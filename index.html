@@ -62,7 +62,7 @@
       color: #d4af37;
     }
 
-    h2 {
+    h2, h3 {
       color: #d4af37;
       margin-top: 0;
     }
@@ -114,6 +114,34 @@
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
     }
 
+    .projects-intro {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+    }
+
+    .project-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .project-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+    }
+
+    .project-item p {
+      margin: 12px auto 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
+    }
+
     a.button {
       display: inline-block;
       margin-top: 20px;
@@ -128,16 +156,6 @@
 
     a.button:hover {
       background: #a88338;
-    }
-
-    a.button.secondary {
-      background: transparent;
-      border: 1px solid #8b6b2f;
-      color: #f4e7c1;
-    }
-
-    a.button.secondary:hover {
-      background: rgba(139, 107, 47, 0.15);
     }
 
     footer {
@@ -170,7 +188,6 @@
     </p>
     <div class="hero-buttons">
       <a class="button" href="#progetti">Scopri i Progetti</a>
-      <a class="button secondary" href="#chi-sono">Chi Sono</a>
     </div>
   </header>
 
@@ -190,10 +207,32 @@
 
     <div class="card" id="progetti">
       <h2>Progetti in Arrivo</h2>
-      <p>
-        Presto qui troverai avventure brevi autoconclusive, missioni secondarie, moduli investigativi,
-        contenuti per bastioni, strumenti per Master e altri materiali originali pronti per la pubblicazione su DMsGuild.
+      <p class="projects-intro">
+        Il sito ospiterà materiali pensati per Master e gruppi che cercano contenuti originali, pronti da usare e adatti a stili di gioco diversi.
       </p>
+
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>One-shot e missioni brevi</h3>
+          <p>
+            Avventure autoconclusive e quest secondarie facili da inserire in campagne esistenti o da giocare in poche sessioni.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Moduli narrativi</h3>
+          <p>
+            Contenuti con forte identità, atmosfera curata e struttura chiara, pensati per aiutare il Master senza rallentare il tavolo.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Homebrew e strumenti</h3>
+          <p>
+            Idee originali, sistemi di supporto, spunti pratici e materiali utili per ampliare la propria esperienza di gioco.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="card" id="dmsguild">
