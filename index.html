@@ -114,32 +114,48 @@
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
     }
 
-    .projects-intro {
+    .projects-intro,
+    .publications-intro {
       max-width: 900px;
       margin: 0 auto 30px auto;
     }
 
-    .project-grid {
+    .project-grid,
+    .publication-grid {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
-    .project-item {
+    .project-item,
+    .publication-item {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(212, 175, 55, 0.45);
       border-radius: 12px;
       padding: 24px 20px;
       box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+      height: 100%;
     }
 
-    .project-item p {
+    .project-item p,
+    .publication-item p {
       margin: 12px auto 0 auto;
       font-size: 1rem;
       line-height: 1.7;
       padding: 0;
+    }
+
+    .publication-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8d8ad;
+      background: rgba(212, 175, 55, 0.08);
     }
 
     a.button {
@@ -158,6 +174,11 @@
       background: #a88338;
     }
 
+    a.button.small {
+      padding: 12px 20px;
+      font-size: 0.95rem;
+    }
+
     footer {
       padding: 30px;
       border-top: 1px solid #8b6b2f;
@@ -173,7 +194,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#chi-sono">Chi Sono</a></li>
       <li><a href="#progetti">Progetti</a></li>
-      <li><a href="#dmsguild">DMsGuild</a></li>
+      <li><a href="#pubblicazioni">Pubblicazioni</a></li>
     </ul>
   </nav>
 
@@ -235,12 +256,31 @@
       </div>
     </div>
 
-    <div class="card" id="dmsguild">
-      <h2>DMsGuild</h2>
-      <p>
-        La sezione prodotti sarà collegata qui appena pubblicherai i tuoi primi moduli.
+    <div class="card" id="pubblicazioni">
+      <h2>Pubblicazioni</h2>
+      <p class="publications-intro">
+        Qui trovi i prodotti già disponibili. I titoli pubblicati su DMsGuild rappresentano il nucleo principale del catalogo, mentre in futuro il sito ospiterà anche versioni deluxe, espansioni e materiali aggiuntivi.
       </p>
-      <a class="button" href="#">Prossimamente</a>
+
+      <div class="publication-grid">
+        <div class="publication-item">
+          <div class="publication-label">Disponibile su DMsGuild</div>
+          <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
+          <p>
+            Il Compendio Definitivo dei Bastioni è un’espansione completa e modulare pensata per portare i Bastioni di D&amp;D 5e 2014 e Bastions 2024 ben oltre una semplice base operativa.
+          </p>
+          <a class="button small" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">Apri su DMsGuild</a>
+        </div>
+
+        <div class="publication-item">
+          <div class="publication-label">Disponibile su DMsGuild</div>
+          <h3>Il Circo delle Meraviglie Celestiali</h3>
+          <p>
+            Mini-campagna horror fantasy modulare per D&amp;D 5e, pensata per gruppi di livello 11–14 e facilmente adattabile anche alle fasce 8–10 e 15–18.
+          </p>
+          <a class="button small" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">Apri su DMsGuild</a>
+        </div>
+      </div>
     </div>
   </section>
 
