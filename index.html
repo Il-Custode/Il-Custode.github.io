@@ -146,6 +146,20 @@
       padding: 0;
     }
 
+    .featured-item-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border-radius: 12px;
+    }
+
+    .featured-item-link:hover .featured-item {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.16);
+      border-color: rgba(212, 175, 55, 0.75);
+    }
+
     .featured-label {
       display: inline-block;
       margin-bottom: 12px;
@@ -267,21 +281,25 @@
       </p>
 
       <div class="featured-grid">
-        <div class="featured-item">
-          <div class="featured-label">In evidenza</div>
-          <h3>Compendio dei Bastioni</h3>
-          <p>
-            Un’espansione completa e modulare dedicata ai Bastioni, pensata per ampliare profondamente l’esperienza di gioco.
-          </p>
-        </div>
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">In evidenza</div>
+            <h3>Compendio dei Bastioni</h3>
+            <p>
+              Un’espansione completa e modulare dedicata ai Bastioni, pensata per ampliare profondamente l’esperienza di gioco.
+            </p>
+          </div>
+        </a>
 
-        <div class="featured-item">
-          <div class="featured-label">In evidenza</div>
-          <h3>Il Circo delle Meraviglie Celestiali</h3>
-          <p>
-            Una mini-campagna horror fantasy modulare pensata per gruppi di alto livello e facilmente adattabile.
-          </p>
-        </div>
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">In evidenza</div>
+            <h3>Il Circo delle Meraviglie Celestiali</h3>
+            <p>
+              Una mini-campagna horror fantasy modulare pensata per gruppi di alto livello e facilmente adattabile.
+            </p>
+          </div>
+        </a>
       </div>
 
       <a class="button" href="pubblicazioni.html">Vedi tutte le pubblicazioni</a>
