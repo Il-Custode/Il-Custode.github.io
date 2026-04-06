@@ -5,12 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Il Custode Studio</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, serif;
       background: linear-gradient(180deg, #111 0%, #1d1b18 100%);
       color: #f4e7c1;
       text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid #8b6b2f;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f4e7c1;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
     }
 
     header {
@@ -23,6 +57,11 @@
       font-size: 3rem;
       margin-bottom: 10px;
       color: #d4af37;
+    }
+
+    h2 {
+      color: #d4af37;
+      margin-top: 0;
     }
 
     p {
@@ -72,13 +111,22 @@
   </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#chi-sono">Chi Sono</a></li>
+      <li><a href="#progetti">Progetti</a></li>
+      <li><a href="#dmsguild">DMsGuild</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
     <h1>Il Custode Studio</h1>
     <p>Avventure premium, horror psicologico, investigazione e worldbuilding per Dungeons & Dragons 5a Edizione.</p>
   </header>
 
   <section class="section">
-    <div class="card">
+    <div class="card" id="chi-sono">
       <h2>Chi Sono</h2>
       <p>
         Sono il creatore di Il Custode Studio, un progetto dedicato alla creazione di one-shot,
@@ -87,7 +135,7 @@
       </p>
     </div>
 
-    <div class="card">
+    <div class="card" id="progetti">
       <h2>Progetti in Arrivo</h2>
       <p>
         Presto qui troverai avventure brevi autoconclusive, castelli infestati,
@@ -96,7 +144,7 @@
       </p>
     </div>
 
-    <div class="card">
+    <div class="card" id="dmsguild">
       <h2>DMsGuild</h2>
       <p>
         La sezione prodotti sarà collegata qui appena pubblicherai i tuoi primi moduli.
