@@ -48,20 +48,48 @@
     }
 
     header {
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.35);
+      padding: 120px 20px 100px 20px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, #1a1713 0%, #121212 100%);
       border-bottom: 2px solid #8b6b2f;
+      box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.35);
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.4rem;
+      margin-bottom: 15px;
       color: #d4af37;
     }
 
     h2 {
       color: #d4af37;
       margin-top: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 950px;
+      margin: 20px auto 10px auto;
+      line-height: 1.8;
+      font-size: 1.2rem;
+      padding: 0 20px;
+    }
+
+    .hero-text {
+      max-width: 850px;
+      margin: 20px auto 0 auto;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      padding: 0 20px;
+      color: #e8d8ad;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     p {
@@ -95,10 +123,21 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      transition: background 0.2s ease;
     }
 
     a.button:hover {
       background: #a88338;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid #8b6b2f;
+      color: #f4e7c1;
+    }
+
+    a.button.secondary:hover {
+      background: rgba(139, 107, 47, 0.15);
     }
 
     footer {
@@ -122,7 +161,17 @@
 
   <header id="home">
     <h1>Il Custode Studio</h1>
-    <p>Avventure premium, horror psicologico, investigazione e worldbuilding per Dungeons & Dragons 5a Edizione.</p>
+    <p class="hero-subtitle">
+      Avventure premium, one-shot, missioni minori, moduli narrativi, strumenti per Master e contenuti originali per Dungeons &amp; Dragons 5a Edizione.
+    </p>
+    <p class="hero-text">
+      Dalle atmosfere oscure alle avventure più leggere, dai moduli autoconclusivi alle idee per campagne più ampie:
+      Il Custode Studio nasce per offrire materiale curato, evocativo e pronto da portare al tavolo.
+    </p>
+    <div class="hero-buttons">
+      <a class="button" href="#progetti">Scopri i Progetti</a>
+      <a class="button secondary" href="#chi-sono">Chi Sono</a>
+    </div>
   </header>
 
   <section class="section">
@@ -130,17 +179,16 @@
       <h2>Chi Sono</h2>
       <p>
         Sono il creatore di Il Custode Studio, un progetto dedicato alla creazione di one-shot,
-        moduli horror, ambientazioni immersive e strumenti premium per Master che vogliono
-        portare al tavolo esperienze memorabili.
+        moduli narrativi, ambientazioni immersive e strumenti premium per Master che vogliono
+        portare al tavolo esperienze memorabili, in qualunque tono di gioco.
       </p>
     </div>
 
     <div class="card" id="progetti">
       <h2>Progetti in Arrivo</h2>
       <p>
-        Presto qui troverai avventure brevi autoconclusive, castelli infestati,
-        moduli investigativi, sistemi avanzati per bastioni e contenuti originali
-        pronti per la pubblicazione su DMsGuild.
+        Presto qui troverai avventure brevi autoconclusive, missioni secondarie, moduli investigativi,
+        contenuti per bastioni, strumenti per Master e altri materiali originali pronti per la pubblicazione su DMsGuild.
       </p>
     </div>
 
