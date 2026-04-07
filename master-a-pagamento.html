@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master a Pagamento | La Bottega Arcana</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(180deg, #111 0%, #1d1b18 100%);
+      color: #f4e7c1;
+      text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid #8b6b2f;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f4e7c1;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 60px 20px 40px 20px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, #1a1713 0%, #121212 100%);
+      border-bottom: 2px solid #8b6b2f;
+      box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #d4af37;
+    }
+
+    h2, h3 {
+      color: #d4af37;
+      margin-top: 0;
+    }
+
+    p {
+      max-width: 950px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.08rem;
+      padding: 0 20px;
+    }
+
+    .hero-subtitle {
+      max-width: 950px;
+      margin: 20px auto 10px auto;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #8b6b2f;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .service-grid,
+    .contact-grid {
+      max-width: 1000px;
+      margin: 30px auto 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item,
+    .contact-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+    }
+
+    .service-item p,
+    .contact-item p {
+      margin: 12px auto 0 auto;
+      max-width: none;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8d8ad;
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #8b6b2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    a.button:hover {
+      background: #a88338;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid #8b6b2f;
+      color: #f4e7c1;
+    }
+
+    a.button.secondary:hover {
+      background: rgba(139, 107, 47, 0.15);
+    }
+
+    footer {
+      padding: 30px;
+      border-top: 1px solid #8b6b2f;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #c9b78d;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#chi-sono">Chi Sono</a></li>
+      <li><a href="index.html#progetti">Linee Editoriali</a></li>
+      <li><a href="index.html#pubblicazioni">Pubblicazioni</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Master a Pagamento</h1>
+    <p class="hero-subtitle">
+      Sessioni curate, immersive e personalizzate per gruppi che vogliono vivere Dungeons &amp; Dragons con un Dungeon Master esperto, sia dal vivo a Milano sia online.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="card">
+      <h2>Un servizio pensato per gruppi nuovi ed esperti</h2>
+      <p>
+        Oltre alla creazione di avventure e contenuti premium, sono disponibile anche come Dungeon Master a pagamento per accompagnare gruppi in sessioni one-shot, mini-campagne o percorsi più continuativi. Ogni esperienza viene preparata con attenzione, con particolare cura per atmosfera, ritmo, roleplay e coinvolgimento del tavolo.
+      </p>
+      <p>
+        Le sessioni possono essere organizzate dal vivo a Milano oppure online, in base alle esigenze del gruppo. L’obiettivo non è solo “far giocare una partita”, ma costruire un’esperienza memorabile, chiara da seguire e adatta sia a chi gioca da anni sia a chi si avvicina per la prima volta a D&amp;D.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Cosa posso offrire</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">One-shot</div>
+          <h3>Sessioni autoconclusive</h3>
+          <p>
+            Avventure complete pensate per una singola serata o per pochi incontri, ideali per gruppi che vogliono vivere un’esperienza intensa e immediata.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Mini-campagne</div>
+          <h3>Percorsi brevi ma curati</h3>
+          <p>
+            Archi narrativi di più sessioni con atmosfera, progressione e maggiore spazio per personaggi, esplorazione e sviluppo del gruppo.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Nuovi giocatori</div>
+          <h3>Esperienze accessibili</h3>
+          <p>
+            Sessioni introduttive pensate anche per chi non ha mai giocato, con spiegazioni chiare e ritmo adatto a entrare nel mondo del gioco di ruolo senza confusione.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Modalità disponibili</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">Dal vivo</div>
+          <h3>Milano</h3>
+          <p>
+            Disponibilità per sessioni in presenza a Milano, concordando formula, orari e organizzazione in base al gruppo.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Online</div>
+          <h3>Gioca ovunque</h3>
+          <p>
+            Possibilità di organizzare sessioni online per gruppi già formati o per chi preferisce giocare da remoto con maggiore flessibilità.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contatti</h2>
+      <p>
+        Questa sezione verrà ampliata con modalità di contatto, disponibilità e dettagli organizzativi. Per ora è pensata come base della pagina dedicata al servizio.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="highlight">In arrivo</div>
+          <h3>Modulo contatti</h3>
+          <p>
+            Spazio predisposto per un futuro modulo diretto o un sistema semplice di richiesta informazioni.
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <div class="highlight">In arrivo</div>
+          <h3>Email / contatti esterni</h3>
+          <p>
+            Qui potrai inserire email, Discord, social o altri canali ufficiali per ricevere richieste da nuovi gruppi.
+          </p>
+        </div>
+      </div>
+
+      <a class="button secondary" href="index.html#chi-sono">Torna a Chi Sono</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 La Bottega Arcana - Tutti i diritti riservati
+  </footer>
+</body>
+</html>
