@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE ARCANE SHOP</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(180deg, #111 0%, #1d1b18 100%);
+      color: #f4e7c1;
+      text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid #8b6b2f;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f4e7c1;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 120px 20px 100px 20px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, #1a1713 0%, #121212 100%);
+      border-bottom: 2px solid #8b6b2f;
+      box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      margin-bottom: 15px;
+      color: #d4af37;
+    }
+
+    h2, h3 {
+      color: #d4af37;
+      margin-top: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 950px;
+      margin: 20px auto 10px auto;
+      line-height: 1.8;
+      font-size: 1.2rem;
+      padding: 0 20px;
+    }
+
+    .hero-text {
+      max-width: 850px;
+      margin: 20px auto 0 auto;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      padding: 0 20px;
+      color: #e8d8ad;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #8b6b2f;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .projects-intro,
+    .publications-intro {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+    }
+
+    .project-grid,
+    .featured-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .project-item,
+    .featured-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+    }
+
+    .project-item p,
+    .featured-item p {
+      margin: 12px auto 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    .featured-item-link {
+      display: flex;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 12px;
+    }
+
+    .featured-item-link .featured-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 260px;
+    }
+
+    .featured-item-link:hover .featured-item {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.16);
+      border-color: rgba(212, 175, 55, 0.75);
+    }
+
+    .featured-label {
+      display: inline-block;
+      align-self: center;
+      margin: 0 auto 12px auto;
+      padding: 6px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8d8ad;
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #8b6b2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    a.button:hover {
+      background: #a88338;
+    }
+
+    footer {
+      padding: 30px;
+      border-top: 1px solid #8b6b2f;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #c9b78d;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Editorial Lines</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="index.html">IT</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>THE ARCANE SHOP</h1>
+    <p class="hero-subtitle">
+      Premium adventures, narrative modules, Dungeon Master tools, professional mastering services, and original content for Dungeons &amp; Dragons 5th Edition.
+    </p>
+    <p class="hero-text">
+      From dark atmospheres to lighter adventures, from self-contained modules to broader campaign ideas, THE ARCANE SHOP was created to offer polished, evocative material ready to bring to your table.
+    </p>
+    <div class="hero-buttons">
+      <a class="button" href="#projects">Discover the Projects</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="card" id="about">
+      <h2>About Me</h2>
+      <p>
+        A Dungeon Master and roleplayer since 1998, I have spent over twenty-five years cultivating a constant passion for Dungeons &amp; Dragons and for creating original content designed for real play at the table.
+      </p>
+      <p>
+        As an author, I love building material that is both evocative and practical: ready-to-use content, easy to read, and genuinely useful for Dungeon Masters.
+      </p>
+      <p>
+        THE ARCANE SHOP was born from this very experience: transforming years of ideas, sessions, playtesting, and design work into polished, versatile products for those seeking D&amp;D material that combines atmosphere, playability, and identity.
+      </p>
+      <p>
+        In addition to content creation, I am also available as a <strong>Dungeon Master for hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory 2–3 session mini one-shot</strong>, ideal for building the right table chemistry before starting longer campaigns.
+      </p>
+      <a class="button" href="master-for-hire.html">Learn More</a>
+    </div>
+
+    <div class="card" id="projects">
+      <h2>Editorial Lines</h2>
+      <p class="projects-intro">
+        THE ARCANE SHOP will grow around three main editorial lines: quick adventures, high-atmosphere modules, and practical tools for Dungeon Masters and groups looking to expand their game experience.
+      </p>
+
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>One-shots & Short Quests</h3>
+          <p>
+            Self-contained adventures and side quests easy to integrate into existing campaigns or play across a few sessions.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Narrative Modules</h3>
+          <p>
+            Strong-identity content with curated atmosphere and clear structure, designed to support the DM without slowing down the table.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Homebrew & Tools</h3>
+          <p>
+            Original ideas, support systems, practical prompts, and useful material to expand your roleplaying experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="publications">
+      <h2>Publications</h2>
+      <p class="publications-intro">
+        Some products are already available, and the catalog will continue to grow over time. To keep the homepage clean, here you’ll find only a curated showcase: the full list will be collected on a dedicated page.
+      </p>
+
+      <div class="featured-grid">
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">Featured</div>
+            <h3>Bastion Compendium</h3>
+            <p>
+              A complete modular expansion dedicated to Bastions, designed to deeply enhance the gameplay experience.
+            </p>
+          </div>
+        </a>
+
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">Featured</div>
+            <h3>The Circus of Celestial Wonders</h3>
+            <p>
+              A modular horror-fantasy mini-campaign designed for high-level groups and easily adaptable.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <a class="button" href="publications.html">View All Publications</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 THE ARCANE SHOP - All rights reserved
+  </footer>
+</body>
+</html>
