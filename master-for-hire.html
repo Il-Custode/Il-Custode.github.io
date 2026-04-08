@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dungeon Master for Hire | THE ARCANE SHOP</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(180deg, #111 0%, #1d1b18 100%);
+      color: #f4e7c1;
+      text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid #8b6b2f;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f4e7c1;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 60px 20px 40px 20px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, #1a1713 0%, #121212 100%);
+      border-bottom: 2px solid #8b6b2f;
+      box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #d4af37;
+    }
+
+    h2, h3 {
+      color: #d4af37;
+      margin-top: 0;
+    }
+
+    p {
+      max-width: 950px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.08rem;
+      padding: 0 20px;
+    }
+
+    .hero-subtitle {
+      max-width: 950px;
+      margin: 20px auto 10px auto;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #8b6b2f;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .service-grid,
+    .contact-grid {
+      max-width: 1000px;
+      margin: 30px auto 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item,
+    .contact-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+    }
+
+    .service-item p,
+    .contact-item p {
+      margin: 12px auto 0 auto;
+      max-width: none;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8d8ad;
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #8b6b2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    a.button:hover {
+      background: #a88338;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid #8b6b2f;
+      color: #f4e7c1;
+    }
+
+    a.button.secondary:hover {
+      background: rgba(139, 107, 47, 0.15);
+    }
+
+    footer {
+      padding: 30px;
+      border-top: 1px solid #8b6b2f;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #c9b78d;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index-en.html#home">Home</a></li>
+      <li><a href="index-en.html#about">About</a></li>
+      <li><a href="index-en.html#projects">Editorial Lines</a></li>
+      <li><a href="index-en.html#publications">Publications</a></li>
+      <li><a href="master-a-noleggio.html">IT</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Dungeon Master for Hire</h1>
+    <p class="hero-subtitle">
+      Curated, immersive, and personalized sessions for groups who want to experience Dungeons &amp; Dragons with an expert Dungeon Master, both live in Milan and online.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="card">
+      <h2>A service designed for both new and experienced groups</h2>
+      <p>
+        In addition to creating premium adventures and content, I am available as a <strong>Dungeon Master for hire</strong> for groups looking for curated, immersive, and memorable sessions, both online and live in Milan.
+      </p>
+      <p>
+        For interested groups, I offer a <strong>free 2–3 session introductory mini one-shot</strong>, perfect for finding the right table chemistry, shaping the tone of the campaign, and understanding together the style that best fits your group.
+      </p>
+      <p>
+        <strong>Group rates:</strong><br />
+        💻 Online: <strong>€50 per session</strong> (3–4 hours)<br />
+        🏰 Live in Milan: <strong>€80 per session</strong> (3–4 hours)<br />
+        📖 5-session mini campaign: <strong>€220 online / €350 live</strong>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>What I Can Offer</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">One-shot</div>
+          <h3>Self-contained Sessions</h3>
+          <p>
+            Complete adventures designed for a single evening or a few sessions, ideal for groups seeking an intense and immediate experience.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Mini Campaigns</div>
+          <h3>Short but Curated Journeys</h3>
+          <p>
+            Multi-session narrative arcs with atmosphere, progression, and more room for characters, exploration, and group development.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">New Players</div>
+          <h3>Accessible Experiences</h3>
+          <p>
+            Introductory sessions designed for complete beginners, with clear explanations and a pace suited to entering the world of roleplaying without confusion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Available Formats</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">Live</div>
+          <h3>Milan</h3>
+          <p>
+            Availability for in-person sessions in Milan, with schedule, format, and organization tailored to the needs of the group.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Online</div>
+          <h3>Play Anywhere</h3>
+          <p>
+            Online sessions available for pre-made groups or anyone who prefers remote play with greater flexibility.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>
+        This section will be expanded with contact methods, availability, and organizational details. For now, it serves as the foundation of the dedicated service page.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="highlight">Coming Soon</div>
+          <h3>Contact Form</h3>
+          <p>
+            Space prepared for a future direct form or a simple information request system.
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <div class="highlight">Coming Soon</div>
+          <h3>Email / External Contacts</h3>
+          <p>
+            Here you will be able to add email, Discord, social channels, or other official ways for new groups to reach out.
+          </p>
+        </div>
+      </div>
+
+      <a class="button" href="mailto:donciccio3@hotmail.it">Contact Me</a>
+      <a class="button secondary" href="index-en.html">Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 THE ARCANE SHOP - All rights reserved
+  </footer>
+</body>
+</html>
