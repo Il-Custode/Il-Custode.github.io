@@ -98,7 +98,9 @@
     }
 
     .featured-grid,
-    .catalog-grid {
+    .catalog-grid,
+    .upcoming-grid,
+    .platform-grid {
       max-width: 1100px;
       margin: 30px auto 0 auto;
       display: grid;
@@ -194,14 +196,15 @@
       font-size: 0.95rem;
     }
 
-    .filters-placeholder {
-      margin-top: 20px;
-      padding: 14px 18px;
-      border: 1px dashed rgba(212, 175, 55, 0.35);
-      border-radius: 10px;
-      color: #d9c797;
-      background: rgba(255, 255, 255, 0.02);
-      font-size: 0.98rem;
+    .section-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8d8ad;
+      background: rgba(212, 175, 55, 0.08);
     }
 
     footer {
@@ -227,15 +230,16 @@
   <header>
     <h1>Publications</h1>
     <p class="hero-subtitle">
-      THE ARCANE SHOP catalog gathers adventures, modules, Dungeon Master tools, and premium content for Dungeons &amp; Dragons 5e.
+      THE ARCANE SHOP brings together adventures, mini-campaigns, DM tools, and premium Dungeons &amp; Dragons 5e content built to deliver rich, atmospheric, and memorable play.
     </p>
   </header>
 
   <section class="section">
     <div class="card">
-      <h2>Featured Products</h2>
+      <span class="section-label">Featured</span>
+      <h2>Available now</h2>
       <p>
-        A selection of the titles currently available. The catalog will continue to grow over time with new releases, additional content, and future deluxe editions.
+        Here you can find the titles currently available. Each release is designed to be solid, usable, and polished, whether you are an experienced DM or a group looking for something ready to bring to the table.
       </p>
 
       <div class="featured-grid">
@@ -243,14 +247,16 @@
           <div>
             <div class="badge-row">
               <span class="badge">Best Seller</span>
+              <span class="badge">Compendium</span>
               <span class="badge">DMsGuild</span>
             </div>
             <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
             <p>
-              A complete modular expansion designed to take D&amp;D 5e 2014 Bastions and 2024 Bastions far beyond a simple base of operations.
+              A complete modular expansion built to turn Bastions into a more dynamic, strategic, and story-driven part of the game.
             </p>
             <div class="product-meta">
-              <strong>Format:</strong> Premium Compendium<br />
+              <strong>Format:</strong> Premium compendium<br />
+              <strong>Category:</strong> DM tools / rules expansion<br />
               <strong>Platform:</strong> DMsGuild
             </div>
           </div>
@@ -262,14 +268,17 @@
         <div class="product-card">
           <div>
             <div class="badge-row">
+              <span class="badge">Mini Campaign</span>
+              <span class="badge">Horror Fantasy</span>
               <span class="badge">DMsGuild</span>
             </div>
             <h3>The Circus of Celestial Wonders</h3>
             <p>
-              A modular horror-fantasy mini campaign for level 11–14 groups, easily adaptable to levels 8–10 and 15–18 as well.
+              A modular horror-fantasy mini campaign for level 11–14 groups, flexible enough to be adapted to different party ranges while keeping a strong sense of atmosphere and identity.
             </p>
             <div class="product-meta">
-              <strong>Format:</strong> Mini Campaign<br />
+              <strong>Format:</strong> Mini campaign<br />
+              <strong>Category:</strong> Adventure module<br />
               <strong>Platform:</strong> DMsGuild
             </div>
           </div>
@@ -281,72 +290,119 @@
     </div>
 
     <div class="card">
-      <h2>Full Catalog</h2>
+      <span class="section-label">Catalog</span>
+      <h2>Current editorial directions</h2>
       <p>
-        All currently available publications and future catalog expansions will be collected here in a clear and easy-to-browse structure.
+        THE ARCANE SHOP is growing as a focused and coherent catalog. These are the main types of content the project is currently built around.
       </p>
-
-      <div class="filters-placeholder">
-        Category, format, and platform filters coming soon.
-      </div>
 
       <div class="catalog-grid">
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Best Seller</span>
-              <span class="badge">DMsGuild</span>
+              <span class="badge">Compendiums</span>
+              <span class="badge">DM Tools</span>
             </div>
-            <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
+            <h3>Expanded tools and premium support material</h3>
             <p>
-              A complete modular expansion dedicated to Bastions, designed to deeply expand the gameplay experience.
+              Content created to deepen rules, improve table management, expand narrative options, and offer practical resources for long-term play.
             </p>
             <div class="product-meta">
-              <strong>Format:</strong> Premium Compendium<br />
-              <strong>Platform:</strong> DMsGuild
+              <strong>Best for:</strong> Dungeon Masters, ongoing campaigns, groups that want more depth
             </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
           </div>
         </div>
 
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">DMsGuild</span>
+              <span class="badge">Adventures</span>
+              <span class="badge">Story-Driven</span>
             </div>
-            <h3>The Circus of Celestial Wonders</h3>
+            <h3>Mini campaigns and ready-to-run modules</h3>
             <p>
-              A modular horror-fantasy mini campaign designed for high-level groups and easily adaptable.
+              Self-contained adventures and short arcs designed to deliver distinctive themes, strong atmosphere, and material that can fit easily into existing campaigns.
             </p>
             <div class="product-meta">
-              <strong>Format:</strong> Mini Campaign<br />
-              <strong>Platform:</strong> DMsGuild
+              <strong>Best for:</strong> ready-to-play content, special sessions, side arcs, event nights
             </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
           </div>
         </div>
 
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Deluxe</span>
-              <span class="badge">New</span>
+              <span class="badge">Premium</span>
+              <span class="badge">Future Releases</span>
             </div>
-            <h3>Future Deluxe Edition</h3>
+            <h3>Expanded editions and future lines</h3>
             <p>
-              Reserved space for future expanded or premium editions sold directly through the official website.
+              Some projects will grow into broader, more refined, or enhanced releases, with the goal of building a stronger and more distinctive editorial identity over time.
             </p>
             <div class="product-meta">
-              <strong>Format:</strong> Deluxe / Expanded Edition<br />
-              <strong>Platform:</strong> Official Website
+              <strong>Direction:</strong> premium expansions, new releases, dedicated product lines
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="section-label">Upcoming</span>
+      <h2>In development</h2>
+      <p>
+        The catalog will keep growing with new releases and original editorial projects. This section will be used to highlight upcoming titles as soon as they are ready to be announced.
+      </p>
+
+      <div class="upcoming-grid">
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Upcoming</span>
+              <span class="badge">Editorial Project</span>
+            </div>
+            <h3>New titles in preparation</h3>
+            <p>
+              New modules, compendiums, and premium releases are already in development, with the goal of steadily expanding THE ARCANE SHOP into a richer and more recognizable catalog.
+            </p>
+            <div class="product-meta">
+              <strong>Status:</strong> In development<br />
+              <strong>Updates:</strong> Announcements and news will appear here on the site
             </div>
           </div>
           <div class="button-row">
-            <a class="button secondary" href="#">Coming Soon</a>
+            <a class="button secondary" href="index-en.html#home">Follow updates</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="section-label">DMsGuild</span>
+      <h2>Explore the catalog on DMsGuild</h2>
+      <p>
+        Current releases are available through DMsGuild. If you want to browse published titles, read full product pages, and follow the growth of the catalog, you can visit the author profile directly.
+      </p>
+
+      <div class="platform-grid">
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Author Page</span>
+              <span class="badge">DMsGuild</span>
+            </div>
+            <h3>Author profile</h3>
+            <p>
+              The main place to explore available releases, open individual product pages, and keep track of how the catalog continues to grow.
+            </p>
+            <div class="product-meta">
+              <strong>Platform:</strong> DMsGuild<br />
+              <strong>Includes:</strong> published titles, full listings, catalog updates
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">Open DMsGuild</a>
+            <a class="button secondary" href="index-en.html">Back to Home</a>
           </div>
         </div>
       </div>
