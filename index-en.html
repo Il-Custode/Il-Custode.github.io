@@ -84,6 +84,15 @@
       color: #e8d8ad;
     }
 
+    .hero-note {
+      max-width: 780px;
+      margin: 18px auto 0 auto;
+      line-height: 1.7;
+      font-size: 0.98rem;
+      padding: 0 20px;
+      color: #dccb9d;
+    }
+
     .hero-buttons {
       margin-top: 35px;
       display: flex;
@@ -121,7 +130,8 @@
     }
 
     .project-grid,
-    .featured-grid {
+    .featured-grid,
+    .quick-access-grid {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -130,7 +140,8 @@
     }
 
     .project-item,
-    .featured-item {
+    .featured-item,
+    .quick-access-item {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(212, 175, 55, 0.45);
       border-radius: 12px;
@@ -139,7 +150,8 @@
     }
 
     .project-item p,
-    .featured-item p {
+    .featured-item p,
+    .quick-access-item p {
       margin: 12px auto 0 auto;
       font-size: 1rem;
       line-height: 1.7;
@@ -168,7 +180,8 @@
       border-color: rgba(212, 175, 55, 0.75);
     }
 
-    .featured-label {
+    .featured-label,
+    .section-label {
       display: inline-block;
       align-self: center;
       margin: 0 auto 12px auto;
@@ -178,6 +191,14 @@
       font-size: 0.85rem;
       color: #e8d8ad;
       background: rgba(212, 175, 55, 0.08);
+    }
+
+    .button-row-center {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     a.button {
@@ -194,6 +215,16 @@
 
     a.button:hover {
       background: #a88338;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid #8b6b2f;
+      color: #f4e7c1;
+    }
+
+    a.button.secondary:hover {
+      background: rgba(139, 107, 47, 0.15);
     }
 
     footer {
@@ -220,68 +251,103 @@
   <header id="home">
     <h1>THE ARCANE SHOP</h1>
     <p class="hero-subtitle">
-      Premium adventures, narrative modules, Dungeon Master tools, professional mastering services, and original content for Dungeons &amp; Dragons 5th Edition.
+      Premium adventures, narrative modules, DM tools, professional Dungeon Master services, and original content for Dungeons &amp; Dragons 5th Edition.
     </p>
     <p class="hero-text">
-      From dark atmospheres to lighter adventures, from self-contained modules to broader campaign ideas, THE ARCANE SHOP was created to offer polished, evocative material ready to bring to your table.
+      From darker atmospheres to lighter adventures, from self-contained modules to broader campaign ideas, THE ARCANE SHOP was created to offer polished, evocative material ready to bring straight to your table.
+    </p>
+    <p class="hero-note">
+      Explore the catalog, discover the editorial projects already available, and if you want, book guided sessions either online or live in Milan.
     </p>
     <div class="hero-buttons">
-      <a class="button" href="#projects">Discover the Projects</a>
+      <a class="button" href="publications.html">Explore Publications</a>
+      <a class="button secondary" href="master-for-hire.html">Request a Session</a>
     </div>
   </header>
 
   <section class="section">
     <div class="card" id="about">
+      <span class="section-label">Author &amp; Dungeon Master</span>
       <h2>About Me</h2>
       <p>
-        A Dungeon Master and roleplayer since 1998, I have spent over twenty-five years cultivating a constant passion for Dungeons &amp; Dragons and for creating original content designed for real play at the table.
+        I have been a Dungeon Master and tabletop roleplayer since 1998, and for more than twenty-five years I have kept the same strong passion for Dungeons &amp; Dragons and for creating original material designed to be used in real play.
       </p>
       <p>
-        As an author, I love building material that is both evocative and practical: ready-to-use content, easy to read, and genuinely useful for Dungeon Masters.
+        Over time, I have developed all kinds of content: short one-shots, side quests, narrative modules, and broader campaign ideas, always with a strong focus on the quality of the experience at the table.
       </p>
       <p>
-        THE ARCANE SHOP was born from this very experience: transforming years of ideas, sessions, playtesting, and design work into polished, versatile products for those seeking D&amp;D material that combines atmosphere, playability, and identity.
+        As an author, I like creating material that feels evocative but also practical: content that is easy to read, ready to use, and genuinely helpful for Dungeon Masters. Roleplay has always been one of the parts of the game I value most, but over the years I have also worked extensively on homebrew systems, encounter structure, storytelling, settings, and tools that can support very different tones, from serious to lighter, from mysterious to adventurous.
       </p>
       <p>
-        In addition to content creation, I am also available as a <strong>Dungeon Master for hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory 2–3 session mini one-shot</strong>, ideal for building the right table chemistry before starting longer campaigns.
+        THE ARCANE SHOP was born from that experience: turning years of ideas, sessions, table testing, and design work into polished, versatile products for people looking for D&amp;D material that combines atmosphere, playability, and identity.
       </p>
-      <a class="button" href="master-for-hire.html">Learn More</a>
+      <p>
+        Alongside content creation, I am also available as a <strong>Dungeon Master for hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory mini one-shot lasting 2–3 sessions</strong>, ideal for building the right table chemistry before moving into longer adventures.
+      </p>
+      <div class="button-row-center">
+        <a class="button" href="master-for-hire.html">Discover the DM Service</a>
+        <a class="button secondary" href="publications.html">View the Catalog</a>
+      </div>
     </div>
 
     <div class="card" id="projects">
+      <span class="section-label">Editorial Direction</span>
       <h2>Editorial Lines</h2>
       <p class="projects-intro">
-        THE ARCANE SHOP will grow around three main editorial lines: quick adventures, high-atmosphere modules, and practical tools for Dungeon Masters and groups looking to expand their game experience.
+        THE ARCANE SHOP is growing around three main directions: quick adventures, atmosphere-driven modules, and practical tools for Dungeon Masters and groups who want to deepen and improve their game experience.
       </p>
 
       <div class="project-grid">
         <div class="project-item">
-          <h3>One-shots & Short Quests</h3>
+          <h3>One-shots &amp; Short Quests</h3>
           <p>
-            Self-contained adventures and side quests easy to integrate into existing campaigns or play across a few sessions.
+            Self-contained adventures and side quests that are easy to drop into existing campaigns or play across a small number of sessions, without losing atmosphere or identity.
           </p>
         </div>
 
         <div class="project-item">
           <h3>Narrative Modules</h3>
           <p>
-            Strong-identity content with curated atmosphere and clear structure, designed to support the DM without slowing down the table.
+            Content with strong personality, curated atmosphere, and a clear structure, designed to support the DM without slowing down the flow of the table.
           </p>
         </div>
 
         <div class="project-item">
-          <h3>Homebrew & Tools</h3>
+          <h3>Homebrew &amp; Tools</h3>
           <p>
-            Original ideas, support systems, practical prompts, and useful material to expand your roleplaying experience.
+            Original ideas, support systems, practical prompts, and useful resources built to expand the game with deeper and more versatile material.
           </p>
         </div>
       </div>
     </div>
 
+    <div class="card">
+      <span class="section-label">Main Paths</span>
+      <h2>Two ways to enter THE ARCANE SHOP</h2>
+      <div class="quick-access-grid">
+        <div class="quick-access-item">
+          <h3>Editorial Catalog</h3>
+          <p>
+            If you are looking for adventures, mini-campaigns, modules, or DM tools, you can explore the publications already available and follow the growth of the catalog.
+          </p>
+          <a class="button" href="publications.html">Explore the Catalog</a>
+        </div>
+
+        <div class="quick-access-item">
+          <h3>Dungeon Master for Hire</h3>
+          <p>
+            If you want a guided session, a short campaign, or a tailored experience for your group, you can directly request a session and discuss the format that fits best.
+          </p>
+          <a class="button secondary" href="master-for-hire.html">View the Service</a>
+        </div>
+      </div>
+    </div>
+
     <div class="card" id="publications">
-      <h2>Publications</h2>
+      <span class="section-label">Publications</span>
+      <h2>Featured Titles</h2>
       <p class="publications-intro">
-        Some products are already available, and the catalog will continue to grow over time. To keep the homepage clean, here you’ll find only a curated showcase: the full list will be collected on a dedicated page.
+        Some products are already available, and the catalog will keep growing over time. Here you will find a concise showcase of the main titles, while the full collection is available on the dedicated page.
       </p>
 
       <div class="featured-grid">
@@ -290,7 +356,7 @@
             <div class="featured-label">Featured</div>
             <h3>Bastion Compendium</h3>
             <p>
-              A complete modular expansion dedicated to Bastions, designed to deeply enhance the gameplay experience.
+              A complete modular expansion focused on Bastions, built to offer more narrative and strategic possibilities and to deepen the overall gameplay experience.
             </p>
           </div>
         </a>
@@ -300,24 +366,26 @@
             <div class="featured-label">Featured</div>
             <h3>The Circus of Celestial Wonders</h3>
             <p>
-              A modular horror-fantasy mini-campaign designed for high-level groups and easily adaptable.
+              A modular horror-fantasy mini-campaign created for high-level groups, designed to deliver atmosphere, mystery, and a strong narrative identity.
             </p>
           </div>
         </a>
       </div>
 
-      <a class="button" href="publications.html">View All Publications</a>
+      <div class="button-row-center">
+        <a class="button" href="publications.html">View All Publications</a>
+      </div>
     </div>
 
     <div class="card" id="special-thanks-en">
       <h2>Special Thanks</h2>
 
       <p>
-        Every project begins with an idea, but it truly comes to life thanks to the people who stay by our side throughout the journey.
+        Every project begins with an idea, but it truly comes to life thanks to the people who stay beside us throughout the journey.
       </p>
 
       <p>
-        A special thank you goes to my wife Marta, for always supporting me, putting up with me, and standing beside me in this adventure, even during the moments when ideas, sessions, and projects seemed endless.
+        A special thank you goes to my wife Marta, for always supporting me, putting up with me, and standing by my side in this adventure, even in the moments when ideas, sessions, and projects seemed never-ending.
       </p>
 
       <p>
@@ -325,7 +393,7 @@
       </p>
 
       <p>
-        A huge thank you also goes to my closest friends — my second family — Piolo, Gibo, Jim, Ryoga, Gnomo, Paolino, Nadia, Dementelale, and Marcello, who over all these years have brought my ideas to life at the table, tested them, refined them, and helped shape them into the products that now take form within THE ARCANE SHOP.
+        A huge thank you also goes to my closest friends — my second family — Piolo, Gibo, Jim, Ryoga, Gnomo, Paolino, Nadia, Dementelale, and Marcello, who over all these years brought my ideas to life at the table, tested them, refined them, and helped shape them into the products that now take form within THE ARCANE SHOP.
       </p>
 
       <p>
