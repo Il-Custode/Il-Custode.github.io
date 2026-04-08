@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | THE ARCANE SHOP</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(180deg, #111 0%, #1d1b18 100%);
+      color: #f4e7c1;
+      text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid #8b6b2f;
+      padding: 16px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f4e7c1;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 60px 20px 40px 20px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, #1a1713 0%, #121212 100%);
+      border-bottom: 2px solid #8b6b2f;
+      box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #d4af37;
+    }
+
+    h2, h3 {
+      color: #d4af37;
+      margin-top: 0;
+    }
+
+    p {
+      max-width: 950px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 1.08rem;
+      padding: 0 20px;
+    }
+
+    .hero-subtitle {
+      max-width: 950px;
+      margin: 20px auto 10px auto;
+      line-height: 1.8;
+      font-size: 1.15rem;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #8b6b2f;
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .featured-grid,
+    .catalog-grid {
+      max-width: 1100px;
+      margin: 30px auto 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: bold;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.08);
+      color: #f4e7c1;
+    }
+
+    .product-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      margin: 0 0 16px 0;
+      max-width: none;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .product-meta {
+      margin-bottom: 18px;
+      color: #dccb9d;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #8b6b2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    a.button:hover {
+      background: #a88338;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid #8b6b2f;
+      color: #f4e7c1;
+    }
+
+    a.button.secondary:hover {
+      background: rgba(139, 107, 47, 0.15);
+    }
+
+    .button-row .button {
+      margin-top: 0;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+    }
+
+    .filters-placeholder {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border: 1px dashed rgba(212, 175, 55, 0.35);
+      border-radius: 10px;
+      color: #d9c797;
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      padding: 30px;
+      border-top: 1px solid #8b6b2f;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #c9b78d;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index-en.html#home">Home</a></li>
+      <li><a href="index-en.html#about">About</a></li>
+      <li><a href="index-en.html#projects">Editorial Lines</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="pubblicazioni.html">IT</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Publications</h1>
+    <p class="hero-subtitle">
+      THE ARCANE SHOP catalog gathers adventures, modules, Dungeon Master tools, and premium content for Dungeons &amp; Dragons 5e.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="card">
+      <h2>Featured Products</h2>
+      <p>
+        A selection of the titles currently available. The catalog will continue to grow over time with new releases, additional content, and future deluxe editions.
+      </p>
+
+      <div class="featured-grid">
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Best Seller</span>
+              <span class="badge">DMsGuild</span>
+            </div>
+            <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
+            <p>
+              A complete modular expansion designed to take D&amp;D 5e 2014 Bastions and 2024 Bastions far beyond a simple base of operations.
+            </p>
+            <div class="product-meta">
+              <strong>Format:</strong> Premium Compendium<br />
+              <strong>Platform:</strong> DMsGuild
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">DMsGuild</span>
+            </div>
+            <h3>The Circus of Celestial Wonders</h3>
+            <p>
+              A modular horror-fantasy mini campaign for level 11–14 groups, easily adaptable to levels 8–10 and 15–18 as well.
+            </p>
+            <div class="product-meta">
+              <strong>Format:</strong> Mini Campaign<br />
+              <strong>Platform:</strong> DMsGuild
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Full Catalog</h2>
+      <p>
+        All currently available publications and future catalog expansions will be collected here in a clear and easy-to-browse structure.
+      </p>
+
+      <div class="filters-placeholder">
+        Category, format, and platform filters coming soon.
+      </div>
+
+      <div class="catalog-grid">
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Best Seller</span>
+              <span class="badge">DMsGuild</span>
+            </div>
+            <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
+            <p>
+              A complete modular expansion dedicated to Bastions, designed to deeply expand the gameplay experience.
+            </p>
+            <div class="product-meta">
+              <strong>Format:</strong> Premium Compendium<br />
+              <strong>Platform:</strong> DMsGuild
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">DMsGuild</span>
+            </div>
+            <h3>The Circus of Celestial Wonders</h3>
+            <p>
+              A modular horror-fantasy mini campaign designed for high-level groups and easily adaptable.
+            </p>
+            <div class="product-meta">
+              <strong>Format:</strong> Mini Campaign<br />
+              <strong>Platform:</strong> DMsGuild
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Deluxe</span>
+              <span class="badge">New</span>
+            </div>
+            <h3>Future Deluxe Edition</h3>
+            <p>
+              Reserved space for future expanded or premium editions sold directly through the official website.
+            </p>
+            <div class="product-meta">
+              <strong>Format:</strong> Deluxe / Expanded Edition<br />
+              <strong>Platform:</strong> Official Website
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="#">Coming Soon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 THE ARCANE SHOP - All rights reserved
+  </footer>
+</body>
+</html>
