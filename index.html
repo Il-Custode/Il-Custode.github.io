@@ -318,23 +318,32 @@
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
     }
 
-    .publication-showcase-content {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+   .publication-showcase-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    .publication-showcase-label {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 7px 13px;
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--gold-soft);
-      background: rgba(212, 175, 55, 0.08);
-      letter-spacing: 0.02em;
-    }
+.publication-showcase-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 7px 13px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--gold-soft);
+  background: rgba(212, 175, 55, 0.08);
+  letter-spacing: 0.02em;
+}
+
+.premium-seal {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
 
     .publication-showcase-content h3 {
       margin: 0;
