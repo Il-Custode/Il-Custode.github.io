@@ -138,18 +138,63 @@
     }
 
     .card {
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      max-width: 930px;
-      margin: 0 auto 28px auto;
-      padding: 36px 32px;
-      box-shadow: var(--shadow);
-    }
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 930px;
+  margin: 0 auto 28px auto;
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
 
-    .projects-intro,
-    .publications-intro {
+.about-layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(280px, 1fr);
+  gap: 28px;
+  align-items: start;
+  text-align: left;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.34);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+.about-content h2 {
+  margin-bottom: 14px;
+}
+
+.about-content p {
+  max-width: none;
+  padding: 0;
+  text-align: left;
+}
+
+.about-content .button {
+  margin-top: 22px;
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-content h2,
+  .about-content p {
+    text-align: center;
+  }
+}
+
+.projects-intro,
+.publications-intro {
       max-width: 900px;
       margin: 0 auto 30px auto;
       color: var(--text-soft);
@@ -484,6 +529,12 @@
 
   <section class="section">
     <div class="card" id="about">
+  <div class="about-layout">
+    <div class="about-image">
+      <img src="assets/images/arcane-shop-keeper-welcome.png" alt="The Keeper of THE ARCANE SHOP welcoming visitors into his arcane store" />
+    </div>
+
+    <div class="about-content">
       <h2>About Me</h2>
       <p>
         I have been a Dungeon Master and tabletop roleplayer since 1998, and for more than twenty-five years I have kept a constant passion for Dungeons &amp; Dragons and for creating original content designed for real use at the table. Over time, I have developed many kinds of adventures, from short one-shots to side quests, from narrative modules to broader campaign ideas, always with special attention to the overall quality of play.
@@ -499,6 +550,8 @@
       </p>
       <a class="button" href="master-for-hire.html">Discover the Dungeon Master for Hire Service</a>
     </div>
+  </div>
+</div>
 
     <div class="card" id="projects">
       <h2>Editorial Lines</h2>
