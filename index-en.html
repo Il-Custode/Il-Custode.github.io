@@ -138,63 +138,63 @@
     }
 
     .card {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.04));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  max-width: 930px;
-  margin: 0 auto 28px auto;
-  padding: 36px 32px;
-  box-shadow: var(--shadow);
-}
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 930px;
+      margin: 0 auto 28px auto;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+    }
 
-.about-layout {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(260px, 360px) minmax(280px, 1fr);
-  gap: 28px;
-  align-items: start;
-  text-align: left;
-}
+    .about-layout {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) minmax(280px, 1fr);
+      gap: 28px;
+      align-items: start;
+      text-align: left;
+    }
 
-.about-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 14px;
-  border: 1px solid rgba(212, 175, 55, 0.34);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
-}
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    }
 
-.about-content h2 {
-  margin-bottom: 14px;
-}
+    .about-content h2 {
+      margin-bottom: 14px;
+    }
 
-.about-content p {
-  max-width: none;
-  padding: 0;
-  text-align: left;
-}
+    .about-content p {
+      max-width: none;
+      padding: 0;
+      text-align: left;
+    }
 
-.about-content .button {
-  margin-top: 22px;
-}
+    .about-content .button {
+      margin-top: 22px;
+    }
 
-@media (max-width: 900px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-  .about-content h2,
-  .about-content p {
-    text-align: center;
-  }
-}
+      .about-content h2,
+      .about-content p {
+        text-align: center;
+      }
+    }
 
-.projects-intro,
-.publications-intro {
+    .projects-intro,
+    .publications-intro {
       max-width: 900px;
       margin: 0 auto 30px auto;
       color: var(--text-soft);
@@ -325,7 +325,9 @@
     }
 
     .publication-showcase-label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       align-self: flex-start;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -334,6 +336,13 @@
       color: var(--gold-soft);
       background: rgba(212, 175, 55, 0.08);
       letter-spacing: 0.02em;
+    }
+
+    .premium-seal {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
     }
 
     .publication-showcase-content h3 {
@@ -529,29 +538,29 @@
 
   <section class="section">
     <div class="card" id="about">
-  <div class="about-layout">
-    <div class="about-image">
-      <img src="assets/images/arcane-shop-keeper-welcome.png" alt="The Keeper of THE ARCANE SHOP welcoming visitors into his arcane store" />
-    </div>
+      <div class="about-layout">
+        <div class="about-image">
+          <img src="assets/images/arcane-shop-keeper-welcome.png" alt="The Keeper of THE ARCANE SHOP welcoming visitors into his arcane store" />
+        </div>
 
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>
-        I have been a Dungeon Master and tabletop roleplayer since 1998, and for more than twenty-five years I have kept a constant passion for Dungeons &amp; Dragons and for creating original content designed for real use at the table. Over time, I have developed many kinds of adventures, from short one-shots to side quests, from narrative modules to broader campaign ideas, always with special attention to the overall quality of play.
-      </p>
-      <p>
-        As an author, I like building material that feels evocative but also practical: content that is ready to use, easy to read, and genuinely helpful for the DM. Roleplay has always been one of the aspects I enjoy most, but over the years I have also worked a lot on homebrew systems, narrative structure, encounters, settings, and tools able to support very different tones, from serious to lighter, from mysterious to more adventurous.
-      </p>
-      <p>
-        THE ARCANE SHOP was born from that very experience: turning years of ideas, sessions, table testing, and design work into polished and versatile products for people looking for D&amp;D material that combines atmosphere, playability, and identity.
-      </p>
-      <p>
-        Alongside content creation, I am also available as a <strong>Dungeon Master for Hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory mini one-shot lasting 2–3 sessions</strong>, ideal for creating the right chemistry at the table before moving into longer adventures.
-      </p>
-      <a class="button" href="master-for-hire.html">Discover the Dungeon Master for Hire Service</a>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>
+            I have been a Dungeon Master and tabletop roleplayer since 1998, and for more than twenty-five years I have kept a constant passion for Dungeons &amp; Dragons and for creating original content designed for real use at the table. Over time, I have developed many kinds of adventures, from short one-shots to side quests, from narrative modules to broader campaign ideas, always with special attention to the overall quality of play.
+          </p>
+          <p>
+            As an author, I like building material that feels evocative but also practical: content that is ready to use, easy to read, and genuinely helpful for the DM. Roleplay has always been one of the aspects I enjoy most, but over the years I have also worked a lot on homebrew systems, narrative structure, encounters, settings, and tools able to support very different tones, from serious to lighter, from mysterious to more adventurous.
+          </p>
+          <p>
+            THE ARCANE SHOP was born from that very experience: turning years of ideas, sessions, table testing, and design work into polished and versatile products for people looking for D&amp;D material that combines atmosphere, playability, and identity.
+          </p>
+          <p>
+            Alongside content creation, I am also available as a <strong>Dungeon Master for Hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory mini one-shot lasting 2–3 sessions</strong>, ideal for creating the right chemistry at the table before moving into longer adventures.
+          </p>
+          <a class="button" href="master-for-hire.html">Discover the Dungeon Master for Hire Service</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <div class="card" id="projects">
       <h2>Editorial Lines</h2>
@@ -595,7 +604,10 @@
         </div>
 
         <div class="publication-showcase-content">
-          <div class="publication-showcase-label">Featured Title</div>
+          <div class="publication-showcase-label">
+            <img src="assets/images/arcane-premium-seal.png" alt="THE ARCANE SHOP premium seal" class="premium-seal" />
+            Featured Title
+          </div>
           <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
           <p>
             The first major editorial pillar of the catalog: a premium compendium dedicated to Bastions, designed to turn them into a living, strategic, and narrative part of the game experience.
