@@ -175,7 +175,9 @@
     }
 
     .highlight {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 14px;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -184,6 +186,26 @@
       color: var(--gold-soft);
       background: rgba(212, 175, 55, 0.08);
       letter-spacing: 0.02em;
+    }
+
+    .glyph-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .master-service-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      font-size: 0.9rem;
     }
 
     .button-row-center {
@@ -333,7 +355,13 @@
 
   <section class="section">
     <div class="card">
+      <div class="master-service-badge">
+        <img src="assets/images/arcane-master-glyph.png" alt="Sigillo Master premium" class="glyph-icon" />
+        Servizio Premium
+      </div>
+
       <h2>Un servizio premium per gruppi che vogliono giocare bene</h2>
+
       <p>
         Oltre alla creazione di avventure e contenuti editoriali, offro un servizio di <strong>Dungeon Master a noleggio</strong> pensato per gruppi che desiderano sessioni curate, immersive e costruite con attenzione reale al ritmo, all’atmosfera e al coinvolgimento del tavolo.
       </p>
@@ -386,7 +414,10 @@
 
       <div class="service-grid">
         <div class="service-item">
-          <div class="highlight">Dal vivo</div>
+          <div class="highlight">
+            <img src="assets/images/arcane-live-session-glyph.png" alt="Sessioni dal vivo" class="glyph-icon" />
+            Dal vivo
+          </div>
           <h3>Milano</h3>
           <p>
             Disponibilità per sessioni in presenza a Milano, concordando formula, orari e organizzazione in base al gruppo.
@@ -394,7 +425,10 @@
         </div>
 
         <div class="service-item">
-          <div class="highlight">Online</div>
+          <div class="highlight">
+            <img src="assets/images/arcane-online-session-glyph.png" alt="Sessioni online" class="glyph-icon" />
+            Online
+          </div>
           <h3>Gioca ovunque</h3>
           <p>
             Possibilità di organizzare sessioni online per gruppi già formati o per chi preferisce giocare da remoto con maggiore flessibilità.
