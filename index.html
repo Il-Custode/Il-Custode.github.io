@@ -67,7 +67,7 @@
       font-size: 0.98rem;
       font-weight: bold;
       letter-spacing: 0.02em;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
@@ -148,38 +148,6 @@
       box-shadow: var(--shadow);
     }
 
-    .section-title-with-glyph {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .section-title-with-glyph h2,
-    .section-title-with-glyph h3 {
-      margin: 0;
-    }
-
-    .section-glyph {
-      width: 54px;
-      height: 54px;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.14));
-    }
-
-    .button-glyph {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 10px;
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.14));
-    }
-
     .about-layout {
       max-width: 1120px;
       margin: 0 auto;
@@ -211,6 +179,18 @@
 
     .about-content .button {
       margin-top: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-content h2,
+      .about-content p {
+        text-align: center;
+      }
     }
 
     .projects-intro,
@@ -449,20 +429,6 @@
         padding: 30px 22px;
       }
 
-      .about-layout {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about-content h2,
-      .about-content p {
-        text-align: center;
-      }
-
-      .section-title-with-glyph {
-        justify-content: center;
-      }
-
       .publication-showcase {
         grid-template-columns: 1fr;
         text-align: center;
@@ -516,11 +482,6 @@
         border-radius: 14px;
       }
 
-      .section-glyph {
-        width: 46px;
-        height: 46px;
-      }
-
       .project-grid,
       .featured-grid {
         grid-template-columns: 1fr;
@@ -571,10 +532,7 @@
     </p>
     <div class="hero-buttons">
       <a class="button" href="pubblicazioni.html">Esplora le Pubblicazioni</a>
-      <a class="button secondary" href="master-a-noleggio.html">
-        <img src="assets/images/arcane-live-session-glyph.png" alt="Glifo sessione dal vivo THE ARCANE SHOP" class="button-glyph" />
-        Richiedi una Sessione
-      </a>
+      <a class="button secondary" href="master-a-noleggio.html">Richiedi una Sessione</a>
     </div>
   </header>
 
@@ -586,10 +544,7 @@
         </div>
 
         <div class="about-content">
-          <div class="section-title-with-glyph">
-            <img src="assets/images/arcane-master-glyph.png" alt="Glifo Master THE ARCANE SHOP" class="section-glyph" />
-            <h2>Chi Sono</h2>
-          </div>
+          <h2>Chi Sono</h2>
           <p>
             Master e giocatore di ruolo dal 1998, porto avanti da oltre venticinque anni una passione costante per Dungeons &amp; Dragons e per la creazione di contenuti originali da usare realmente al tavolo. Nel tempo ho sviluppato avventure di ogni tipo, dalle one-shot brevi alle missioni secondarie, dai moduli narrativi alle idee più ampie per campagne, sempre con un’attenzione particolare alla qualità dell’esperienza di gioco.
           </p>
@@ -602,10 +557,7 @@
           <p>
             Oltre alla creazione di contenuti, sono disponibile anche come <strong>Master a Noleggio</strong> per sessioni dal vivo a Milano e online. Per i gruppi interessati propongo una <strong>mini one-shot introduttiva gratuita di 2–3 sessioni</strong>, ideale per creare il giusto feeling al tavolo prima di iniziare percorsi più lunghi.
           </p>
-          <a class="button" href="master-a-noleggio.html">
-            <img src="assets/images/arcane-live-session-glyph.png" alt="Glifo sessione dal vivo THE ARCANE SHOP" class="button-glyph" />
-            Scopri il servizio di Master a Noleggio
-          </a>
+          <a class="button" href="master-a-noleggio.html">Scopri il servizio di Master a Noleggio</a>
         </div>
       </div>
     </div>
