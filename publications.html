@@ -253,7 +253,9 @@
     }
 
     .section-label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 14px;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -262,6 +264,13 @@
       color: var(--gold-soft);
       background: rgba(212, 175, 55, 0.08);
       letter-spacing: 0.02em;
+    }
+
+    .glyph-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
     }
 
     footer {
@@ -366,7 +375,10 @@
 
   <section class="section">
     <div class="card">
-      <span class="section-label">Featured</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-featured-glyph-en.png" alt="Featured seal" class="glyph-icon" />
+        Featured
+      </span>
       <h2>Available now</h2>
       <p>
         Here you can find the titles currently available. Each release is designed to be solid, usable, and polished, whether you are an experienced DM or a group looking for something ready to bring to the table.
@@ -420,7 +432,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">Catalog</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-catalog-glyph-en.png" alt="Catalog seal" class="glyph-icon" />
+        Catalog
+      </span>
       <h2>Current editorial directions</h2>
       <p>
         THE ARCANE SHOP is growing as a focused and coherent catalog. These are the main types of content the project is currently built around.
@@ -478,7 +493,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">Upcoming</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-new-release-glyph-en.png" alt="New releases seal" class="glyph-icon" />
+        Upcoming
+      </span>
       <h2>In development</h2>
       <p>
         The catalog will keep growing with new releases and original editorial projects. This section will be used to highlight upcoming titles as soon as they are ready to be announced.
@@ -508,7 +526,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">DMsGuild</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-dmsguild-glyph.png" alt="DMsGuild seal" class="glyph-icon" />
+        DMsGuild
+      </span>
       <h2>Explore the catalog on DMsGuild</h2>
       <p>
         Current releases are available through DMsGuild. If you want to browse published titles, read full product pages, and follow the growth of the catalog, you can visit the author profile directly.
