@@ -253,7 +253,9 @@
     }
 
     .section-label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 14px;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -262,6 +264,13 @@
       color: var(--gold-soft);
       background: rgba(212, 175, 55, 0.08);
       letter-spacing: 0.02em;
+    }
+
+    .glyph-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
     }
 
     footer {
@@ -365,7 +374,10 @@
 
   <section class="section">
     <div class="card">
-      <span class="section-label">In evidenza</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-featured-glyph.png" alt="Sigillo In evidenza" class="glyph-icon" />
+        In evidenza
+      </span>
       <h2>Pubblicazioni disponibili ora</h2>
       <p>
         Una selezione dei titoli attualmente disponibili. Ogni prodotto è pensato per offrire materiale solido, utilizzabile e rifinito, sia per gruppi esperti sia per Master che cercano contenuti pronti da portare al tavolo.
@@ -419,7 +431,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">Catalogo</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-catalog-glyph.png" alt="Sigillo Catalogo" class="glyph-icon" />
+        Catalogo
+      </span>
       <h2>Linee attive del catalogo</h2>
       <p>
         Il catalogo di THE ARCANE SHOP è pensato per crescere in modo coerente, con prodotti divisi per funzione, tono e utilizzo al tavolo. Qui trovi la direzione editoriale attuale del progetto.
@@ -477,7 +492,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">Prossime uscite</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Prossime uscite" class="glyph-icon" />
+        Prossime uscite
+      </span>
       <h2>In sviluppo</h2>
       <p>
         Il catalogo continuerà a crescere con nuove pubblicazioni e progetti editoriali originali. Questa sezione raccoglierà le prossime uscite e i prodotti in arrivo man mano che verranno annunciati.
@@ -507,7 +525,10 @@
     </div>
 
     <div class="card">
-      <span class="section-label">DMsGuild</span>
+      <span class="section-label">
+        <img src="assets/images/arcane-dmsguild-glyph.png" alt="Sigillo DMsGuild" class="glyph-icon" />
+        DMsGuild
+      </span>
       <h2>Scopri il catalogo completo su DMsGuild</h2>
       <p>
         Le pubblicazioni già disponibili sono distribuite tramite DMsGuild. Se vuoi esplorare i prodotti pubblicati, consultare le schede complete e seguire l’evoluzione del catalogo, puoi visitare direttamente il profilo autore.
