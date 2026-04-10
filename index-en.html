@@ -181,18 +181,6 @@
       margin-top: 22px;
     }
 
-    @media (max-width: 900px) {
-      .about-layout {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about-content h2,
-      .about-content p {
-        text-align: center;
-      }
-    }
-
     .projects-intro,
     .publications-intro {
       max-width: 900px;
@@ -280,15 +268,6 @@
       letter-spacing: 0.02em;
     }
 
-    .button-row-center {
-      margin-top: 26px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
     .publication-showcase {
       max-width: 1120px;
       margin: 0 auto 30px auto;
@@ -324,11 +303,12 @@
       gap: 12px;
     }
 
-    .publication-showcase-label {
+    .publication-showcase-label,
+    .section-label,
+    .highlight {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      align-self: flex-start;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 999px;
@@ -338,11 +318,29 @@
       letter-spacing: 0.02em;
     }
 
+    .publication-showcase-label {
+      align-self: flex-start;
+    }
+
+    .section-label {
+      margin-bottom: 14px;
+    }
+
+    .highlight {
+      margin-bottom: 14px;
+    }
+
+    .glyph-icon,
+    .premium-seal {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
+
     .premium-seal {
       width: 28px;
       height: 28px;
-      object-fit: contain;
-      display: block;
     }
 
     .publication-showcase-content h3 {
@@ -429,6 +427,21 @@
         padding: 30px 22px;
       }
 
+      .about-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-content h2,
+      .about-content p {
+        text-align: center;
+      }
+
+      .section-label,
+      .highlight {
+        justify-content: center;
+      }
+
       .publication-showcase {
         grid-template-columns: 1fr;
         text-align: center;
@@ -503,7 +516,6 @@
       }
 
       .hero-buttons,
-      .button-row-center,
       .publication-showcase-buttons {
         gap: 12px;
       }
@@ -544,6 +556,10 @@
         </div>
 
         <div class="about-content">
+          <div class="section-label">
+            <img src="assets/images/arcane-master-glyph.png" alt="Author and Dungeon Master seal" class="glyph-icon" />
+            Author &amp; Dungeon Master
+          </div>
           <h2>About Me</h2>
           <p>
             I have been a Dungeon Master and tabletop roleplayer since 1998, and for more than twenty-five years I have kept a constant passion for Dungeons &amp; Dragons and for creating original content designed for real use at the table. Over time, I have developed many kinds of adventures, from short one-shots to side quests, from narrative modules to broader campaign ideas, always with special attention to the overall quality of play.
@@ -554,6 +570,11 @@
           <p>
             THE ARCANE SHOP was born from that very experience: turning years of ideas, sessions, table testing, and design work into polished and versatile products for people looking for D&amp;D material that combines atmosphere, playability, and identity.
           </p>
+
+          <div class="highlight">
+            <img src="assets/images/arcane-live-session-glyph.png" alt="Live and online sessions seal" class="glyph-icon" />
+            Live and Online Sessions
+          </div>
           <p>
             Alongside content creation, I am also available as a <strong>Dungeon Master for Hire</strong> for live sessions in Milan and online. For interested groups, I offer a <strong>free introductory mini one-shot lasting 2–3 sessions</strong>, ideal for creating the right chemistry at the table before moving into longer adventures.
           </p>
