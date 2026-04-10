@@ -181,18 +181,6 @@
       margin-top: 22px;
     }
 
-    @media (max-width: 900px) {
-      .about-layout {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about-content h2,
-      .about-content p {
-        text-align: center;
-      }
-    }
-
     .projects-intro,
     .publications-intro {
       max-width: 900px;
@@ -280,15 +268,6 @@
       letter-spacing: 0.02em;
     }
 
-    .button-row-center {
-      margin-top: 26px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
     .publication-showcase {
       max-width: 1120px;
       margin: 0 auto 30px auto;
@@ -324,11 +303,12 @@
       gap: 12px;
     }
 
-    .publication-showcase-label {
+    .publication-showcase-label,
+    .section-label,
+    .highlight {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      align-self: flex-start;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 999px;
@@ -338,11 +318,29 @@
       letter-spacing: 0.02em;
     }
 
+    .publication-showcase-label {
+      align-self: flex-start;
+    }
+
+    .section-label {
+      margin-bottom: 14px;
+    }
+
+    .highlight {
+      margin-bottom: 14px;
+    }
+
+    .glyph-icon,
+    .premium-seal {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
+
     .premium-seal {
       width: 28px;
       height: 28px;
-      object-fit: contain;
-      display: block;
     }
 
     .publication-showcase-content h3 {
@@ -429,6 +427,21 @@
         padding: 30px 22px;
       }
 
+      .about-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-content h2,
+      .about-content p {
+        text-align: center;
+      }
+
+      .section-label,
+      .highlight {
+        justify-content: center;
+      }
+
       .publication-showcase {
         grid-template-columns: 1fr;
         text-align: center;
@@ -503,7 +516,6 @@
       }
 
       .hero-buttons,
-      .button-row-center,
       .publication-showcase-buttons {
         gap: 12px;
       }
@@ -544,6 +556,10 @@
         </div>
 
         <div class="about-content">
+          <div class="section-label">
+            <img src="assets/images/arcane-master-glyph.png" alt="Sigillo autore e master" class="glyph-icon" />
+            Autore &amp; Master
+          </div>
           <h2>Chi Sono</h2>
           <p>
             Master e giocatore di ruolo dal 1998, porto avanti da oltre venticinque anni una passione costante per Dungeons &amp; Dragons e per la creazione di contenuti originali da usare realmente al tavolo. Nel tempo ho sviluppato avventure di ogni tipo, dalle one-shot brevi alle missioni secondarie, dai moduli narrativi alle idee più ampie per campagne, sempre con un’attenzione particolare alla qualità dell’esperienza di gioco.
@@ -554,6 +570,11 @@
           <p>
             THE ARCANE SHOP nasce proprio da questa esperienza: trasformare anni di idee, sessioni, prove al tavolo e progettazione in prodotti curati, versatili e pensati per chi cerca materiale D&amp;D capace di unire atmosfera, giocabilità e identità.
           </p>
+
+          <div class="highlight">
+            <img src="assets/images/arcane-live-session-glyph.png" alt="Sigillo sessioni dal vivo e online" class="glyph-icon" />
+            Sessioni dal vivo e online
+          </div>
           <p>
             Oltre alla creazione di contenuti, sono disponibile anche come <strong>Master a Noleggio</strong> per sessioni dal vivo a Milano e online. Per i gruppi interessati propongo una <strong>mini one-shot introduttiva gratuita di 2–3 sessioni</strong>, ideale per creare il giusto feeling al tavolo prima di iniziare percorsi più lunghi.
           </p>
