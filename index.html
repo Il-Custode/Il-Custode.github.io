@@ -506,6 +506,17 @@
       color: var(--danger);
     }
 
+    .hidden-brevo-form {
+      display: none !important;
+      visibility: hidden;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     footer {
       padding: 34px 20px;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
@@ -856,12 +867,32 @@
     © 2026 THE ARCANE SHOP - Tutti i diritti riservati
   </footer>
 
+  <iframe name="brevo-hidden-frame-it" class="hidden-brevo-form" title="Brevo hidden submit"></iframe>
+
+  <form
+    id="brevo-hidden-form-it"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAPOCcN7NI6Jtili9UANfGgmpTmGygFJYkVec0EIf4gJhwFj829W3zUeh22N43Z8O9Jy-FsHZR3lU9cOngC0rawTU28ENSVOBWGW5qTH95IFuFXyx8wmpMZPjoTAD8Jv2qAwS37sQ3vNv5uIDQjJB2OWpMk1F_etT5wtyDuhW80_xXvIdv6ReeIraOHQjuJsf9f5Jmxsf9ApU6g=="
+    target="brevo-hidden-frame-it"
+  >
+    <input type="hidden" name="lists_25[]" value="2" />
+    <input type="hidden" name="EMAIL" id="brevo-email-it" value="" />
+    <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="locale" value="it" />
+    <input type="hidden" name="html_type" value="simple" />
+  </form>
+
   <script>
     (function () {
       const giftOptions = document.querySelectorAll('.gift-option');
       const emailInput = document.getElementById('gift-email-it');
       const submitButton = document.getElementById('gift-submit-it');
       const statusBox = document.getElementById('gift-status-it');
+
+      const brevoForm = document.getElementById('brevo-hidden-form-it');
+      const brevoEmail = document.getElementById('brevo-email-it');
+
       let selectedGift = '';
 
       function setStatus(message, type) {
@@ -905,6 +936,15 @@
         if (!isValidEmail(email)) {
           setStatus('L’indirizzo email non sembra valido. Controllalo e riprova.', 'error');
           emailInput.focus();
+          return;
+        }
+
+        brevoEmail.value = email;
+
+        try {
+          brevoForm.submit();
+        } catch (error) {
+          setStatus('C’è stato un problema durante l’iscrizione. Riprova tra poco.', 'error');
           return;
         }
 
