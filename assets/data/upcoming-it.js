@@ -1,8 +1,8 @@
 window.arcaneUpcomingIt = [
   {
-    title: "Nuovo omaggio gratuito",
-    description: "Una nuova risorsa gratuita pensata per far conoscere lo stile editoriale di THE ARCANE SHOP.",
+    type: "Prossima uscita",
     status: "In preparazione",
-    type: "Omaggi"
+    title: "Nuova pubblicazione in sviluppo",
+    description: "Il prossimo progetto editoriale di THE ARCANE SHOP verrà mostrato qui non appena la sua direzione sarà definita. Questa sezione accompagnerà la crescita naturale del catalogo con le future uscite."
   }
 ];
