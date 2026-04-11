@@ -131,7 +131,8 @@
     }
 
     .service-grid,
-    .contact-grid {
+    .contact-grid,
+    .faq-grid {
       max-width: 1000px;
       margin: 30px auto 0 auto;
       display: grid;
@@ -141,17 +142,20 @@
     }
 
     .service-item,
-    .contact-item {
+    .contact-item,
+    .faq-item {
       background: var(--panel-soft);
       border: 1px solid rgba(212, 175, 55, 0.34);
       border-radius: var(--radius);
       padding: 26px 22px;
       box-shadow: 0 0 16px rgba(212, 175, 55, 0.08);
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      text-align: left;
     }
 
     .service-item:hover,
-    .contact-item:hover {
+    .contact-item:hover,
+    .faq-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 24px rgba(212, 175, 55, 0.14);
       border-color: rgba(212, 175, 55, 0.62);
@@ -159,23 +163,28 @@
     }
 
     .service-item h3,
-    .contact-item h3 {
+    .contact-item h3,
+    .faq-item h3 {
       margin-bottom: 12px;
       font-size: 1.24rem;
     }
 
     .service-item p,
-    .contact-item p {
+    .contact-item p,
+    .faq-item p {
       margin: 0;
       max-width: none;
       padding: 0;
       font-size: 1rem;
       line-height: 1.75;
       color: var(--text-soft);
+      text-align: left;
     }
 
     .highlight {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 14px;
       padding: 7px 13px;
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -184,6 +193,35 @@
       color: var(--gold-soft);
       background: rgba(212, 175, 55, 0.08);
       letter-spacing: 0.02em;
+    }
+
+    .glyph-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .master-service-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+    }
+
+    .button-row-center {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     a.button {
@@ -220,40 +258,7 @@
       background: rgba(139, 107, 47, 0.16);
       border-color: rgba(212, 175, 55, 0.72);
     }
-.master-service-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  padding: 8px 14px;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 999px;
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--gold-soft);
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-}
 
-.glyph-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
-
-.highlight {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  padding: 7px 13px;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  color: var(--gold-soft);
-  background: rgba(212, 175, 55, 0.08);
-  letter-spacing: 0.02em;
-}
     .contact-note {
       font-size: 0.95rem;
       margin-top: 14px;
@@ -322,7 +327,8 @@
       }
 
       .service-grid,
-      .contact-grid {
+      .contact-grid,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
@@ -330,6 +336,10 @@
       a.button.secondary {
         width: 100%;
         max-width: 340px;
+      }
+
+      .button-row-center {
+        gap: 12px;
       }
     }
   </style>
@@ -341,134 +351,251 @@
       <li><a href="index-en.html#about">About</a></li>
       <li><a href="index-en.html#projects">Editorial Lines</a></li>
       <li><a href="index-en.html#publications">Publications</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="master-a-noleggio.html">IT</a></li>
     </ul>
   </nav>
 
   <header>
-  <h1>Dungeon Master for Hire</h1>
-  <p class="hero-subtitle">
-    Curated, immersive, and personalized sessions for groups who want to experience Dungeons &amp; Dragons with an expert Dungeon Master, both live in Milan and online.
-  </p>
-</header>
+    <h1>Dungeon Master for Hire</h1>
+    <p class="hero-subtitle">
+      Curated, immersive, and personalized sessions for groups who want to experience Dungeons &amp; Dragons with an expert Dungeon Master, both live in Milan and online.
+    </p>
+  </header>
 
-<section class="section">
-  <div class="card">
-    <div class="master-service-badge">
-      <img src="assets/images/arcane-master-glyph.png" alt="Premium Dungeon Master service seal" class="glyph-icon" />
-      Premium Service
+  <section class="section">
+    <div class="card">
+      <div class="master-service-badge">
+        <img src="assets/images/arcane-master-glyph.png" alt="Premium Dungeon Master service seal" class="glyph-icon" />
+        Premium Service
+      </div>
+
+      <h2>A guided game experience built with real care</h2>
+
+      <p>
+        Alongside the creation of adventures and editorial content, I offer a <strong>Dungeon Master for hire</strong> service designed for groups who want to sit at the table and enjoy a session built with care, pacing, and real attention to engagement.
+      </p>
+      <p>
+        This is not just about “running a game,” but about guiding the group through a more structured, immersive, and enjoyable experience, with careful attention to atmosphere, timing, narrative moments, and the overall fun of the table.
+      </p>
+      <p>
+        The service is suitable both for <strong>new groups</strong> looking to start with confident guidance and for <strong>experienced players</strong> who want a more refined, coherent, and memorable experience, either online or live in Milan.
+      </p>
+      <p>
+        For interested groups, I offer a <strong>free 2–3 session introductory mini one-shot</strong>, useful for getting to know each other, finding the right tone, and understanding together whether my way of running the game is truly the right fit for your table.
+      </p>
+      <p>
+        <strong>Group rates:</strong><br />
+        💻 Online: <strong>€50 per session</strong> (3–4 hours)<br />
+        🏰 Live in Milan: <strong>€80 per session</strong> (3–4 hours)<br />
+        📖 5-session mini campaign: <strong>€220 online / €350 live</strong>
+      </p>
     </div>
 
-    <h2>A premium service for groups who want to play well</h2>
-    <p>
-      Alongside the creation of adventures and editorial content, I offer a <strong>Dungeon Master for hire</strong> service designed for groups looking for curated, immersive sessions built with real attention to pacing, atmosphere, and table engagement.
-    </p>
-    <p>
-      This service is suitable both for <strong>new groups</strong> who want to start with confident guidance and for <strong>experienced players</strong> looking for a more refined, coherent, and memorable experience, either online or live in Milan.
-    </p>
-    <p>
-      For interested groups, I offer a <strong>free 2–3 session introductory mini one-shot</strong>, useful for getting to know each other, finding the right campaign tone, and understanding together whether my DMing style is the right fit for your table.
-    </p>
-    <p>
-      <strong>Group rates:</strong><br />
-      💻 Online: <strong>€50 per session</strong> (3–4 hours)<br />
-      🏰 Live in Milan: <strong>€80 per session</strong> (3–4 hours)<br />
-      📖 5-session mini campaign: <strong>€220 online / €350 live</strong>
-    </p>
-  </div>
+    <div class="card">
+      <h2>Who this is for</h2>
 
-  <div class="card">
-    <h2>What I Can Offer</h2>
-
-    <div class="service-grid">
-      <div class="service-item">
-        <div class="highlight">One-shot</div>
-        <h3>Self-contained Sessions</h3>
-        <p>
-          Complete adventures designed for a single evening or a few sessions, ideal for groups seeking an intense and immediate experience.
-        </p>
-      </div>
-
-      <div class="service-item">
-        <div class="highlight">Mini Campaigns</div>
-        <h3>Short but Curated Journeys</h3>
-        <p>
-          Multi-session narrative arcs with atmosphere, progression, and more room for characters, exploration, and group development.
-        </p>
-      </div>
-
-      <div class="service-item">
-        <div class="highlight">New Players</div>
-        <h3>Accessible Experiences</h3>
-        <p>
-          Introductory sessions designed for complete beginners, with clear explanations and a pace suited to entering the world of roleplaying without confusion.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Available Formats</h2>
-
-    <div class="service-grid">
-      <div class="service-item">
-        <div class="highlight">
-          <img src="assets/images/arcane-live-session-glyph.png" alt="Live sessions" class="glyph-icon" />
-          Live
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">New groups</div>
+          <h3>A strong way to begin</h3>
+          <p>
+            Ideal for people who want to approach Dungeons &amp; Dragons without confusion, with clear guidance, simple explanations, and a pace that works well even for complete beginners.
+          </p>
         </div>
-        <h3>Milan</h3>
-        <p>
-          Availability for in-person sessions in Milan, with schedule, format, and organization tailored to the needs of the group.
-        </p>
-      </div>
 
-      <div class="service-item">
-        <div class="highlight">
-          <img src="assets/images/arcane-online-session-glyph.png" alt="Online sessions" class="glyph-icon" />
-          Online
+        <div class="service-item">
+          <div class="highlight">Experienced groups</div>
+          <h3>For a more polished experience</h3>
+          <p>
+            Perfect for players who already know the game but want something more refined, with greater attention to atmosphere, coherence, and the overall quality of the session.
+          </p>
         </div>
-        <h3>Play Anywhere</h3>
-        <p>
-          Online sessions available for pre-made groups or anyone who prefers remote play with greater flexibility.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <div class="card">
-    <h2>Contact</h2>
-    <p>
-      If you would like to organize a session, propose a mini campaign, or simply ask for information, you can contact me directly by email. I will personally reply to help define availability, session format, and the style of experience that best fits your group.
-    </p>
-
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="highlight">Planning</div>
-        <h3>Table Setup</h3>
-        <p>
-          We can define together player count, campaign style, duration, online or live format, and the overall availability of your group.
-        </p>
-      </div>
-
-      <div class="contact-item">
-        <div class="highlight">Quick Reply</div>
-        <h3>Availability & Proposal</h3>
-        <p>
-          You will quickly receive a reply with availability, an initial proposal, and clear guidance on how to begin your gaming journey.
-        </p>
+        <div class="service-item">
+          <div class="highlight">Groups without a regular DM</div>
+          <h3>So the table keeps moving</h3>
+          <p>
+            A useful option for already formed groups who want to keep playing, organize a special game night, or try a short campaign without having to manage everything on their own.
+          </p>
+        </div>
       </div>
     </div>
 
-    <a class="button" href="mailto:dm@thearcaneshop.com?subject=Session%20Request%20THE%20ARCANE%20SHOP">Request a Session</a>
-    <p class="contact-note">
-      In your email, you can include player count, preferred style, online or live format, and the kind of experience you want for your group.
-    </p>
-    <a class="button secondary" href="index-en.html">Back to Home</a>
-  </div>
-</section>
+    <div class="card" id="how-it-works">
+      <h2>How it works</h2>
 
-<footer>
-  © 2026 THE ARCANE SHOP - All rights reserved
-</footer>
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">First contact</div>
+          <h3>You write to me</h3>
+          <p>
+            You contact me by email and tell me how many players you are, whether you prefer online or live play, the kind of experience you are looking for, and anything useful about your group.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Initial conversation</div>
+          <h3>I understand what fits you best</h3>
+          <p>
+            Based on what you tell me, I reply with a clear proposal so we can understand together which format suits you best: one-shot, mini campaign, introductory experience, or a short structured run.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Introductory trial</div>
+          <h3>We get to know each other at the table</h3>
+          <p>
+            If the group is interested, we can begin with the free introductory mini one-shot, so we can see in play whether the chemistry, tone, and pacing are the right ones to continue together.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What I can offer</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">One-shots</div>
+          <h3>Self-contained sessions</h3>
+          <p>
+            Complete adventures designed for a single evening or a few sessions, ideal for groups looking for an intense, clear, and immediate experience.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">Mini campaigns</div>
+          <h3>Short but carefully built journeys</h3>
+          <p>
+            Multi-session narrative arcs with atmosphere, progression, and more room for characters, exploration, group dynamics, and development at the table.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">New players</div>
+          <h3>Accessible experiences</h3>
+          <p>
+            Introductory sessions designed for people who have never played before, with clear explanations and a structure that makes entering roleplaying simple and enjoyable.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Available formats</h2>
+
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="highlight">
+            <img src="assets/images/arcane-live-session-glyph.png" alt="Live sessions" class="glyph-icon" />
+            Live
+          </div>
+          <h3>Milan</h3>
+          <p>
+            Available for in-person sessions in Milan, with schedule, structure, and organization agreed together based on the group and the kind of experience requested.
+          </p>
+        </div>
+
+        <div class="service-item">
+          <div class="highlight">
+            <img src="assets/images/arcane-online-session-glyph.png" alt="Online sessions" class="glyph-icon" />
+            Online
+          </div>
+          <h3>Play from anywhere</h3>
+          <p>
+            Online sessions are available for already formed groups or for anyone who prefers remote play with more flexibility and easier organization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Do we need to be experienced players?</h3>
+          <p>
+            No. The service is also designed for new groups or players who want to approach Dungeons &amp; Dragons with clear guidance and a more structured introduction.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can we play online?</h3>
+          <p>
+            Yes. The service is available both online and live in Milan, depending on what works best for the group.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you also work with already formed groups?</h3>
+          <p>
+            Yes. In fact, that is one of the easiest situations to organize, because it allows me to shape a proposal right away around the number of players and the tone you want.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How does the free introductory mini one-shot work?</h3>
+          <p>
+            It is a short 2–3 session introductory experience designed to let us get to know each other, test the chemistry at the table, and decide whether to continue together with a longer format.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long does a session last?</h3>
+          <p>
+            A session usually lasts between 3 and 4 hours, but the duration can be discussed together depending on the group, the type of adventure, and the players’ availability.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can we contact you just to ask for information?</h3>
+          <p>
+            Absolutely. Even if you have not decided yet, you can simply write to understand whether the service fits your group and which format might work best for you.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>
+        If you want to organize a session, propose a mini campaign, or simply understand whether this service could be a good fit for your group, you can contact me directly by email.
+      </p>
+      <p>
+        I will reply personally to understand what you are looking for and to suggest the most suitable format, without pressure and with clear guidance from the very first contact.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="highlight">Planning</div>
+          <h3>I understand your table</h3>
+          <p>
+            Together we can define player count, desired style, duration, online or live format, and the kind of experience you truly want to build.
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <div class="highlight">Personal reply</div>
+          <h3>You receive a clear proposal</h3>
+          <p>
+            After your first message, you will receive a personal reply with availability, practical details, and an initial proposal built around your group.
+          </p>
+        </div>
+      </div>
+
+      <a class="button" href="mailto:dm@thearcaneshop.com?subject=Session%20Request%20THE%20ARCANE%20SHOP">Request a Session</a>
+      <p class="contact-note">
+        In your email, you can include player count, preferred style, online or live format, and the kind of experience you would like to organize.
+      </p>
+      <a class="button secondary" href="index-en.html">Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 THE ARCANE SHOP - All rights reserved
+  </footer>
 </body>
 </html>
