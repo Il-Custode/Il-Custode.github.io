@@ -383,51 +383,7 @@
         Una selezione dei titoli attualmente disponibili. Ogni prodotto è pensato per offrire materiale solido, utilizzabile e rifinito, sia per gruppi esperti sia per Master che cercano contenuti pronti da portare al tavolo.
       </p>
 
-      <div class="featured-grid">
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Best Seller</span>
-              <span class="badge">Compendio</span>
-              <span class="badge">DMsGuild</span>
-            </div>
-            <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
-            <p>
-              Un’espansione completa e modulare dedicata ai Bastioni, progettata per trasformarli in una parte viva, strategica e narrativa dell’esperienza di gioco.
-            </p>
-            <div class="product-meta">
-              <strong>Formato:</strong> Compendio premium<br />
-              <strong>Categoria:</strong> Strumenti per Master / Espansione di regole<br />
-              <strong>Piattaforma:</strong> DMsGuild
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">Vai su DMsGuild</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Mini-campagna</span>
-              <span class="badge">Horror Fantasy</span>
-              <span class="badge">DMsGuild</span>
-            </div>
-            <h3>Il Circo delle Meraviglie Celestiali</h3>
-            <p>
-              Una mini-campagna horror fantasy modulare per gruppi di livello 11–14, adattabile anche ad altre fasce, costruita per offrire atmosfera, mistero e una forte identità narrativa.
-            </p>
-            <div class="product-meta">
-              <strong>Formato:</strong> Mini-campagna<br />
-              <strong>Categoria:</strong> Avventura modulare<br />
-              <strong>Piattaforma:</strong> DMsGuild
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">Vai su DMsGuild</a>
-          </div>
-        </div>
-      </div>
+                  <div class="featured-grid" id="featured-products-it"></div>
     </div>
 
     <div class="card">
@@ -559,8 +515,68 @@
     </div>
   </section>
 
-  <footer>
+    <footer>
     © 2026 THE ARCANE SHOP - Tutti i diritti riservati
   </footer>
+
+  <script src="assets/data/products-it.js"></script>
+  <script>
+    (function () {
+      const container = document.getElementById('featured-products-it');
+      const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
+
+      if (!container) return;
+
+      products.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      function escapeHtml(text) {
+        return String(text || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function buildBadges(badges) {
+        if (!Array.isArray(badges) || !badges.length) return '';
+        return badges.map(function (badge) {
+          return '<span class="badge">' + escapeHtml(badge) + '</span>';
+        }).join('');
+      }
+
+      function buildButton(link) {
+        if (!link || link === '#') {
+          return '<a class="button secondary" href="#">Anteprima non ancora collegata</a>';
+        }
+
+        return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
+      }
+
+      container.innerHTML = products.map(function (product) {
+        return `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                ${buildBadges(product.badges)}
+              </div>
+              <h3>${escapeHtml(product.title)}</h3>
+              <p>${escapeHtml(product.description)}</p>
+              <div class="product-meta">
+                <strong>Formato:</strong> ${escapeHtml(product.format)}<br />
+                <strong>Categoria:</strong> ${escapeHtml(product.category)}<br />
+                <strong>Piattaforma:</strong> ${escapeHtml(product.platform)}
+              </div>
+            </div>
+            <div class="button-row">
+              ${buildButton(product.link)}
+            </div>
+          </div>
+        `;
+      }).join('');
+    })();
+  </script>
 </body>
 </html>
