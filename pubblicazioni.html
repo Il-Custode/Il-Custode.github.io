@@ -527,7 +527,28 @@
         <a class="button secondary" href="index.html#circolo-arcano">Segui gli aggiornamenti</a>
       </div>
     </div>
+<div class="card">
+  <span class="section-label">
+    <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Contenuti riservati" class="glyph-icon" />
+    Riservato agli iscritti
+  </span>
+  <h2>Contenuti esclusivi del Circolo Arcano</h2>
+  <p>
+    Qui troverai materiali più ricchi e selezionati, pensati per chi desidera seguire da vicino la crescita del catalogo e ricevere contenuti speciali riservati agli iscritti.
+  </p>
 
+  <div class="upcoming-grid">
+    <div id="members-products-it" class="upcoming-products-dynamic"></div>
+  </div>
+
+  <p class="intro-note">
+    Questi contenuti vengono consegnati tramite email agli iscritti al Circolo Arcano.
+  </p>
+
+  <div class="button-row" style="justify-content: center; margin-top: 24px;">
+    <a class="button secondary" href="index.html#circolo-arcano">Ricevi i contenuti esclusivi</a>
+  </div>
+</div>
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-dmsguild-glyph.png" alt="Sigillo DMsGuild" class="glyph-icon" />
@@ -569,14 +590,17 @@
 
   <script src="assets/data/products-it.js"></script>
   <script src="assets/data/upcoming-it.js"></script>
+  <script src="assets/data/members-it.js"></script>
   <script>
     (function () {
       const featuredContainer = document.getElementById('featured-products-it');
       const catalogListContainer = document.getElementById('catalog-list-it');
       const upcomingContainer = document.getElementById('upcoming-products-it');
+const membersContainer = document.getElementById('members-products-it');
 
       const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
       const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
+      const members = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
 
       function escapeHtml(text) {
         return String(text || '')
@@ -683,6 +707,41 @@
           }).join('');
         }
       }
+      if (membersContainer) {
+  if (!members.length) {
+    membersContainer.innerHTML = `
+      <div class="product-card">
+        <div>
+          <div class="badge-row">
+            <span class="badge">Solo iscritti</span>
+          </div>
+          <h3>Contenuti esclusivi in arrivo</h3>
+          <p>
+            I prossimi materiali riservati agli iscritti del Circolo Arcano compariranno qui non appena saranno pronti.
+          </p>
+        </div>
+      </div>
+    `;
+  } else {
+    membersContainer.innerHTML = members.map(function (item) {
+      return `
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">${escapeHtml(item.type)}</span>
+              <span class="badge">${escapeHtml(item.status)}</span>
+            </div>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.description)}</p>
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="index.html#circolo-arcano">${escapeHtml(item.buttonText)}</a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+}
     })();
   </script>
 </body>
