@@ -142,6 +142,10 @@
       align-items: stretch;
     }
 
+    .featured-products-dynamic {
+      display: contents;
+    }
+
     .product-card {
       background: var(--panel-soft);
       border: 1px solid rgba(212, 175, 55, 0.34);
@@ -200,6 +204,32 @@
       color: var(--text-soft);
       font-size: 0.95rem;
       line-height: 1.75;
+    }
+
+    .catalog-list {
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .catalog-list-item {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .catalog-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .catalog-list-link {
+      color: var(--gold-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .catalog-list-link:hover {
+      color: var(--gold);
+      text-decoration: underline;
     }
 
     .button-row {
@@ -352,6 +382,11 @@
         width: 100%;
         max-width: 340px;
       }
+
+      .catalog-list {
+        max-height: none;
+        overflow: visible;
+      }
     }
   </style>
 </head>
@@ -385,47 +420,21 @@
       </p>
 
       <div class="featured-grid">
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Best Seller</span>
-              <span class="badge">Compendium</span>
-              <span class="badge">DMsGuild</span>
-            </div>
-            <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
-            <p>
-              A complete modular expansion built to turn Bastions into a more dynamic, strategic, and story-driven part of the game.
-            </p>
-            <div class="product-meta">
-              <strong>Format:</strong> Premium compendium<br />
-              <strong>Category:</strong> DM tools / rules expansion<br />
-              <strong>Platform:</strong> DMsGuild
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
-          </div>
-        </div>
+        <div id="featured-products-en" class="featured-products-dynamic"></div>
 
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Mini Campaign</span>
-              <span class="badge">Horror Fantasy</span>
-              <span class="badge">DMsGuild</span>
+              <span class="badge">Quick Catalog</span>
+              <span class="badge">Automatic Update</span>
             </div>
-            <h3>The Circus of Celestial Wonders</h3>
-            <p>
-              A modular horror-fantasy mini campaign for level 11–14 groups, flexible enough to be adapted to different party ranges while keeping a strong sense of atmosphere and identity.
-            </p>
-            <div class="product-meta">
-              <strong>Format:</strong> Mini campaign<br />
-              <strong>Category:</strong> Adventure module<br />
-              <strong>Platform:</strong> DMsGuild
-            </div>
+            <h3>All published titles</h3>
+            <div id="catalog-list-en" class="product-meta catalog-list"></div>
           </div>
           <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">View on DMsGuild</a>
+            <a class="button secondary" href="https://site.dmsguild.com/browse.php?author=Francesco%20Paolo%20Russo" target="_blank" rel="noopener noreferrer">
+              Full catalog on DMsGuild
+            </a>
           </div>
         </div>
       </div>
@@ -563,5 +572,85 @@
   <footer>
     © 2026 THE ARCANE SHOP - All rights reserved
   </footer>
+
+  <script src="assets/data/products-en.js"></script>
+  <script>
+    (function () {
+      const featuredContainer = document.getElementById('featured-products-en');
+      const catalogListContainer = document.getElementById('catalog-list-en');
+      const products = Array.isArray(window.arcaneProductsEn) ? [...window.arcaneProductsEn] : [];
+
+      if (!featuredContainer || !catalogListContainer) return;
+
+      products.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      function escapeHtml(text) {
+        return String(text || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function buildBadges(badges) {
+        if (!Array.isArray(badges) || !badges.length) return '';
+        return badges.map(function (badge) {
+          return '<span class="badge">' + escapeHtml(badge) + '</span>';
+        }).join('');
+      }
+
+      function buildButton(link) {
+        if (!link || link === '#') {
+          return '<a class="button secondary" href="#">Preview not linked yet</a>';
+        }
+
+        return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Open product</a>';
+      }
+
+      const featuredProducts = products.slice(0, 2);
+
+      featuredContainer.innerHTML = featuredProducts.map(function (product) {
+        return `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                ${buildBadges(product.badges)}
+              </div>
+              <h3>${escapeHtml(product.title)}</h3>
+              <p>${escapeHtml(product.description)}</p>
+              <div class="product-meta">
+                <strong>Format:</strong> ${escapeHtml(product.format)}<br />
+                <strong>Category:</strong> ${escapeHtml(product.category)}<br />
+                <strong>Platform:</strong> ${escapeHtml(product.platform)}
+              </div>
+            </div>
+            <div class="button-row">
+              ${buildButton(product.link)}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      catalogListContainer.innerHTML = products.map(function (product) {
+        const safeTitle = escapeHtml(product.title);
+        const safeLink = escapeHtml(product.link || '#');
+
+        if (!product.link || product.link === '#') {
+          return `<div class="catalog-list-item">• ${safeTitle}</div>`;
+        }
+
+        return `
+          <div class="catalog-list-item">
+            • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+              ${safeTitle}
+            </a>
+          </div>
+        `;
+      }).join('');
+    })();
+  </script>
 </body>
 </html>
