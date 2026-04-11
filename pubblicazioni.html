@@ -207,7 +207,7 @@
     }
 
     .catalog-list {
-      max-height: 280px;
+      max-height: 300px;
       overflow-y: auto;
       padding-right: 6px;
     }
@@ -303,6 +303,11 @@
       display: block;
     }
 
+    .intro-note {
+      max-width: 980px;
+      color: var(--text-soft);
+    }
+
     footer {
       padding: 34px 20px;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
@@ -392,19 +397,19 @@
 </head>
 <body>
   <nav>
-  <ul>
-    <li><a href="index.html#home">Home</a></li>
-    <li><a href="index.html#chi-sono">Chi Sono</a></li>
-    <li><a href="index.html#progetti">Progetti</a></li>
-    <li><a href="pubblicazioni.html">Pubblicazioni</a></li>
-    <li><a href="publications.html">EN</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#chi-sono">Chi Sono</a></li>
+      <li><a href="index.html#progetti">Linee Editoriali</a></li>
+      <li><a href="pubblicazioni.html">Pubblicazioni</a></li>
+      <li><a href="publications.html">EN</a></li>
+    </ul>
+  </nav>
 
   <header>
     <h1>Pubblicazioni</h1>
     <p class="hero-subtitle">
-      Il catalogo de THE ARCANE SHOP raccoglie avventure, mini-campagne, compendi e strumenti premium per Dungeons &amp; Dragons 5e, pensati per offrire esperienze curate, atmosferiche e memorabili.
+      Il catalogo di THE ARCANE SHOP raccoglie avventure, mini-campagne, compendi e strumenti premium per Dungeons &amp; Dragons 5e, pensati per offrire esperienze curate, atmosferiche e memorabili.
     </p>
   </header>
 
@@ -412,11 +417,11 @@
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-featured-glyph.png" alt="Sigillo In evidenza" class="glyph-icon" />
-        In evidenza
+        Disponibili ora
       </span>
-      <h2>Pubblicazioni disponibili ora</h2>
+      <h2>Pubblicazioni attualmente disponibili</h2>
       <p>
-        Una selezione dei titoli attualmente disponibili. Ogni prodotto è pensato per offrire materiale solido, utilizzabile e rifinito, sia per gruppi esperti sia per Master che cercano contenuti pronti da portare al tavolo.
+        Qui trovi i titoli già pubblicati e acquistabili. Ogni prodotto nasce con un obiettivo preciso: offrire materiale solido, leggibile, immediatamente utilizzabile e capace di lasciare davvero il segno al tavolo.
       </p>
 
       <div class="featured-grid">
@@ -425,9 +430,13 @@
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Catalogo rapido</span>
+              <span class="badge">Archivio catalogo</span>
+              <span class="badge">Tutti i titoli</span>
             </div>
-            <h3>Tutti i titoli pubblicati</h3>
+            <h3>Panoramica completa delle uscite</h3>
+            <p>
+              Una raccolta rapida di tutti i prodotti già pubblicati, utile per avere subito sott’occhio la crescita del catalogo e raggiungere in pochi clic ogni scheda prodotto.
+            </p>
             <div id="catalog-list-it" class="product-meta catalog-list"></div>
           </div>
           <div class="button-row">
@@ -442,11 +451,11 @@
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-catalog-glyph.png" alt="Sigillo Catalogo" class="glyph-icon" />
-        Catalogo
+        Direzione editoriale
       </span>
-      <h2>Linee attive del catalogo</h2>
+      <h2>Come sta crescendo il catalogo</h2>
       <p>
-        Il catalogo di THE ARCANE SHOP è pensato per crescere in modo coerente, con prodotti divisi per funzione, tono e utilizzo al tavolo. Qui trovi la direzione editoriale attuale del progetto.
+        THE ARCANE SHOP non vuole essere una raccolta casuale di file, ma un catalogo coerente, riconoscibile e utile. Le pubblicazioni seguono linee chiare, così da offrire prodotti adatti a esigenze diverse senza perdere identità.
       </p>
 
       <div class="catalog-grid">
@@ -458,10 +467,10 @@
             </div>
             <h3>Espansioni e strumenti premium</h3>
             <p>
-              Materiali pensati per ampliare regole, gestione del tavolo, costruzione narrativa e opzioni di gioco con un taglio pratico e approfondito.
+              Materiali pensati per ampliare regole, gestione del tavolo, costruzione narrativa e possibilità di gioco con un taglio pratico, approfondito e pronto all’uso.
             </p>
             <div class="product-meta">
-              <strong>Ideale per:</strong> Dungeon Master, campagne lunghe, gruppi che vogliono più profondità
+              <strong>Ideale per:</strong> Master, campagne lunghe, gruppi che vogliono più profondità e più controllo sugli strumenti di gioco.
             </div>
           </div>
         </div>
@@ -470,14 +479,14 @@
           <div>
             <div class="badge-row">
               <span class="badge">Avventure</span>
-              <span class="badge">Narrativa</span>
+              <span class="badge">Atmosfera</span>
             </div>
-            <h3>Mini-campagne e moduli</h3>
+            <h3>Mini-campagne e moduli narrativi</h3>
             <p>
-              Avventure autoconclusive o archi brevi costruiti per offrire esperienze forti, tematizzate e facilmente integrabili in campagne esistenti.
+              Avventure autoconclusive o archi brevi costruiti per offrire esperienze forti, tematizzate e facili da inserire in campagne già esistenti.
             </p>
             <div class="product-meta">
-              <strong>Ideale per:</strong> gruppi che cercano contenuti pronti, serate evento, archi secondari
+              <strong>Ideale per:</strong> gruppi che cercano contenuti pronti, serate evento, missioni brevi o archi secondari con personalità.
             </div>
           </div>
         </div>
@@ -485,15 +494,15 @@
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Premium</span>
-              <span class="badge">Prossime uscite</span>
+              <span class="badge">Crescita futura</span>
+              <span class="badge">Nuove linee</span>
             </div>
-            <h3>Edizioni ampliate e progetti futuri</h3>
+            <h3>Progetti in espansione</h3>
             <p>
-              Alcune linee editoriali verranno sviluppate anche in versioni più ampie, rifinite o arricchite, pensate per offrire contenuti ancora più completi.
+              Alcune linee editoriali nasceranno come uscite singole e potranno poi crescere in materiali più ampi, raccolte dedicate, versioni arricchite o prodotti collegati tra loro.
             </p>
             <div class="product-meta">
-              <strong>Direzione:</strong> espansioni premium, nuove uscite, linee editoriali dedicate
+              <strong>Direzione:</strong> nuove pubblicazioni, linee riconoscibili, materiali sempre più completi e strutturati.
             </div>
           </div>
         </div>
@@ -503,33 +512,70 @@
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Prossime uscite" class="glyph-icon" />
-        Prossime uscite
+        In preparazione
       </span>
-      <h2>In sviluppo</h2>
+      <h2>Cosa arriverà dopo</h2>
       <p>
-        Il catalogo continuerà a crescere con nuove pubblicazioni e progetti editoriali originali. Questa sezione raccoglierà le prossime uscite e i prodotti in arrivo man mano che verranno annunciati.
+        Questa sezione è dedicata ai materiali in lavorazione. Non serve a riempire spazio: serve a mostrare in modo chiaro la direzione del progetto e a far capire che il catalogo continuerà a crescere con costanza.
       </p>
 
       <div class="upcoming-grid">
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">In arrivo</span>
-              <span class="badge">Progetto editoriale</span>
+              <span class="badge">Nuove uscite</span>
+              <span class="badge">In scrittura</span>
             </div>
-            <h3>Nuove pubblicazioni in preparazione</h3>
+            <h3>Nuove pubblicazioni in lavorazione</h3>
             <p>
-              Sono in lavorazione nuovi moduli, compendi e contenuti premium pensati per ampliare progressivamente il catalogo de THE ARCANE SHOP con una linea editoriale sempre più definita.
+              Sono in preparazione nuovi moduli, strumenti per il Master e materiali narrativi pensati per ampliare il catalogo senza disperderne l’identità. Ogni nuova uscita verrà annunciata qui in modo chiaro, non appena sarà pronta a mostrarsi.
             </p>
             <div class="product-meta">
-              <strong>Stato:</strong> In sviluppo<br />
-              <strong>Pubblicazione:</strong> Annunci e aggiornamenti qui sul sito
+              <strong>Obiettivo:</strong> mantenere il catalogo vivo, coerente e sempre più solido.<br />
+              <strong>Aggiornamenti:</strong> sito e Circolo Arcano.
             </div>
           </div>
-          <div class="button-row">
-            <a class="button secondary" href="/index.html#circolo-arcano">Segui gli aggiornamenti</a>
+        </div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Omaggi</span>
+              <span class="badge">Risorse utili</span>
+            </div>
+            <h3>Materiali gratuiti e contenuti speciali</h3>
+            <p>
+              Accanto alle uscite a pagamento, il progetto crescerà anche con omaggi selezionati, risorse scaricabili e contenuti pensati per permettere ai nuovi visitatori di conoscere meglio lo stile di THE ARCANE SHOP.
+            </p>
+            <div class="product-meta">
+              <strong>Funzione:</strong> offrire valore reale, far conoscere il catalogo e accompagnare i lettori verso le pubblicazioni complete.
+            </div>
           </div>
         </div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Linea editoriale</span>
+              <span class="badge">Sviluppo futuro</span>
+            </div>
+            <h3>Pagine dedicate e raccolte tematiche</h3>
+            <p>
+              Con la crescita del catalogo, alcune linee potranno ottenere uno spazio dedicato, così da rendere più semplice seguire prodotti affini, raccolte coerenti e sviluppi futuri legati allo stesso filone.
+            </p>
+            <div class="product-meta">
+              <strong>Direzione:</strong> una struttura più ricca, ma sempre pulita, leggibile e credibile come vero marchio editoriale.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="intro-note">
+        Vuoi essere tra i primi a sapere quando arriveranno nuovi materiali, omaggi o prossime uscite? Il modo migliore è entrare nel Circolo Arcano.
+      </p>
+
+      <div class="button-row" style="justify-content: center; margin-top: 24px;">
+        <a class="button secondary" href="index.html#circolo-arcano">Segui gli aggiornamenti</a>
       </div>
     </div>
 
@@ -603,7 +649,7 @@
 
       function buildButton(link) {
         if (!link || link === '#') {
-          return '<a class="button secondary" href="#">Anteprima non ancora collegata</a>';
+          return '<a class="button secondary" href="#">Collegamento non ancora disponibile</a>';
         }
 
         return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
