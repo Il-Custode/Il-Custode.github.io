@@ -142,7 +142,8 @@
       align-items: stretch;
     }
 
-    .featured-products-dynamic {
+    .featured-products-dynamic,
+    .upcoming-products-dynamic {
       display: contents;
     }
 
@@ -207,7 +208,7 @@
     }
 
     .catalog-list {
-      max-height: 280px;
+      max-height: 300px;
       overflow-y: auto;
       padding-right: 6px;
     }
@@ -301,6 +302,11 @@
       height: 24px;
       object-fit: contain;
       display: block;
+    }
+
+    .intro-note {
+      max-width: 980px;
+      color: var(--text-soft);
     }
 
     footer {
@@ -404,7 +410,7 @@
   <header>
     <h1>Publications</h1>
     <p class="hero-subtitle">
-      THE ARCANE SHOP brings together adventures, mini-campaigns, DM tools, and premium Dungeons &amp; Dragons 5e content built to deliver rich, atmospheric, and memorable play.
+      THE ARCANE SHOP brings together adventures, mini-campaigns, compendiums, and premium Dungeons &amp; Dragons 5e tools designed to deliver rich, atmospheric, and memorable experiences at the table.
     </p>
   </header>
 
@@ -412,11 +418,11 @@
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-featured-glyph-en.png" alt="Featured seal" class="glyph-icon" />
-        Featured
+        Available now
       </span>
-      <h2>Available now</h2>
+      <h2>Currently available publications</h2>
       <p>
-        Here you can find the titles currently available. Each release is designed to be solid, usable, and polished, whether you are an experienced DM or a group looking for something ready to bring to the table.
+        Here you can find the titles already published and available. Each release is built with a clear goal: to offer material that is solid, readable, immediately usable, and capable of leaving a real mark at the table.
       </p>
 
       <div class="featured-grid">
@@ -425,15 +431,14 @@
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Quick Catalog</span>
+              <span class="badge">Catalog archive</span>
+              <span class="badge">All titles</span>
             </div>
-            <h3>All published titles</h3>
+            <h3>Complete release overview</h3>
+            <p>
+              A quick collection of every published product, useful for keeping the catalog’s growth in view and reaching each product page in just a few clicks.
+            </p>
             <div id="catalog-list-en" class="product-meta catalog-list"></div>
-          </div>
-          <div class="button-row">
-            <a class="button secondary" href="https://site.dmsguild.com/browse.php?author=Francesco%20Paolo%20Russo" target="_blank" rel="noopener noreferrer">
-              Full catalog on DMsGuild
-            </a>
           </div>
         </div>
       </div>
@@ -442,11 +447,11 @@
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-catalog-glyph-en.png" alt="Catalog seal" class="glyph-icon" />
-        Catalog
+        Editorial direction
       </span>
-      <h2>Current editorial directions</h2>
+      <h2>How the catalog is growing</h2>
       <p>
-        THE ARCANE SHOP is growing as a focused and coherent catalog. These are the main types of content the project is currently built around.
+        THE ARCANE SHOP is not meant to be a random collection of files, but a coherent, recognizable, and useful catalog. Each release is created to fit within a clear direction, offering different kinds of products tied together by a distinct identity.
       </p>
 
       <div class="catalog-grid">
@@ -456,12 +461,12 @@
               <span class="badge">Compendiums</span>
               <span class="badge">DM Tools</span>
             </div>
-            <h3>Expanded tools and premium support material</h3>
+            <h3>Expansions and support material</h3>
             <p>
-              Content created to deepen rules, improve table management, expand narrative options, and offer practical resources for long-term play.
+              Content designed to expand the game with practical tools, additional rules, useful structures, and material that helps the DM manage campaign flow, table rhythm, and narrative pacing more effectively.
             </p>
             <div class="product-meta">
-              <strong>Best for:</strong> Dungeon Masters, ongoing campaigns, groups that want more depth
+              <strong>Best for:</strong> Dungeon Masters, long campaigns, and groups looking for more depth and genuinely useful tools.
             </div>
           </div>
         </div>
@@ -470,14 +475,14 @@
           <div>
             <div class="badge-row">
               <span class="badge">Adventures</span>
-              <span class="badge">Story-Driven</span>
+              <span class="badge">Atmosphere</span>
             </div>
-            <h3>Mini campaigns and ready-to-run modules</h3>
+            <h3>Mini-campaigns and narrative modules</h3>
             <p>
-              Self-contained adventures and short arcs designed to deliver distinctive themes, strong atmosphere, and material that can fit easily into existing campaigns.
+              Short adventures, self-contained arcs, and atmosphere-driven modules created to deliver strong, themed experiences that are easy to bring to the table without heavy preparation.
             </p>
             <div class="product-meta">
-              <strong>Best for:</strong> ready-to-play content, special sessions, side arcs, event nights
+              <strong>Best for:</strong> groups looking for ready-to-run content, special sessions, side quests, and adventures with a strong identity.
             </div>
           </div>
         </div>
@@ -485,15 +490,15 @@
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Premium</span>
-              <span class="badge">Future Releases</span>
+              <span class="badge">Future growth</span>
+              <span class="badge">Dedicated lines</span>
             </div>
-            <h3>Expanded editions and future lines</h3>
+            <h3>Projects that can expand over time</h3>
             <p>
-              Some projects will grow into broader, more refined, or enhanced releases, with the goal of building a stronger and more distinctive editorial identity over time.
+              Some publications will begin as individual releases, but may later grow into broader collections, connected material, or fully dedicated editorial lines as the catalog continues to evolve.
             </p>
             <div class="product-meta">
-              <strong>Direction:</strong> premium expansions, new releases, dedicated product lines
+              <strong>Direction:</strong> a richer catalog over time, while remaining clean, readable, and coherent as a true editorial brand.
             </div>
           </div>
         </div>
@@ -502,34 +507,43 @@
 
     <div class="card">
       <span class="section-label">
-        <img src="assets/images/arcane-new-release-glyph-en.png" alt="New releases seal" class="glyph-icon" />
-        Upcoming
+        <img src="assets/images/arcane-new-release-glyph-en.png" alt="Upcoming seal" class="glyph-icon" />
+        In development
       </span>
-      <h2>In development</h2>
+      <h2>What’s coming next</h2>
       <p>
-        The catalog will keep growing with new releases and original editorial projects. This section will be used to highlight upcoming titles as soon as they are ready to be announced.
+        This section will feature upcoming publications currently in development: new one-shots, compendiums, dedicated editorial lines, and projects designed to help THE ARCANE SHOP grow into an increasingly solid and recognizable catalog.
       </p>
 
       <div class="upcoming-grid">
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Upcoming</span>
-              <span class="badge">Editorial Project</span>
-            </div>
-            <h3>New titles in preparation</h3>
-            <p>
-              New modules, compendiums, and premium releases are already in development, with the goal of steadily expanding THE ARCANE SHOP into a richer and more recognizable catalog.
-            </p>
-            <div class="product-meta">
-              <strong>Status:</strong> In development<br />
-              <strong>Updates:</strong> Announcements and news will appear here on the site
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button secondary" href="/index-en.html#arcane-circle-en">Follow updates</a>
-          </div>
-        </div>
+        <div id="upcoming-products-en" class="upcoming-products-dynamic"></div>
+      </div>
+
+      <p class="intro-note">
+        This section is meant to reflect the natural evolution of the catalog, showing the next releases already in progress and the future directions of the project.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="section-label">
+        <img src="assets/images/arcane-new-release-glyph-en.png" alt="Exclusive content seal" class="glyph-icon" />
+        Subscriber-only
+      </span>
+      <h2>Exclusive Arcane Circle content</h2>
+      <p>
+        Here you will find richer, more selective material created for those who want to follow the catalog more closely and receive special content reserved for subscribers.
+      </p>
+
+      <div class="upcoming-grid">
+        <div id="members-products-en" class="upcoming-products-dynamic"></div>
+      </div>
+
+      <p class="intro-note">
+        These materials are delivered by email to Arcane Circle subscribers.
+      </p>
+
+      <div class="button-row" style="justify-content: center; margin-top: 24px;">
+        <a class="button secondary" href="index-en.html#arcane-circle-en">Receive exclusive content</a>
       </div>
     </div>
 
@@ -538,25 +552,25 @@
         <img src="assets/images/arcane-dmsguild-glyph.png" alt="DMsGuild seal" class="glyph-icon" />
         DMsGuild
       </span>
-      <h2>Explore the catalog on DMsGuild</h2>
+      <h2>Explore the full catalog on DMsGuild</h2>
       <p>
-        Current releases are available through DMsGuild. If you want to browse published titles, read full product pages, and follow the growth of the catalog, you can visit the author profile directly.
+        If you would like to see what is already available, DMsGuild is where you can browse all the currently released publications in THE ARCANE SHOP catalog.
       </p>
 
       <div class="platform-grid">
         <div class="product-card">
           <div>
             <div class="badge-row">
-              <span class="badge">Author Page</span>
+              <span class="badge">Author page</span>
               <span class="badge">DMsGuild</span>
             </div>
             <h3>Author profile</h3>
             <p>
-              The main place to explore available releases, open individual product pages, and keep track of how the catalog continues to grow.
+              The main place to explore available releases, open individual product pages, and follow the ongoing growth of the catalog.
             </p>
             <div class="product-meta">
               <strong>Platform:</strong> DMsGuild<br />
-              <strong>Includes:</strong> published titles, full listings, catalog updates
+              <strong>Includes:</strong> published titles, full product pages, and catalog updates
             </div>
           </div>
           <div class="button-row">
@@ -573,17 +587,18 @@
   </footer>
 
   <script src="assets/data/products-en.js"></script>
+  <script src="assets/data/upcoming-en.js"></script>
+  <script src="assets/data/members-en.js"></script>
   <script>
     (function () {
       const featuredContainer = document.getElementById('featured-products-en');
       const catalogListContainer = document.getElementById('catalog-list-en');
+      const upcomingContainer = document.getElementById('upcoming-products-en');
+      const membersContainer = document.getElementById('members-products-en');
+
       const products = Array.isArray(window.arcaneProductsEn) ? [...window.arcaneProductsEn] : [];
-
-      if (!featuredContainer || !catalogListContainer) return;
-
-      products.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
-      });
+      const upcoming = Array.isArray(window.arcaneUpcomingEn) ? [...window.arcaneUpcomingEn] : [];
+      const members = Array.isArray(window.arcaneMembersEn) ? [...window.arcaneMembersEn] : [];
 
       function escapeHtml(text) {
         return String(text || '')
@@ -601,54 +616,131 @@
         }).join('');
       }
 
-      function buildButton(link) {
+      function buildProductButton(link) {
         if (!link || link === '#') {
-          return '<a class="button secondary" href="#">Preview not linked yet</a>';
+          return '<a class="button secondary" href="#">Link not available yet</a>';
         }
 
         return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Open product</a>';
       }
 
-      const featuredProducts = products.slice(0, 2);
+      products.sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
 
-      featuredContainer.innerHTML = featuredProducts.map(function (product) {
-        return `
-          <div class="product-card">
-            <div>
-              <div class="badge-row">
-                ${buildBadges(product.badges)}
+      if (featuredContainer) {
+        const featuredProducts = products.slice(0, 2);
+
+        featuredContainer.innerHTML = featuredProducts.map(function (product) {
+          return `
+            <div class="product-card">
+              <div>
+                <div class="badge-row">
+                  ${buildBadges(product.badges)}
+                </div>
+                <h3>${escapeHtml(product.title)}</h3>
+                <p>${escapeHtml(product.description)}</p>
+                <div class="product-meta">
+                  <strong>Format:</strong> ${escapeHtml(product.format)}<br />
+                  <strong>Category:</strong> ${escapeHtml(product.category)}<br />
+                  <strong>Platform:</strong> ${escapeHtml(product.platform)}
+                </div>
               </div>
-              <h3>${escapeHtml(product.title)}</h3>
-              <p>${escapeHtml(product.description)}</p>
-              <div class="product-meta">
-                <strong>Format:</strong> ${escapeHtml(product.format)}<br />
-                <strong>Category:</strong> ${escapeHtml(product.category)}<br />
-                <strong>Platform:</strong> ${escapeHtml(product.platform)}
+              <div class="button-row">
+                ${buildProductButton(product.link)}
               </div>
             </div>
-            <div class="button-row">
-              ${buildButton(product.link)}
+          `;
+        }).join('');
+      }
+
+      if (catalogListContainer) {
+        catalogListContainer.innerHTML = products.map(function (product) {
+          const safeTitle = escapeHtml(product.title);
+          const safeLink = escapeHtml(product.link || '#');
+
+          if (!product.link || product.link === '#') {
+            return `<div class="catalog-list-item">• ${safeTitle}</div>`;
+          }
+
+          return `
+            <div class="catalog-list-item">
+              • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+                ${safeTitle}
+              </a>
             </div>
-          </div>
-        `;
-      }).join('');
+          `;
+        }).join('');
+      }
 
-      catalogListContainer.innerHTML = products.map(function (product) {
-        const safeTitle = escapeHtml(product.title);
-        const safeLink = escapeHtml(product.link || '#');
-
-        if (!product.link || product.link === '#') {
-          return `<div class="catalog-list-item">• ${safeTitle}</div>`;
+      if (upcomingContainer) {
+        if (!upcoming.length) {
+          upcomingContainer.innerHTML = `
+            <div class="product-card">
+              <div>
+                <div class="badge-row">
+                  <span class="badge">Updating</span>
+                </div>
+                <h3>New announcements coming soon</h3>
+                <p>
+                  This section will be updated as soon as the next materials are ready to be revealed.
+                </p>
+              </div>
+            </div>
+          `;
+        } else {
+          upcomingContainer.innerHTML = upcoming.map(function (item) {
+            return `
+              <div class="product-card">
+                <div>
+                  <div class="badge-row">
+                    <span class="badge">${escapeHtml(item.type)}</span>
+                    <span class="badge">${escapeHtml(item.status)}</span>
+                  </div>
+                  <h3>${escapeHtml(item.title)}</h3>
+                  <p>${escapeHtml(item.description)}</p>
+                </div>
+              </div>
+            `;
+          }).join('');
         }
+      }
 
-        return `
-          <div class="catalog-list-item">
-            • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
-              ${safeTitle}
-            </a>
-          </div>
-        `;
-      }).join('');
+      if (membersContainer) {
+        if (!members.length) {
+          membersContainer.innerHTML = `
+            <div class="product-card">
+              <div>
+                <div class="badge-row">
+                  <span class="badge">Subscribers only</span>
+                </div>
+                <h3>Exclusive content coming soon</h3>
+                <p>
+                  The next subscriber-only materials for the Arcane Circle will appear here as soon as they are ready.
+                </p>
+              </div>
+            </div>
+          `;
+        } else {
+          membersContainer.innerHTML = members.map(function (item) {
+            return `
+              <div class="product-card">
+                <div>
+                  <div class="badge-row">
+                    <span class="badge">${escapeHtml(item.type)}</span>
+                    <span class="badge">${escapeHtml(item.status)}</span>
+                  </div>
+                  <h3>${escapeHtml(item.title)}</h3>
+                  <p>${escapeHtml(item.description)}</p>
+                </div>
+                <div class="button-row">
+                  <a class="button secondary" href="index-en.html#arcane-circle-en">${escapeHtml(item.buttonText)}</a>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+      }
     })();
   </script>
 </body>
