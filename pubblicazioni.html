@@ -142,6 +142,10 @@
       align-items: stretch;
     }
 
+    .featured-products-dynamic {
+      display: contents;
+    }
+
     .product-card {
       background: var(--panel-soft);
       border: 1px solid rgba(212, 175, 55, 0.34);
@@ -200,6 +204,32 @@
       color: var(--text-soft);
       font-size: 0.95rem;
       line-height: 1.75;
+    }
+
+    .catalog-list {
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .catalog-list-item {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .catalog-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .catalog-list-link {
+      color: var(--gold-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .catalog-list-link:hover {
+      color: var(--gold);
+      text-decoration: underline;
     }
 
     .button-row {
@@ -352,6 +382,11 @@
         width: 100%;
         max-width: 340px;
       }
+
+      .catalog-list {
+        max-height: none;
+        overflow: visible;
+      }
     }
   </style>
 </head>
@@ -383,7 +418,25 @@
         Una selezione dei titoli attualmente disponibili. Ogni prodotto è pensato per offrire materiale solido, utilizzabile e rifinito, sia per gruppi esperti sia per Master che cercano contenuti pronti da portare al tavolo.
       </p>
 
-                  <div class="featured-grid" id="featured-products-it"></div>
+      <div class="featured-grid">
+        <div id="featured-products-it" class="featured-products-dynamic"></div>
+
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              <span class="badge">Catalogo rapido</span>
+              <span class="badge">Aggiornamento automatico</span>
+            </div>
+            <h3>Tutti i titoli pubblicati</h3>
+            <div id="catalog-list-it" class="product-meta catalog-list"></div>
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="https://site.dmsguild.com/browse.php?author=Francesco%20Paolo%20Russo" target="_blank" rel="noopener noreferrer">
+              Catalogo completo su DMsGuild
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card">
@@ -515,17 +568,18 @@
     </div>
   </section>
 
-    <footer>
+  <footer>
     © 2026 THE ARCANE SHOP - Tutti i diritti riservati
   </footer>
 
   <script src="assets/data/products-it.js"></script>
   <script>
     (function () {
-      const container = document.getElementById('featured-products-it');
+      const featuredContainer = document.getElementById('featured-products-it');
+      const catalogListContainer = document.getElementById('catalog-list-it');
       const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
 
-      if (!container) return;
+      if (!featuredContainer || !catalogListContainer) return;
 
       products.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date);
@@ -555,7 +609,9 @@
         return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
       }
 
-      container.innerHTML = products.map(function (product) {
+      const featuredProducts = products.slice(0, 2);
+
+      featuredContainer.innerHTML = featuredProducts.map(function (product) {
         return `
           <div class="product-card">
             <div>
@@ -573,6 +629,23 @@
             <div class="button-row">
               ${buildButton(product.link)}
             </div>
+          </div>
+        `;
+      }).join('');
+
+      catalogListContainer.innerHTML = products.map(function (product) {
+        const safeTitle = escapeHtml(product.title);
+        const safeLink = escapeHtml(product.link || '#');
+
+        if (!product.link || product.link === '#') {
+          return `<div class="catalog-list-item">• ${safeTitle}</div>`;
+        }
+
+        return `
+          <div class="catalog-list-item">
+            • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+              ${safeTitle}
+            </a>
           </div>
         `;
       }).join('');
