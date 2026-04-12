@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Pubblicazioni D&D 5e, One-shot e Compendi | THE ARCANE SHOP</title>
-  <meta name="description" content="Scopri le pubblicazioni di THE ARCANE SHOP: one-shot, mini-campagne, compendi premium e strumenti per Dungeon Master dedicati a Dungeons & Dragons 5e." />
-  <meta name="keywords" content="pubblicazioni D&D, one-shot D&D 5e, mini-campagne D&D, compendi D&D, strumenti per Dungeon Master, avventure D&D, prodotti premium D&D, DMsGuild D&D" />
+  <title>THE ARCANE SHOP | Avventure premium e contenuti D&D 5e</title>
+  <meta name="description" content="THE ARCANE SHOP offre avventure premium, mini-campagne, strumenti per Dungeon Master, servizio di Master a Noleggio e contenuti originali per Dungeons & Dragons 5a Edizione." />
+  <meta name="keywords" content="Dungeons and Dragons, D&D 5e, avventure D&D, one-shot D&D, mini-campagne D&D, Dungeon Master, Master a Noleggio, contenuti D&D, moduli narrativi, strumenti per master" />
   <meta name="author" content="THE ARCANE SHOP" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://thearcaneshop.com/pubblicazioni.html" />
+  <link rel="canonical" href="https://thearcaneshop.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:site_name" content="THE ARCANE SHOP" />
-  <meta property="og:title" content="Pubblicazioni D&D 5e, One-shot e Compendi | THE ARCANE SHOP" />
-  <meta property="og:description" content="One-shot, mini-campagne, compendi premium e strumenti per Dungeon Master dedicati a Dungeons & Dragons 5e." />
-  <meta property="og:url" content="https://thearcaneshop.com/pubblicazioni.html" />
-  <meta property="og:image" content="https://thearcaneshop.com/assets/images/bastion-mockup-premium.png" />
+  <meta property="og:title" content="THE ARCANE SHOP | Avventure premium e contenuti D&D 5e" />
+  <meta property="og:description" content="Avventure premium, moduli narrativi, strumenti per Dungeon Master, Master a Noleggio e contenuti originali per Dungeons & Dragons 5a Edizione." />
+  <meta property="og:url" content="https://thearcaneshop.com/" />
+  <meta property="og:image" content="https://thearcaneshop.com/assets/images/arcane-shop-keeper-welcome.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pubblicazioni D&D 5e, One-shot e Compendi | THE ARCANE SHOP" />
-  <meta name="twitter:description" content="Scopri il catalogo di THE ARCANE SHOP con avventure, compendi e strumenti premium per Dungeons & Dragons 5e." />
-  <meta name="twitter:image" content="https://thearcaneshop.com/assets/images/bastion-mockup-premium.png" />
+  <meta name="twitter:title" content="THE ARCANE SHOP | Avventure premium e contenuti D&D 5e" />
+  <meta name="twitter:description" content="Avventure premium, strumenti per Master, moduli narrativi e servizio di Master a Noleggio per Dungeons & Dragons 5a Edizione." />
+  <meta name="twitter:image" content="https://thearcaneshop.com/assets/images/arcane-shop-keeper-welcome.png" />
 
   <style>
     html {
@@ -44,6 +44,8 @@
       --border: rgba(212, 175, 55, 0.42);
       --shadow: 0 0 22px rgba(212, 175, 55, 0.12);
       --radius: 16px;
+      --success: #cfe8b0;
+      --danger: #f0b4b4;
     }
 
     * {
@@ -80,6 +82,10 @@
       gap: 26px;
       flex-wrap: wrap;
       align-items: center;
+    }
+
+    nav .brand-item {
+      margin-right: 12px;
     }
 
     nav .brand-link {
@@ -120,7 +126,7 @@
     }
 
     header {
-      padding: 92px 20px 64px 20px;
+      padding: 95px 20px 90px 20px;
       background:
         linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.58)),
         radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 45%),
@@ -130,10 +136,10 @@
     }
 
     h1 {
-      font-size: 3.25rem;
-      margin: 0 0 16px 0;
+      font-size: 3.7rem;
+      margin: 0 0 18px 0;
       color: var(--gold);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       text-shadow: 0 0 24px rgba(212, 175, 55, 0.16);
     }
 
@@ -142,26 +148,44 @@
       margin-top: 0;
     }
 
-    p {
-      max-width: 950px;
-      margin: 18px auto;
-      line-height: 1.85;
-      font-size: 1.06rem;
-      padding: 0 20px;
-      color: var(--text);
-    }
-
     .hero-subtitle {
-      max-width: 950px;
-      margin: 0 auto;
+      max-width: 980px;
+      margin: 0 auto 16px auto;
       line-height: 1.85;
-      font-size: 1.14rem;
+      font-size: 1.2rem;
       padding: 0 20px;
       color: #f1e3bb;
     }
 
+    .hero-text {
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.85;
+      font-size: 1.06rem;
+      padding: 0 20px;
+      color: var(--gold-soft);
+    }
+
+    .hero-buttons {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 18px auto;
+      line-height: 1.85;
+      font-size: 1.08rem;
+      padding: 0 20px;
+      color: var(--text);
+    }
+
     .section {
-      padding: 72px 20px;
+      padding: 74px 20px;
     }
 
     .card {
@@ -169,128 +193,236 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.04));
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      max-width: 1120px;
+      max-width: 930px;
       margin: 0 auto 28px auto;
       padding: 36px 32px;
       box-shadow: var(--shadow);
     }
 
-    .featured-grid,
-    .catalog-grid,
-    .upcoming-grid,
-    .platform-grid {
-      max-width: 1100px;
-      margin: 30px auto 0 auto;
+    .about-layout {
+      max-width: 1120px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: minmax(260px, 360px) minmax(280px, 1fr);
+      gap: 28px;
+      align-items: start;
+      text-align: left;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    }
+
+    .about-content h2 {
+      margin-bottom: 14px;
+    }
+
+    .about-content p {
+      max-width: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .about-content .button {
+      margin-top: 22px;
+    }
+
+    .projects-intro,
+    .publications-intro {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      color: var(--text-soft);
+    }
+
+    .project-grid,
+    .featured-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 22px;
       align-items: stretch;
     }
 
-    .featured-products-dynamic,
-    .upcoming-products-dynamic {
-      display: contents;
-    }
-
-    .product-card {
+    .project-item,
+    .featured-item {
       background: var(--panel-soft);
       border: 1px solid rgba(212, 175, 55, 0.34);
       border-radius: var(--radius);
       padding: 26px 22px;
       box-shadow: 0 0 16px rgba(212, 175, 55, 0.08);
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
     }
 
-    .product-card:hover {
+    .project-item:hover,
+    .featured-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 24px rgba(212, 175, 55, 0.14);
       border-color: rgba(212, 175, 55, 0.62);
       background: var(--panel);
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 7px 11px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      background: rgba(212, 175, 55, 0.08);
-      color: var(--text);
-      letter-spacing: 0.02em;
-    }
-
-    .product-card h3 {
+    .project-item h3,
+    .featured-item h3 {
       margin-bottom: 12px;
       font-size: 1.24rem;
     }
 
-    .product-card p {
-      margin: 0 0 16px 0;
-      max-width: none;
-      padding: 0;
+    .project-item p,
+    .featured-item p {
+      margin: 0;
       font-size: 1rem;
       line-height: 1.75;
+      padding: 0;
       color: var(--text-soft);
     }
 
-    .product-meta {
-      margin-bottom: 18px;
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      line-height: 1.75;
-    }
-
-    .catalog-list {
-      max-height: 300px;
-      overflow-y: auto;
-      padding-right: 6px;
-    }
-
-    .catalog-list-item {
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .catalog-list-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .catalog-list-link {
-      color: var(--gold-soft);
+    .featured-item-link {
+      display: flex;
       text-decoration: none;
-      transition: color 0.2s ease;
+      color: inherit;
+      border-radius: var(--radius);
+      height: 100%;
     }
 
-    .catalog-list-link:hover {
-      color: var(--gold);
-      text-decoration: underline;
+    .featured-item-link .featured-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 260px;
     }
 
-    .button-row {
+    .featured-item-link:hover .featured-item {
+      transform: translateY(-4px);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.14);
+      border-color: rgba(212, 175, 55, 0.72);
+      background: var(--panel);
+    }
+
+    .featured-label {
+      display: inline-block;
+      align-self: center;
+      margin: 0 auto 14px auto;
+      padding: 7px 13px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--gold-soft);
+      background: rgba(212, 175, 55, 0.08);
+      letter-spacing: 0.02em;
+    }
+
+    .publication-showcase {
+      max-width: 1120px;
+      margin: 0 auto 30px auto;
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) minmax(280px, 1fr);
+      gap: 28px;
+      align-items: center;
+      text-align: left;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+    }
+
+    .publication-showcase:hover {
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.14);
+      border-color: rgba(212, 175, 55, 0.56);
+    }
+
+    .publication-showcase-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    }
+
+    .publication-showcase-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .publication-showcase-label,
+    .section-label,
+    .highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--gold-soft);
+      background: rgba(212, 175, 55, 0.08);
+      letter-spacing: 0.02em;
+    }
+
+    .publication-showcase-label {
+      align-self: flex-start;
+    }
+
+    .section-label {
+      margin-bottom: 14px;
+    }
+
+    .highlight {
+      margin-bottom: 14px;
+    }
+
+    .glyph-icon,
+    .premium-seal {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .premium-seal {
+      width: 28px;
+      height: 28px;
+    }
+
+    .publication-showcase-content h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .publication-showcase-content p {
+      margin: 0;
+      max-width: none;
+      padding: 0;
+      font-size: 1.03rem;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    .publication-showcase-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: auto;
+      gap: 14px;
+      margin-top: 10px;
       align-items: center;
     }
 
-    a.button {
+    a.button,
+    button.button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      min-height: 48px;
+      min-height: 50px;
       margin-top: 20px;
       padding: 14px 28px;
       background: linear-gradient(180deg, #9a7734 0%, #7f6128 100%);
@@ -299,11 +431,15 @@
       border: 1px solid rgba(212, 175, 55, 0.42);
       border-radius: 10px;
       font-weight: bold;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
-    a.button:hover {
+    a.button:hover,
+    button.button:hover {
       transform: translateY(-2px);
       background: linear-gradient(180deg, #a88338 0%, #8b6b2f 100%);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
@@ -321,41 +457,117 @@
       border-color: rgba(212, 175, 55, 0.72);
     }
 
-    .button-row .button {
+    .publication-showcase-buttons .button {
       margin-top: 0;
-      padding: 12px 20px;
-      font-size: 0.95rem;
-      min-height: 44px;
     }
 
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-      padding: 7px 13px;
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--gold-soft);
-      background: rgba(212, 175, 55, 0.08);
-      letter-spacing: 0.02em;
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 900px;
+      margin: 30px auto;
     }
 
-    .glyph-icon {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
+    .gift-option {
+      width: 100%;
+      text-align: center;
+      background: var(--panel-soft);
+      border: 1px solid rgba(212, 175, 55, 0.34);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.08);
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
     }
 
-    .intro-note {
-      max-width: 980px;
+    .gift-option:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.14);
+      border-color: rgba(212, 175, 55, 0.62);
+      background: var(--panel);
+    }
+
+    .gift-option.is-selected {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: rgba(212, 175, 55, 0.9);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .gift-option h3 {
+      margin-bottom: 12px;
+      font-size: 1.24rem;
+    }
+
+    .gift-option p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.75;
       color: var(--text-soft);
     }
 
+    .gift-form {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .gift-input {
+      width: 100%;
+      max-width: 520px;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.42);
+      background: rgba(255, 255, 255, 0.04);
+      color: #f4e7c1;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .gift-input:focus {
+      border-color: rgba(212, 175, 55, 0.8);
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.12);
+    }
+
+    .gift-note {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .gift-status {
+      min-height: 26px;
+      margin: 16px auto 0 auto;
+      font-size: 0.98rem;
+      max-width: 760px;
+      color: var(--text-soft);
+    }
+
+    .gift-status.success {
+      color: var(--success);
+    }
+
+    .gift-status.error {
+      color: var(--danger);
+    }
+
+    .hidden-brevo-form {
+      display: none !important;
+      visibility: hidden;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     footer {
-      padding: 34px 20px;
+      padding: 28px 20px;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
       margin-top: 30px;
       font-size: 0.92rem;
@@ -363,17 +575,67 @@
       background: rgba(0, 0, 0, 0.12);
     }
 
+    .footer-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.12));
+    }
+
+    .footer-brand-text {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 900px) {
       header {
-        padding: 82px 20px 58px 20px;
+        padding: 82px 20px 72px 20px;
       }
 
       h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
 
       .card {
         padding: 30px 22px;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-content h2,
+      .about-content p {
+        text-align: center;
+      }
+
+      .section-label,
+      .highlight {
+        justify-content: center;
+      }
+
+      .publication-showcase {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .publication-showcase-label {
+        align-self: center;
+      }
+
+      .publication-showcase-buttons {
+        justify-content: center;
       }
     }
 
@@ -400,17 +662,14 @@
       }
 
       header {
-        padding: 74px 16px 52px 16px;
-      }
-
-      h1 {
-        font-size: 2.3rem;
+        padding: 72px 16px 60px 16px;
       }
 
       .hero-subtitle {
-        font-size: 1.05rem;
+        font-size: 1.08rem;
       }
 
+      .hero-text,
       p {
         font-size: 1rem;
       }
@@ -424,28 +683,36 @@
         border-radius: 14px;
       }
 
+      .project-grid,
       .featured-grid,
-      .catalog-grid,
-      .upcoming-grid,
-      .platform-grid {
+      .gift-grid {
         grid-template-columns: 1fr;
       }
 
-      .button-row {
-        flex-direction: column;
-        align-items: stretch;
+      .publication-showcase {
+        padding: 20px;
+        gap: 20px;
       }
 
-      .button-row .button,
+      .publication-showcase-content h3 {
+        font-size: 1.5rem;
+      }
+
       a.button,
-      a.button.secondary {
+      a.button.secondary,
+      button.button {
         width: 100%;
         max-width: 340px;
       }
 
-      .catalog-list {
-        max-height: none;
-        overflow: visible;
+      .hero-buttons,
+      .publication-showcase-buttons {
+        gap: 12px;
+      }
+
+      .footer-brand-logo {
+        width: 30px;
+        height: 30px;
       }
     }
   </style>
@@ -453,353 +720,332 @@
 <body>
   <nav>
     <ul>
-      <li>
-        <a href="index.html#home" class="brand-link">
+      <li class="brand-item">
+        <a href="#home" class="brand-link">
           <img src="assets/images/arcane-shop-logo-symbol.png" alt="Logo di THE ARCANE SHOP" class="brand-logo" />
           <span class="brand-text">THE ARCANE SHOP</span>
         </a>
       </li>
-      <li><a href="index.html#chi-sono">Chi Sono</a></li>
-      <li><a href="index.html#progetti">Linee Editoriali</a></li>
-      <li><a href="pubblicazioni.html">Pubblicazioni</a></li>
-      <li><a href="publications.html">EN</a></li>
+      <li><a href="#chi-sono">Chi Sono</a></li>
+      <li><a href="#progetti">Linee Editoriali</a></li>
+      <li><a href="#pubblicazioni">Pubblicazioni</a></li>
+      <li><a href="#circolo-arcano">Circolo Arcano</a></li>
+      <li><a href="#ringraziamenti-speciali">Ringraziamenti Speciali</a></li>
+      <li><a href="index-en.html">EN</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h1>Pubblicazioni</h1>
+    <header id="home">
+    <h1>THE ARCANE SHOP</h1>
     <p class="hero-subtitle">
-      Il catalogo di THE ARCANE SHOP raccoglie avventure, mini-campagne, compendi e strumenti premium per Dungeons &amp; Dragons 5e, pensati per offrire esperienze curate, atmosferiche e memorabili.
+      Avventure premium, moduli narrativi, strumenti per Dungeon Master, servizio di Master a Noleggio e contenuti originali per Dungeons &amp; Dragons 5a Edizione.
+    </p>
+    <p class="hero-text">
+      Dalle atmosfere oscure alle avventure più leggere, dai moduli autoconclusivi alle idee per campagne più ampie, THE ARCANE SHOP nasce per offrire materiale curato, evocativo e pronto da portare al tavolo.
     </p>
   </header>
 
   <section class="section">
-    <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-featured-glyph.png" alt="Sigillo In evidenza" class="glyph-icon" />
-        Disponibili ora
-      </span>
-      <h2>Pubblicazioni attualmente disponibili</h2>
-      <p>
-        Qui trovi i titoli già pubblicati e acquistabili. Ogni prodotto nasce con un obiettivo preciso: offrire materiale solido, leggibile, immediatamente utilizzabile e capace di lasciare davvero il segno al tavolo.
+    <div class="card" id="chi-sono">
+      <div class="about-layout">
+        <div class="about-image">
+          <img src="assets/images/arcane-shop-keeper-welcome.png" alt="Il Custode di THE ARCANE SHOP accoglie i visitatori nella sua bottega arcana" />
+        </div>
+
+        <div class="about-content">
+          <div class="section-label">
+            <img src="assets/images/arcane-master-glyph.png" alt="Sigillo autore e master" class="glyph-icon" />
+            Autore &amp; Master
+          </div>
+          <h2>Chi Sono</h2>
+          <p>
+            Master e giocatore di ruolo dal 1998, porto avanti da oltre venticinque anni una passione costante per Dungeons &amp; Dragons e per la creazione di contenuti originali da usare realmente al tavolo. Nel tempo ho sviluppato avventure di ogni tipo, dalle one-shot brevi alle missioni secondarie, dai moduli narrativi alle idee più ampie per campagne, sempre con un’attenzione particolare alla qualità dell’esperienza di gioco.
+          </p>
+          <p>
+            Come autore, mi piace costruire materiale che sia evocativo ma anche pratico: contenuti pronti da usare, chiari da leggere e utili per il Master. Il roleplay è da sempre uno degli aspetti che apprezzo di più, ma negli anni ho lavorato molto anche su homebrew, strutture narrative, incontri, ambientazioni e strumenti capaci di adattarsi a toni diversi, dal serio al leggero, dal misterioso al più avventuroso.
+          </p>
+          <p>
+            THE ARCANE SHOP nasce proprio da questa esperienza: trasformare anni di idee, sessioni, prove al tavolo e progettazione in prodotti curati, versatili e pensati per chi cerca materiale D&amp;D capace di unire atmosfera, giocabilità e identità.
+          </p>
+
+          <div class="highlight">
+            <img src="assets/images/arcane-live-session-glyph.png" alt="Sigillo sessioni dal vivo e online" class="glyph-icon" />
+            Sessioni dal vivo e online
+          </div>
+          <p>
+            Oltre alla creazione di contenuti, sono disponibile anche come <strong>Master a Noleggio</strong> per sessioni dal vivo a Milano e online. Per i gruppi interessati propongo una <strong>mini one-shot introduttiva gratuita di 2–3 sessioni</strong>, ideale per creare il giusto feeling al tavolo prima di iniziare percorsi più lunghi.
+          </p>
+          <a class="button" href="master-a-noleggio.html">Scopri il servizio di Master a Noleggio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="progetti">
+      <h2>Linee Editoriali</h2>
+      <p class="projects-intro">
+        THE ARCANE SHOP crescerà seguendo tre linee editoriali principali: avventure rapide, moduli ad alta atmosfera e strumenti pratici per Master e gruppi che vogliono ampliare la propria esperienza di gioco.
       </p>
+
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>One-shot e missioni brevi</h3>
+          <p>
+            Avventure autoconclusive e quest secondarie facili da inserire in campagne esistenti o da giocare in poche sessioni.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Moduli narrativi</h3>
+          <p>
+            Contenuti con forte identità, atmosfera curata e struttura chiara, pensati per aiutare il Master senza rallentare il tavolo.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>Homebrew e strumenti</h3>
+          <p>
+            Idee originali, sistemi di supporto, spunti pratici e materiali utili per ampliare la propria esperienza di gioco.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="pubblicazioni">
+      <h2>Pubblicazioni</h2>
+      <p class="publications-intro">
+        Alcuni prodotti sono già disponibili e il catalogo continuerà a crescere nel tempo. Qui trovi una vetrina sintetica dei titoli principali, mentre la raccolta completa è disponibile nella pagina dedicata.
+      </p>
+
+      <div class="publication-showcase">
+        <div class="publication-showcase-image">
+          <img src="assets/images/bastion-mockup-premium.png" alt="Mockup premium del Bastion Compendium di THE ARCANE SHOP" />
+        </div>
+
+        <div class="publication-showcase-content">
+          <div class="publication-showcase-label">
+            <img src="assets/images/arcane-premium-seal.png" alt="Sigillo premium THE ARCANE SHOP" class="premium-seal" />
+            Titolo in evidenza
+          </div>
+          <h3>The Definitive Bastion Compendium for D&amp;D 5e</h3>
+          <p>
+            Il primo grande pilastro editoriale del catalogo: un compendio premium dedicato ai Bastioni, pensato per trasformarli in una parte viva, strategica e narrativa dell’esperienza di gioco.
+          </p>
+          <p>
+            Ogni sezione è pensata per offrire strumenti concreti, spunti narrativi e possibilità di crescita, trasformando il Bastione in una vera estensione della campagna e non in una semplice regola accessoria.
+          </p>
+
+          <div class="publication-showcase-buttons">
+            <a class="button" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">Apri su DMsGuild</a>
+            <a class="button secondary" href="pubblicazioni.html">Scopri il catalogo completo</a>
+          </div>
+        </div>
+      </div>
 
       <div class="featured-grid">
-        <div id="featured-products-it" class="featured-products-dynamic"></div>
-
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Archivio catalogo</span>
-              <span class="badge">Tutti i titoli</span>
-            </div>
-            <h3>Panoramica completa delle uscite</h3>
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">In evidenza</div>
+            <h3>Compendio dei Bastioni</h3>
             <p>
-              Una raccolta rapida di tutti i prodotti già pubblicati, utile per avere subito sott’occhio la crescita del catalogo e raggiungere in pochi clic ogni scheda prodotto.
+              Un’espansione completa e modulare dedicata ai Bastioni, pensata per ampliare profondamente l’esperienza di gioco.
             </p>
-            <div id="catalog-list-it" class="product-meta catalog-list"></div>
           </div>
+        </a>
+
+        <a class="featured-item-link" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">
+          <div class="featured-item">
+            <div class="featured-label">In evidenza</div>
+            <h3>Il Circo delle Meraviglie Celestiali</h3>
+            <p>
+              Una mini-campagna horror fantasy modulare pensata per gruppi di alto livello e facilmente adattabile.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <a class="button" href="pubblicazioni.html">Vedi tutte le pubblicazioni</a>
+    </div>
+
+    <div id="circolo-arcano"></div>
+    <div class="card">
+      <h2>Entra nel Circolo Arcano</h2>
+      <p>
+        Iscriviti per ricevere un dono esclusivo di benvenuto e accedere, di tanto in tanto, a materiali speciali, contenuti selezionati e anteprime dal laboratorio creativo di THE ARCANE SHOP.
+      </p>
+
+      <div class="gift-grid">
+        <button class="gift-option" type="button" data-gift="boss-rakshasa-it.pdf">
+          <div class="featured-label">Dono 1</div>
+          <h3>Boss Iconico</h3>
+          <p>Un antagonista completo con tana, retroscena narrativo e agganci pronti per creare una scena finale d’impatto.</p>
+        </button>
+
+        <button class="gift-option" type="button" data-gift="dm-toolkit-it.pdf">
+          <div class="featured-label">Dono 2</div>
+          <h3>Strumenti per il Master</h3>
+          <p>PNG, eventi, tesori e idee pratiche subito utilizzabili al tavolo.</p>
+        </button>
+
+        <button class="gift-option" type="button" data-gift="struttura-modulare-it.pdf">
+          <div class="featured-label">Dono 3</div>
+          <h3>Struttura Modulare</h3>
+          <p>Un edificio versatile adattabile come rifugio, villa, rovina o sotterraneo, pronto da inserire in qualsiasi campagna.</p>
+        </button>
+
+        <button class="gift-option" type="button" data-gift="png-premium-it.pdf">
+          <div class="featured-label">Dono 4</div>
+          <h3>PNG Premium</h3>
+          <p>Un personaggio memorabile con segreti, motivazioni e possibili evoluzioni narrative.</p>
+        </button>
+      </div>
+
+      <div class="gift-form">
+        <p style="margin-top:30px;">
+          Scegli il tuo dono, inserisci la tua email e apri il tuo omaggio di benvenuto.
+        </p>
+
+        <input
+          id="gift-email-it"
+          class="gift-input"
+          type="email"
+          placeholder="Inserisci la tua email"
+          autocomplete="email"
+        />
+
+        <div class="gift-note">
+          Dopo il clic si aprirà direttamente il PDF selezionato.
         </div>
+
+        <button id="gift-submit-it" class="button" type="button">Iscriviti al Circolo Arcano</button>
+        <div id="gift-status-it" class="gift-status" aria-live="polite"></div>
       </div>
     </div>
 
-    <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-catalog-glyph.png" alt="Sigillo Catalogo" class="glyph-icon" />
-        Direzione editoriale
-      </span>
-      <h2>Come cresce il catalogo</h2>
+    <div class="card" id="ringraziamenti-speciali">
+      <h2>Ringraziamenti Speciali</h2>
+
       <p>
-        THE ARCANE SHOP non vuole essere una raccolta casuale di file, ma un catalogo coerente, riconoscibile e utile. Ogni uscita nasce per inserirsi in una direzione precisa, così da offrire prodotti diversi tra loro ma legati da uno stile chiaro.
+        Ogni progetto nasce da un’idea, ma prende davvero vita grazie alle persone che restano accanto a noi lungo il percorso.
       </p>
 
-      <div class="catalog-grid">
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Compendi</span>
-              <span class="badge">Strumenti per Master</span>
-            </div>
-            <h3>Espansioni e materiali di supporto</h3>
-            <p>
-              Contenuti pensati per ampliare il gioco con strumenti concreti, regole aggiuntive, strutture utili e materiali che aiutano il Master a gestire meglio campagna, tavolo e ritmo narrativo.
-            </p>
-            <div class="product-meta">
-              <strong>Per chi sono pensati:</strong> Master, campagne lunghe, gruppi che vogliono più profondità e più strumenti realmente utili.
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Avventure</span>
-              <span class="badge">Atmosfera</span>
-            </div>
-            <h3>Mini-campagne e moduli narrativi</h3>
-            <p>
-              Avventure brevi, archi autoconclusivi e moduli ad alta atmosfera, costruiti per offrire esperienze forti, tematizzate e facili da portare al tavolo senza lunghe preparazioni.
-            </p>
-            <div class="product-meta">
-              <strong>Per chi sono pensati:</strong> gruppi che cercano contenuti pronti, sessioni speciali, missioni secondarie e avventure con una forte identità.
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Crescita futura</span>
-              <span class="badge">Linee dedicate</span>
-            </div>
-            <h3>Progetti che possono espandersi</h3>
-            <p>
-              Alcune pubblicazioni nasceranno come uscite singole, ma potranno poi diventare raccolte più ampie, materiali collegati o vere linee editoriali dedicate, man mano che il catalogo crescerà.
-            </p>
-            <div class="product-meta">
-              <strong>Direzione:</strong> un catalogo più ricco nel tempo, ma sempre ordinato, leggibile e coerente come vero marchio editoriale.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Prossime uscite" class="glyph-icon" />
-        In preparazione
-      </span>
-      <h2>Cosa arriverà dopo</h2>
       <p>
-        Qui compariranno le prossime pubblicazioni in sviluppo: nuove one-shot, compendi, linee editoriali dedicate e progetti pensati per far crescere THE ARCANE SHOP come un catalogo sempre più solido e riconoscibile.
+        Un ringraziamento speciale va a mia moglie Marta, per avermi sempre sopportato, sostenuto e accompagnato in questa avventura, anche nei momenti in cui idee, sessioni e progetti sembravano non finire mai.
       </p>
 
-      <div class="upcoming-grid">
-        <div id="upcoming-products-it" class="upcoming-products-dynamic"></div>
-      </div>
-
-      <p class="intro-note">
-        Questa sezione mostrerà l’evoluzione naturale del catalogo, con le prossime uscite già in lavorazione e le future linee del progetto.
-      </p>
-    </div>
-
-    <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Contenuti riservati" class="glyph-icon" />
-        Riservato agli iscritti
-      </span>
-      <h2>Contenuti esclusivi del Circolo Arcano</h2>
       <p>
-        Qui troverai materiali più ricchi e selezionati, pensati per chi desidera seguire da vicino la crescita del catalogo e ricevere contenuti speciali riservati agli iscritti.
+        Grazie a mia cognata Ceci, a mio cognato Grisu e a mio fratello Andre, che mi hanno sempre spinto a credere in questo sogno e a trasformarlo in qualcosa di concreto.
       </p>
 
-      <div class="upcoming-grid">
-        <div id="members-products-it" class="upcoming-products-dynamic"></div>
-      </div>
-
-      <p class="intro-note">
-        Questi contenuti vengono consegnati tramite email agli iscritti al Circolo Arcano.
-      </p>
-
-      <div class="button-row" style="justify-content: center; margin-top: 24px;">
-        <a class="button secondary" href="index.html#circolo-arcano">Ricevi i contenuti esclusivi</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-dmsguild-glyph.png" alt="Sigillo DMsGuild" class="glyph-icon" />
-        DMsGuild
-      </span>
-      <h2>Scopri il catalogo completo su DMsGuild</h2>
       <p>
-        Se ti va di scoprire cos’altro c’è già disponibile, su DMsGuild trovi tutte le pubblicazioni attualmente uscite nel catalogo di THE ARCANE SHOP.
+        Un ringraziamento immenso va anche ai miei amici più cari — la mia seconda famiglia — Piolo, Gibo, Jim, Ryoga, Gnomo, Paolino, Nadia, Bione, Dementelale e Marcello, che in tutti questi anni hanno dato vita alle mie idee al tavolo, mettendole alla prova, migliorandole e aiutandomi a trasformarle nei prodotti che oggi prendono forma in THE ARCANE SHOP.
       </p>
 
-      <div class="platform-grid">
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Profilo autore</span>
-              <span class="badge">DMsGuild</span>
-            </div>
-            <h3>Profilo autore</h3>
-            <p>
-              Il punto di riferimento principale per visualizzare le pubblicazioni disponibili, accedere alle pagine prodotto e seguire la crescita del catalogo editoriale.
-            </p>
-            <div class="product-meta">
-              <strong>Piattaforma:</strong> DMsGuild<br />
-              <strong>Contenuto:</strong> prodotti pubblicati, schede complete, aggiornamenti di catalogo
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button" href="https://site.dmsguild.com/browse.php?author=Francesco%20Paolo%20Russo" target="_blank" rel="noopener noreferrer">Apri DMsGuild</a>
-            <a class="button secondary" href="index.html">Torna alla Home</a>
-          </div>
-        </div>
-      </div>
+      <p>
+        Senza di voi, molte di queste storie non sarebbero mai arrivate fin qui.
+      </p>
     </div>
   </section>
 
   <footer>
+    <div class="footer-brand">
+      <img src="assets/images/arcane-shop-logo-symbol.png" alt="Logo di THE ARCANE SHOP" class="footer-brand-logo" />
+      <span class="footer-brand-text">THE ARCANE SHOP</span>
+    </div>
     © 2026 THE ARCANE SHOP - Tutti i diritti riservati
   </footer>
 
-  <script src="assets/data/products-it.js"></script>
-  <script src="assets/data/upcoming-it.js"></script>
-  <script src="assets/data/members-it.js"></script>
+  <iframe name="brevo-hidden-frame-it" class="hidden-brevo-form" title="Brevo hidden submit"></iframe>
+
+  <form
+    id="brevo-hidden-form-it"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAPOCcN7NI6Jtili9UANfGgmpTmGygFJYkVec0EIf4gJhwFj829W3zUeh22N43Z8O9Jy-FsHZR3lU9cOngC0rawTU28ENSVOBWGW5qTH95IFuFXyx8wmpMZPjoTAD8Jv2qAwS37sQ3vNv5uIDQjJB2OWpMk1F_etT5wtyDuhW80_xXvIdv6ReeIraOHQjuJsf9f5Jmxsf9ApU6g=="
+    target="brevo-hidden-frame-it"
+  >
+    <input type="hidden" name="lists_25[]" value="2" />
+    <input type="hidden" name="EMAIL" id="brevo-email-it" value="" />
+    <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="locale" value="it" />
+    <input type="hidden" name="html_type" value="simple" />
+  </form>
+
   <script>
     (function () {
-      const featuredContainer = document.getElementById('featured-products-it');
-      const catalogListContainer = document.getElementById('catalog-list-it');
-      const upcomingContainer = document.getElementById('upcoming-products-it');
-      const membersContainer = document.getElementById('members-products-it');
+      const giftOptions = document.querySelectorAll('.gift-option');
+      const emailInput = document.getElementById('gift-email-it');
+      const submitButton = document.getElementById('gift-submit-it');
+      const statusBox = document.getElementById('gift-status-it');
 
-      const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
-      const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
-      const members = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
+      const brevoForm = document.getElementById('brevo-hidden-form-it');
+      const brevoEmail = document.getElementById('brevo-email-it');
 
-      function escapeHtml(text) {
-        return String(text || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      }
+      let selectedGift = '';
 
-      function buildBadges(badges) {
-        if (!Array.isArray(badges) || !badges.length) return '';
-        return badges.map(function (badge) {
-          return '<span class="badge">' + escapeHtml(badge) + '</span>';
-        }).join('');
-      }
-
-      function buildProductButton(link) {
-        if (!link || link === '#') {
-          return '<a class="button secondary" href="#">Collegamento non ancora disponibile</a>';
+      function setStatus(message, type) {
+        statusBox.textContent = message;
+        statusBox.className = 'gift-status';
+        if (type) {
+          statusBox.classList.add(type);
         }
-
-        return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
       }
 
-      products.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      giftOptions.forEach(function (option) {
+        option.addEventListener('click', function () {
+          giftOptions.forEach(function (item) {
+            item.classList.remove('is-selected');
+          });
+
+          option.classList.add('is-selected');
+          selectedGift = option.getAttribute('data-gift') || '';
+          setStatus('Dono selezionato. Ora inserisci la tua email e clicca sul pulsante.', 'success');
+        });
       });
 
-      if (featuredContainer) {
-        const featuredProducts = products.slice(0, 2);
+      submitButton.addEventListener('click', function () {
+        const email = emailInput.value.trim();
 
-        featuredContainer.innerHTML = featuredProducts.map(function (product) {
-          return `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  ${buildBadges(product.badges)}
-                </div>
-                <h3>${escapeHtml(product.title)}</h3>
-                <p>${escapeHtml(product.description)}</p>
-                <div class="product-meta">
-                  <strong>Formato:</strong> ${escapeHtml(product.format)}<br />
-                  <strong>Categoria:</strong> ${escapeHtml(product.category)}<br />
-                  <strong>Piattaforma:</strong> ${escapeHtml(product.platform)}
-                </div>
-              </div>
-              <div class="button-row">
-                ${buildProductButton(product.link)}
-              </div>
-            </div>
-          `;
-        }).join('');
-      }
-
-      if (catalogListContainer) {
-        catalogListContainer.innerHTML = products.map(function (product) {
-          const safeTitle = escapeHtml(product.title);
-          const safeLink = escapeHtml(product.link || '#');
-
-          if (!product.link || product.link === '#') {
-            return `<div class="catalog-list-item">• ${safeTitle}</div>`;
-          }
-
-          return `
-            <div class="catalog-list-item">
-              • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
-                ${safeTitle}
-              </a>
-            </div>
-          `;
-        }).join('');
-      }
-
-      if (upcomingContainer) {
-        if (!upcoming.length) {
-          upcomingContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">In aggiornamento</span>
-                </div>
-                <h3>Nuovi annunci in arrivo</h3>
-                <p>
-                  Questa sezione verrà aggiornata man mano che i prossimi materiali saranno pronti per essere mostrati.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          upcomingContainer.innerHTML = upcoming.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-              </div>
-            `;
-          }).join('');
+        if (!selectedGift) {
+          setStatus('Prima scegli uno dei quattro doni.', 'error');
+          return;
         }
-      }
 
-      if (membersContainer) {
-        if (!members.length) {
-          membersContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">Solo iscritti</span>
-                </div>
-                <h3>Contenuti esclusivi in arrivo</h3>
-                <p>
-                  I prossimi materiali riservati agli iscritti del Circolo Arcano compariranno qui non appena saranno pronti.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          membersContainer.innerHTML = members.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-                <div class="button-row">
-                  <a class="button secondary" href="index.html#circolo-arcano">${escapeHtml(item.buttonText)}</a>
-                </div>
-              </div>
-            `;
-          }).join('');
+        if (!email) {
+          setStatus('Inserisci la tua email prima di continuare.', 'error');
+          emailInput.focus();
+          return;
         }
-      }
+
+        if (!isValidEmail(email)) {
+          setStatus('L’indirizzo email non sembra valido. Controllalo e riprova.', 'error');
+          emailInput.focus();
+          return;
+        }
+
+        brevoEmail.value = email;
+
+        try {
+          brevoForm.submit();
+        } catch (error) {
+          setStatus('C’è stato un problema durante l’iscrizione. Riprova tra poco.', 'error');
+          return;
+        }
+
+        setStatus('Perfetto. Tra poco si aprirà il tuo dono di benvenuto.', 'success');
+
+        const giftPath = 'gifts/it/' + selectedGift;
+        const tempLink = document.createElement('a');
+        tempLink.href = giftPath;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+      });
     })();
   </script>
 </body>
