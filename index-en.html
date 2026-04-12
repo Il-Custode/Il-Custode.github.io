@@ -83,6 +83,30 @@
       align-items: center;
     }
 
+    nav .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    nav .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.14));
+    }
+
+    nav .brand-text {
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 16px rgba(212, 175, 55, 0.16);
+      white-space: nowrap;
+    }
+
     nav a {
       color: var(--text);
       text-decoration: none;
@@ -597,6 +621,15 @@
         gap: 16px;
       }
 
+      nav .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+
+      nav .brand-text {
+        font-size: 1rem;
+      }
+
       nav a {
         font-size: 0.95rem;
       }
@@ -659,7 +692,12 @@
 <body>
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
+      <li>
+        <a href="#home" class="brand-link">
+          <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="brand-logo" />
+          <span class="brand-text">THE ARCANE SHOP</span>
+        </a>
+      </li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Editorial Lines</a></li>
       <li><a href="#publications">Publications</a></li>
