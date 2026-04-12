@@ -2,7 +2,13 @@ window.arcaneUpcomingEn = [
   {
     type: "Next release",
     status: "In development",
-    title: "New publication in progress",
-    description: "The next THE ARCANE SHOP editorial project will appear here as soon as its direction is fully defined. This section is meant to naturally reflect the future growth of the catalog."
+    title: "The Feast of the Crimson Lady",
+    description: "A horror mystery one-shot designed to deliver an intense, refined, and table-ready experience. A self-contained adventure built around atmosphere, narrative tension, and a strong editorial identity."
+  },
+  {
+    type: "DM Toolkit",
+    status: "In development",
+    title: "The Leyline Compendium",
+    description: "A premium compendium focused on ley lines, created to give Dungeon Masters practical tools, narrative hooks, and support material to enrich campaigns, settings, and the management of world energy systems."
   }
 ];
