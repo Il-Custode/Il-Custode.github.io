@@ -562,12 +562,34 @@
     }
 
     footer {
-      padding: 34px 20px;
+      padding: 28px 20px;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
       margin-top: 30px;
       font-size: 0.92rem;
       color: #c9b78d;
       background: rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.12));
+    }
+
+    .footer-brand-text {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 0.04em;
     }
 
     @media (max-width: 900px) {
@@ -685,6 +707,11 @@
       .hero-buttons,
       .publication-showcase-buttons {
         gap: 12px;
+      }
+
+      .footer-brand-logo {
+        width: 30px;
+        height: 30px;
       }
     }
   </style>
@@ -920,6 +947,10 @@
   </section>
 
   <footer>
+    <div class="footer-brand">
+      <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="footer-brand-logo" />
+      <span class="footer-brand-text">THE ARCANE SHOP</span>
+    </div>
     © 2026 THE ARCANE SHOP - All rights reserved
   </footer>
 
