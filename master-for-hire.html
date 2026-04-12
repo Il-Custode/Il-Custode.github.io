@@ -81,6 +81,30 @@
       align-items: center;
     }
 
+    nav .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    nav .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.14));
+    }
+
+    nav .brand-text {
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 16px rgba(212, 175, 55, 0.16);
+      white-space: nowrap;
+    }
+
     nav a {
       color: var(--text);
       text-decoration: none;
@@ -286,12 +310,34 @@
     }
 
     footer {
-      padding: 34px 20px;
+      padding: 28px 20px;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
       margin-top: 30px;
       font-size: 0.92rem;
       color: #c9b78d;
       background: rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.12));
+    }
+
+    .footer-brand-text {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 0.04em;
     }
 
     @media (max-width: 900px) {
@@ -315,6 +361,15 @@
 
       nav ul {
         gap: 16px;
+      }
+
+      nav .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+
+      nav .brand-text {
+        font-size: 1rem;
       }
 
       nav a {
@@ -361,13 +416,23 @@
       .button-row-center {
         gap: 12px;
       }
+
+      .footer-brand-logo {
+        width: 30px;
+        height: 30px;
+      }
     }
   </style>
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="index-en.html#home">Home</a></li>
+      <li>
+        <a href="index-en.html#home" class="brand-link">
+          <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="brand-logo" />
+          <span class="brand-text">THE ARCANE SHOP</span>
+        </a>
+      </li>
       <li><a href="index-en.html#about">About</a></li>
       <li><a href="index-en.html#projects">Editorial Lines</a></li>
       <li><a href="index-en.html#publications">Publications</a></li>
@@ -615,6 +680,10 @@
   </section>
 
   <footer>
+    <div class="footer-brand">
+      <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="footer-brand-logo" />
+      <span class="footer-brand-text">THE ARCANE SHOP</span>
+    </div>
     © 2026 THE ARCANE SHOP - All rights reserved
   </footer>
 </body>
