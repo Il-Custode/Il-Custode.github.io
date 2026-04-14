@@ -980,16 +980,28 @@
         </div>
 
         <div class="review-field">
-          <label class="review-label" for="review-comment-it">La tua recensione</label>
-          <textarea
-            id="review-comment-it"
-            class="review-textarea"
-            placeholder="Scrivi qui la tua esperienza"
-          ></textarea>
-        </div>
+  <label class="review-label" for="review-email-it">La tua email</label>
+  <input
+    id="review-email-it"
+    class="gift-input"
+    type="email"
+    placeholder="Inserisci la tua email"
+    autocomplete="email"
+  />
+</div>
 
-        <button id="review-submit-it" class="button" type="button">Pubblica recensione</button>
-        <div id="review-status-it" class="review-status" aria-live="polite"></div>
+<div class="review-field">
+  <label class="review-label" for="review-comment-it">La tua recensione</label>
+  <textarea
+    id="review-comment-it"
+    class="review-textarea"
+    placeholder="Scrivi qui la tua esperienza"
+  ></textarea>
+</div>
+
+<button id="review-submit-it" class="button" type="button">Invia recensione</button>
+<div id="review-status-it" class="review-status" aria-live="polite"></div>
+
       </div>
 
       <div id="review-public-list-it" class="review-public-list"></div>
@@ -1149,6 +1161,7 @@
     const reviewProductWrap = document.getElementById('review-product-wrap-it');
     const reviewProduct = document.getElementById('review-product-it');
     const starsBox = document.getElementById('review-stars-it');
+    const reviewEmail = document.getElementById('review-email-it');
     const reviewComment = document.getElementById('review-comment-it');
     const reviewSubmit = document.getElementById('review-submit-it');
     const reviewStatus = document.getElementById('review-status-it');
@@ -1164,6 +1177,10 @@
       if (type) {
         reviewStatus.classList.add(type);
       }
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     function renderProducts() {
@@ -1217,6 +1234,7 @@
     reviewSubmit.addEventListener('click', function () {
       const category = reviewCategory.value;
       const productId = reviewProduct.value;
+      const email = reviewEmail.value.trim();
       const comment = reviewComment.value.trim();
 
       if (!category) {
@@ -1236,6 +1254,18 @@
         return;
       }
 
+      if (!email) {
+        setStatus('Inserisci la tua email prima di inviare la recensione.', 'error');
+        reviewEmail.focus();
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        setStatus('L’indirizzo email non sembra valido. Controllalo e riprova.', 'error');
+        reviewEmail.focus();
+        return;
+      }
+
       if (!comment) {
         setStatus('Scrivi la tua recensione prima di inviarla.', 'error');
         reviewComment.focus();
@@ -1245,6 +1275,7 @@
       reviewCategory.value = '';
       reviewProduct.value = '';
       reviewProductWrap.style.display = 'none';
+      reviewEmail.value = '';
       reviewComment.value = '';
       resetStars();
 
