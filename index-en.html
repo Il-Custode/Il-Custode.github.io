@@ -741,7 +741,6 @@
     <p class="hero-text">
       From darker atmospheres to lighter adventures, from self-contained modules to broader campaign ideas, THE ARCANE SHOP was created to offer polished, evocative material ready to bring to the table.
     </p>
-    
   </header>
 
   <section class="section">
@@ -840,34 +839,14 @@
         </div>
       </div>
 
-      <div class="featured-grid">
-        <a class="featured-item-link" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">
-          <div class="featured-item">
-            <div class="featured-label">Featured</div>
-            <h3>Bastion Compendium</h3>
-            <p>
-              A complete modular expansion dedicated to Bastions, designed to deepen the game experience and offer more narrative and strategic possibilities.
-            </p>
-          </div>
-        </a>
-
-        <a class="featured-item-link" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">
-          <div class="featured-item">
-            <div class="featured-label">Featured</div>
-            <h3>The Circus of Celestial Wonders</h3>
-            <p>
-              A modular horror-fantasy mini-campaign designed for high-level groups and easily adaptable to different party ranges.
-            </p>
-          </div>
-        </a>
-      </div>
+      <div class="featured-grid" id="home-featured-grid-en"></div>
 
       <a class="button" href="publications.html">View All Publications</a>
     </div>
 
     <div id="arcane-circle-en"></div>
-<div class="card">
-  <h2>Join the Arcane Circle</h2>
+    <div class="card">
+      <h2>Join the Arcane Circle</h2>
       <p>
         Sign up to receive an exclusive welcome gift and, from time to time, unlock special resources, curated content, and early glimpses from the creative workshop of THE ARCANE SHOP.
       </p>
@@ -968,6 +947,29 @@
     <input type="hidden" name="locale" value="it" />
     <input type="hidden" name="html_type" value="simple" />
   </form>
+
+  <script src="assets/data/home-featured-en.js"></script>
+
+  <script>
+    (function () {
+      const featuredGrid = document.getElementById('home-featured-grid-en');
+      const featuredProducts = Array.isArray(window.arcaneHomeFeaturedEn) ? window.arcaneHomeFeaturedEn : [];
+
+      if (featuredGrid && featuredProducts.length) {
+        featuredGrid.innerHTML = featuredProducts.map(function (product) {
+          return `
+            <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
+              <div class="featured-item">
+                <div class="featured-label">${product.label}</div>
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+              </div>
+            </a>
+          `;
+        }).join('');
+      }
+    })();
+  </script>
 
   <script>
     (function () {
