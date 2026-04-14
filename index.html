@@ -983,6 +983,49 @@
     })();
   </script>
 
+<script>
+  (function () {
+    const reviewType = document.getElementById('review-type');
+    const reviewProduct = document.getElementById('review-product');
+    const reviewForm = document.getElementById('review-form');
+
+    if (!reviewType || !reviewProduct || !reviewForm) {
+      return;
+    }
+
+    function updateReviewFlow() {
+      const selectedType = reviewType.value;
+
+      if (selectedType === 'master') {
+        reviewProduct.style.display = 'none';
+        reviewProduct.value = '';
+        reviewForm.style.display = 'block';
+        return;
+      }
+
+      if (selectedType === 'product') {
+        reviewProduct.style.display = 'block';
+        reviewForm.style.display = reviewProduct.value ? 'block' : 'none';
+        return;
+      }
+
+      reviewProduct.style.display = 'none';
+      reviewProduct.value = '';
+      reviewForm.style.display = 'none';
+    }
+
+    reviewType.addEventListener('change', updateReviewFlow);
+
+    reviewProduct.addEventListener('change', function () {
+      if (reviewType.value === 'product' && reviewProduct.value) {
+        reviewForm.style.display = 'block';
+      } else {
+        reviewForm.style.display = 'none';
+      }
+    });
+  })();
+</script>
+  
   <script>
     (function () {
       const giftOptions = document.querySelectorAll('.gift-option');
