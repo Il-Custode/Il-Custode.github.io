@@ -517,7 +517,9 @@
       margin: 0 auto;
     }
 
-    .gift-input {
+    .gift-input,
+    .review-select,
+    .review-textarea {
       width: 100%;
       max-width: 520px;
       padding: 14px;
@@ -530,9 +532,20 @@
       outline: none;
     }
 
-    .gift-input:focus {
+    .gift-input:focus,
+    .review-select:focus,
+    .review-textarea:focus {
       border-color: rgba(212, 175, 55, 0.8);
       box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.12);
+    }
+
+    .review-select option {
+      color: #111111;
+    }
+
+    .review-textarea {
+      min-height: 150px;
+      resize: vertical;
     }
 
     .gift-note {
@@ -541,7 +554,8 @@
       color: var(--text-soft);
     }
 
-    .gift-status {
+    .gift-status,
+    .review-status {
       min-height: 26px;
       margin: 16px auto 0 auto;
       font-size: 0.98rem;
@@ -549,12 +563,62 @@
       color: var(--text-soft);
     }
 
-    .gift-status.success {
+    .gift-status.success,
+    .review-status.success {
       color: var(--success);
     }
 
-    .gift-status.error {
+    .gift-status.error,
+    .review-status.error {
       color: var(--danger);
+    }
+
+    .review-form {
+      max-width: 560px;
+      margin: 0 auto 34px auto;
+    }
+
+    .review-field {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .review-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-soft);
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .review-stars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      user-select: none;
+    }
+
+    .review-stars span {
+      font-size: 2rem;
+      color: var(--gold);
+      cursor: pointer;
+      transition: transform 0.15s ease, text-shadow 0.15s ease;
+    }
+
+    .review-stars span:hover {
+      transform: scale(1.08);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .review-public-list {
+      max-width: 760px;
+      margin: 26px auto 0 auto;
+    }
+
+    .review-public-list:empty {
+      display: none;
     }
 
     .hidden-brevo-form {
@@ -689,6 +753,10 @@
       .publication-showcase-buttons {
         gap: 12px;
       }
+
+      .review-stars span {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -705,6 +773,7 @@
       <li><a href="#progetti">Linee Editoriali</a></li>
       <li><a href="#pubblicazioni">Pubblicazioni</a></li>
       <li><a href="#circolo-arcano">Circolo Arcano</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
       <li><a href="#ringraziamenti-speciali">Ringraziamenti Speciali</a></li>
       <li><a href="index-en.html">EN</a></li>
     </ul>
@@ -821,42 +890,6 @@
       <a class="button" href="pubblicazioni.html">Vedi tutte le pubblicazioni</a>
     </div>
 
-    <div class="card" id="recensioni">
-  <h2>Lascia una recensione</h2>
-  <p class="publications-intro">
-    Racconta la tua esperienza con una sessione Master o con uno dei prodotti di THE ARCANE SHOP.
-  </p>
-
-  <div class="gift-form">
-    <select id="review-type" class="gift-input">
-      <option value="">Seleziona una categoria</option>
-      <option value="master">Master a Noleggio</option>
-      <option value="product">Prodotti in vendita</option>
-    </select>
-
-    <select id="review-product" class="gift-input" style="margin-top:16px; display:none;">
-      <option value="">Seleziona un prodotto</option>
-    </select>
-
-    <div id="review-form" style="display:none; margin-top:20px;">
-      <div style="font-size:2rem; color:#d4af37; margin-bottom:18px;">
-        ★★★★★
-      </div>
-
-      <textarea
-        id="review-comment"
-        class="gift-input"
-        rows="5"
-        placeholder="Scrivi qui la tua esperienza..."
-        style="resize:vertical;"
-      ></textarea>
-
-      <button class="button" type="button" id="review-submit">
-        Invia recensione
-      </button>
-    </div>
-  </div>
-</div>
     <div id="circolo-arcano"></div>
     <div class="card">
       <h2>Entra nel Circolo Arcano</h2>
@@ -912,6 +945,56 @@
       </div>
     </div>
 
+    <div class="card" id="recensioni">
+      <h2>Recensioni</h2>
+      <p>
+        Racconta la tua esperienza con THE ARCANE SHOP. Puoi lasciare una recensione per il servizio di Master a Noleggio oppure per uno dei prodotti pubblicati.
+      </p>
+
+      <div class="review-form">
+        <div class="review-field">
+          <label class="review-label" for="review-category-it">Categoria recensione</label>
+          <select id="review-category-it" class="review-select">
+            <option value="">Seleziona una categoria</option>
+            <option value="master">Master a Noleggio</option>
+            <option value="product">Prodotti</option>
+          </select>
+        </div>
+
+        <div class="review-field" id="review-product-wrap-it" style="display:none;">
+          <label class="review-label" for="review-product-it">Seleziona un prodotto</label>
+          <select id="review-product-it" class="review-select">
+            <option value="">Seleziona un prodotto</option>
+          </select>
+        </div>
+
+        <div class="review-field">
+          <span class="review-label">La tua valutazione</span>
+          <div id="review-stars-it" class="review-stars" aria-label="Scegli una valutazione da 1 a 5">
+            <span data-value="1">☆</span>
+            <span data-value="2">☆</span>
+            <span data-value="3">☆</span>
+            <span data-value="4">☆</span>
+            <span data-value="5">☆</span>
+          </div>
+        </div>
+
+        <div class="review-field">
+          <label class="review-label" for="review-comment-it">La tua recensione</label>
+          <textarea
+            id="review-comment-it"
+            class="review-textarea"
+            placeholder="Scrivi qui la tua esperienza"
+          ></textarea>
+        </div>
+
+        <button id="review-submit-it" class="button" type="button">Pubblica recensione</button>
+        <div id="review-status-it" class="review-status" aria-live="polite"></div>
+      </div>
+
+      <div id="review-public-list-it" class="review-public-list"></div>
+    </div>
+
     <div class="card" id="ringraziamenti-speciali">
       <h2>Ringraziamenti Speciali</h2>
 
@@ -958,6 +1041,7 @@
   </form>
 
   <script src="assets/data/home-featured-it.js"></script>
+  <script src="assets/data/products-it.js"></script>
 
   <script>
     (function () {
@@ -980,49 +1064,6 @@
     })();
   </script>
 
-<script>
-  (function () {
-    const reviewType = document.getElementById('review-type');
-    const reviewProduct = document.getElementById('review-product');
-    const reviewForm = document.getElementById('review-form');
-
-    if (!reviewType || !reviewProduct || !reviewForm) {
-      return;
-    }
-
-    function updateReviewFlow() {
-      const selectedType = reviewType.value;
-
-      if (selectedType === 'master') {
-        reviewProduct.style.display = 'none';
-        reviewProduct.value = '';
-        reviewForm.style.display = 'block';
-        return;
-      }
-
-      if (selectedType === 'product') {
-        reviewProduct.style.display = 'block';
-        reviewForm.style.display = reviewProduct.value ? 'block' : 'none';
-        return;
-      }
-
-      reviewProduct.style.display = 'none';
-      reviewProduct.value = '';
-      reviewForm.style.display = 'none';
-    }
-
-    reviewType.addEventListener('change', updateReviewFlow);
-
-    reviewProduct.addEventListener('change', function () {
-      if (reviewType.value === 'product' && reviewProduct.value) {
-        reviewForm.style.display = 'block';
-      } else {
-        reviewForm.style.display = 'none';
-      }
-    });
-  })();
-</script>
-  
   <script>
     (function () {
       const giftOptions = document.querySelectorAll('.gift-option');
@@ -1099,6 +1140,150 @@
         tempLink.click();
         document.body.removeChild(tempLink);
       });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const storageKey = 'arcaneReviewsIt';
+      const reviewCategory = document.getElementById('review-category-it');
+      const reviewProductWrap = document.getElementById('review-product-wrap-it');
+      const reviewProduct = document.getElementById('review-product-it');
+      const starsBox = document.getElementById('review-stars-it');
+      const reviewComment = document.getElementById('review-comment-it');
+      const reviewSubmit = document.getElementById('review-submit-it');
+      const reviewStatus = document.getElementById('review-status-it');
+      const publicList = document.getElementById('review-public-list-it');
+
+      const products = Array.isArray(window.arcaneProductsIt) ? window.arcaneProductsIt : [];
+      let selectedStars = 0;
+      let reviews = [];
+
+      function setStatus(message, type) {
+        reviewStatus.textContent = message;
+        reviewStatus.className = 'review-status';
+        if (type) {
+          reviewStatus.classList.add(type);
+        }
+      }
+
+      function loadReviews() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          reviews = saved ? JSON.parse(saved) : [];
+          if (!Array.isArray(reviews)) {
+            reviews = [];
+          }
+        } catch (error) {
+          reviews = [];
+        }
+      }
+
+      function saveReviews() {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(reviews));
+        } catch (error) {
+        }
+      }
+
+      function renderProducts() {
+        reviewProduct.innerHTML = '<option value="">Seleziona un prodotto</option>';
+        products.forEach(function (product) {
+          const option = document.createElement('option');
+          option.value = product.id;
+          option.textContent = product.title;
+          reviewProduct.appendChild(option);
+        });
+      }
+
+      function renderReviews() {
+        publicList.innerHTML = reviews.map(function (review) {
+          return `<div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+      <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(review.stars)}</div>
+      <p style="margin:10px 0 0 0; padding:0; max-width:none;">${review.comment}</p>
+    </div>`;
+        }).join('');
+      }
+
+      function resetStars() {
+        selectedStars = 0;
+        starsBox.querySelectorAll('span').forEach(function (star) {
+          star.textContent = '☆';
+        });
+      }
+
+      function updateCategoryVisibility() {
+        const selectedCategory = reviewCategory.value;
+        if (selectedCategory === 'product') {
+          reviewProductWrap.style.display = 'block';
+          renderProducts();
+        } else {
+          reviewProductWrap.style.display = 'none';
+          reviewProduct.value = '';
+        }
+      }
+
+      reviewCategory.addEventListener('change', updateCategoryVisibility);
+
+      starsBox.addEventListener('click', function (e) {
+        const value = Number(e.target.dataset.value || 0);
+        if (!value) return;
+        selectedStars = value;
+        starsBox.querySelectorAll('span').forEach(function (star, index) {
+          star.textContent = index < value ? '★' : '☆';
+        });
+      });
+
+      reviewSubmit.addEventListener('click', function () {
+        const category = reviewCategory.value;
+        const productId = reviewProduct.value;
+        const comment = reviewComment.value.trim();
+
+        if (!category) {
+          setStatus('Seleziona prima una categoria recensione.', 'error');
+          reviewCategory.focus();
+          return;
+        }
+
+        if (category === 'product' && !productId) {
+          setStatus('Seleziona un prodotto prima di pubblicare la recensione.', 'error');
+          reviewProduct.focus();
+          return;
+        }
+
+        if (!selectedStars) {
+          setStatus('Scegli una valutazione da 1 a 5 stelle.', 'error');
+          return;
+        }
+
+        if (!comment) {
+          setStatus('Scrivi la tua recensione prima di pubblicarla.', 'error');
+          reviewComment.focus();
+          return;
+        }
+
+        reviews.unshift({
+          category: category,
+          productId: category === 'product' ? productId : '',
+          stars: selectedStars,
+          comment: comment
+        });
+
+        saveReviews();
+        renderReviews();
+
+        reviewCategory.value = '';
+        reviewProduct.value = '';
+        reviewProductWrap.style.display = 'none';
+        reviewComment.value = '';
+        resetStars();
+
+        setStatus('La tua recensione è stata pubblicata con successo.', 'success');
+      });
+
+      loadReviews();
+      updateCategoryVisibility();
+      renderReviews();
     })();
   </script>
 </body>
