@@ -719,7 +719,7 @@
       });
 
       if (featuredContainer) {
-        const featuredProducts = products;
+        const featuredProducts = products.slice(0, 2);
 
         featuredContainer.innerHTML = featuredProducts.map(function (product) {
           return `
