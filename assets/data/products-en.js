@@ -2,13 +2,13 @@ window.arcaneProductsEn = [
   {
     id: "crimson-ladys-feast",
     date: "2026-04-14",
-    title: "THE CRIMSON LADY'S FEAST",
+    title: "The Crimson Lady's Feast",
     description: "A gothic investigative horror one-shot of masked feasts, bloodbound secrets, and multiple endings, designed to deliver elegant tension, high replayability, and strong campaign sequel potential.",
     format: "Premium adventure",
     category: "Narrative module / One-shot",
     platform: "DMsGuild",
     badges: ["New Release", "Horror", "DMsGuild"],
-    link: "https://site.dmsguild.com/product/564224/THE-CRIMSON-LADYS-FEAST?src=newest_in_dmg&filters=45469"
+    link: "https://site.dmsguild.com/product/564224/The-Crimson-Ladys-Feast?src=newest_in_dmg&filters=45469"
   },
   {
     id: "bastion-compendium",
