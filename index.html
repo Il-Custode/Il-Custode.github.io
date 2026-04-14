@@ -710,7 +710,7 @@
     </ul>
   </nav>
 
-    <header id="home">
+  <header id="home">
     <h1>THE ARCANE SHOP</h1>
     <p class="hero-subtitle">
       Avventure premium, moduli narrativi, strumenti per Dungeon Master, servizio di Master a Noleggio e contenuti originali per Dungeons &amp; Dragons 5a Edizione.
@@ -816,27 +816,7 @@
         </div>
       </div>
 
-      <div class="featured-grid">
-        <a class="featured-item-link" href="https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e" target="_blank" rel="noopener noreferrer">
-          <div class="featured-item">
-            <div class="featured-label">In evidenza</div>
-            <h3>Compendio dei Bastioni</h3>
-            <p>
-              Un’espansione completa e modulare dedicata ai Bastioni, pensata per ampliare profondamente l’esperienza di gioco.
-            </p>
-          </div>
-        </a>
-
-        <a class="featured-item-link" href="https://site.dmsguild.com/product/562814/Il-Circo-delle-Meraviglie-Celestiali--MiniCampagna-Horror-Fantasy-Modulare-per-DD-5e?term=il+circo" target="_blank" rel="noopener noreferrer">
-          <div class="featured-item">
-            <div class="featured-label">In evidenza</div>
-            <h3>Il Circo delle Meraviglie Celestiali</h3>
-            <p>
-              Una mini-campagna horror fantasy modulare pensata per gruppi di alto livello e facilmente adattabile.
-            </p>
-          </div>
-        </a>
-      </div>
+      <div class="featured-grid" id="home-featured-grid-it"></div>
 
       <a class="button" href="pubblicazioni.html">Vedi tutte le pubblicazioni</a>
     </div>
@@ -940,6 +920,29 @@
     <input type="hidden" name="locale" value="it" />
     <input type="hidden" name="html_type" value="simple" />
   </form>
+
+  <script src="assets/data/home-featured-it.js"></script>
+
+  <script>
+    (function () {
+      const featuredGrid = document.getElementById('home-featured-grid-it');
+      const featuredProducts = Array.isArray(window.arcaneHomeFeaturedIt) ? window.arcaneHomeFeaturedIt : [];
+
+      if (featuredGrid && featuredProducts.length) {
+        featuredGrid.innerHTML = featuredProducts.map(function (product) {
+          return `
+            <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
+              <div class="featured-item">
+                <div class="featured-label">${product.label}</div>
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+              </div>
+            </a>
+          `;
+        }).join('');
+      }
+    })();
+  </script>
 
   <script>
     (function () {
