@@ -1,5 +1,16 @@
 window.arcaneProductsIt = [
   {
+    id: "crimson-ladys-feast",
+    date: "2026-04-14",
+    title: "THE CRIMSON LADY'S FEAST",
+    description: "Una one-shot horror gotica investigativa tra feste in maschera, segreti di sangue e finali multipli, progettata per offrire tensione elegante, alta rigiocabilità e possibili seguiti di campagna.",
+    format: "Avventura premium",
+    category: "Modulo narrativo / One-shot",
+    platform: "DMsGuild",
+    badges: ["Nuova uscita", "Horror", "DMsGuild"],
+    link: "https://site.dmsguild.com/product/564224/THE-CRIMSON-LADYS-FEAST?src=newest_in_dmg&filters=45469"
+  },
+  {
     id: "bastion-compendium",
     date: "2026-04-01",
     title: "The Definitive Bastion Compendium for D&D 5e",
