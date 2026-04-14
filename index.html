@@ -821,6 +821,45 @@
       <a class="button" href="pubblicazioni.html">Vedi tutte le pubblicazioni</a>
     </div>
 
+    <div class="card" id="recensioni">
+  <h2>Lascia una recensione</h2>
+  <p class="publications-intro">
+    Racconta la tua esperienza con una sessione Master o con uno dei prodotti di THE ARCANE SHOP.
+  </p>
+
+  <div class="gift-form">
+    <select id="review-type" class="gift-input">
+      <option value="">Seleziona una categoria</option>
+      <option value="master">Master a Noleggio</option>
+      <option value="product">Prodotti in vendita</option>
+    </select>
+
+    <select id="review-product" class="gift-input" style="margin-top:16px; display:none;">
+      <option value="">Seleziona un prodotto</option>
+      <option value="crimson">The Crimson Lady's Feast</option>
+      <option value="bastion">The Definitive Bastion Compendium</option>
+      <option value="circo">Il Circo delle Meraviglie Celestiali</option>
+    </select>
+
+    <div id="review-form" style="display:none; margin-top:20px;">
+      <div style="font-size:2rem; color:#d4af37; margin-bottom:18px;">
+        ★★★★★
+      </div>
+
+      <textarea
+        id="review-comment"
+        class="gift-input"
+        rows="5"
+        placeholder="Scrivi qui la tua esperienza..."
+        style="resize:vertical;"
+      ></textarea>
+
+      <button class="button" type="button" id="review-submit">
+        Invia recensione
+      </button>
+    </div>
+  </div>
+</div>
     <div id="circolo-arcano"></div>
     <div class="card">
       <h2>Entra nel Circolo Arcano</h2>
