@@ -1,4 +1,4 @@
-window.arcaneUpcomingEng = [
+window.arcaneUpcomingEn = [
   {
     type: "Next Release",
     status: "In preparation",
