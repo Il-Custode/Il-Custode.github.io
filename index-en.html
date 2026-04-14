@@ -513,7 +513,9 @@
       margin: 0 auto;
     }
 
-    .gift-input {
+    .gift-input,
+    .review-select,
+    .review-textarea {
       width: 100%;
       max-width: 520px;
       padding: 14px;
@@ -526,9 +528,20 @@
       outline: none;
     }
 
-    .gift-input:focus {
+    .gift-input:focus,
+    .review-select:focus,
+    .review-textarea:focus {
       border-color: rgba(212, 175, 55, 0.8);
       box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.12);
+    }
+
+    .review-select option {
+      color: #111111;
+    }
+
+    .review-textarea {
+      min-height: 150px;
+      resize: vertical;
     }
 
     .gift-note {
@@ -537,7 +550,8 @@
       color: var(--text-soft);
     }
 
-    .gift-status {
+    .gift-status,
+    .review-status {
       min-height: 26px;
       margin: 16px auto 0 auto;
       font-size: 0.98rem;
@@ -545,12 +559,62 @@
       color: var(--text-soft);
     }
 
-    .gift-status.success {
+    .gift-status.success,
+    .review-status.success {
       color: var(--success);
     }
 
-    .gift-status.error {
+    .gift-status.error,
+    .review-status.error {
       color: var(--danger);
+    }
+
+    .review-form {
+      max-width: 560px;
+      margin: 0 auto 34px auto;
+    }
+
+    .review-field {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .review-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-soft);
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .review-stars {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      user-select: none;
+    }
+
+    .review-stars span {
+      font-size: 2rem;
+      color: var(--gold);
+      cursor: pointer;
+      transition: transform 0.15s ease, text-shadow 0.15s ease;
+    }
+
+    .review-stars span:hover {
+      transform: scale(1.08);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .review-public-list {
+      max-width: 760px;
+      margin: 26px auto 0 auto;
+    }
+
+    .review-public-list:empty {
+      display: none;
     }
 
     .hidden-brevo-form {
@@ -708,6 +772,10 @@
         gap: 12px;
       }
 
+      .review-stars span {
+        font-size: 1.8rem;
+      }
+
       .footer-brand-logo {
         width: 30px;
         height: 30px;
@@ -728,6 +796,7 @@
       <li><a href="#projects">Editorial Lines</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#arcane-circle-en">Arcane Circle</a></li>
+      <li><a href="#reviews-en">Reviews</a></li>
       <li><a href="#special-thanks-en">Special Thanks</a></li>
       <li><a href="index.html">IT</a></li>
     </ul>
@@ -899,6 +968,56 @@
       </div>
     </div>
 
+    <div class="card" id="reviews-en">
+      <h2>Reviews</h2>
+      <p>
+        Share your experience with THE ARCANE SHOP. You can leave a review for the Dungeon Master for Hire service or for one of the published products.
+      </p>
+
+      <div class="review-form">
+        <div class="review-field">
+          <label class="review-label" for="review-category-en">Review category</label>
+          <select id="review-category-en" class="review-select">
+            <option value="">Select a category</option>
+            <option value="dm">Dungeon Master for Hire</option>
+            <option value="product">Products</option>
+          </select>
+        </div>
+
+        <div class="review-field" id="review-product-wrap-en" style="display:none;">
+          <label class="review-label" for="review-product-en">Select a product</label>
+          <select id="review-product-en" class="review-select">
+            <option value="">Select a product</option>
+          </select>
+        </div>
+
+        <div class="review-field">
+          <span class="review-label">Your rating</span>
+          <div id="review-stars-en" class="review-stars" aria-label="Choose a rating from 1 to 5">
+            <span data-value="1">☆</span>
+            <span data-value="2">☆</span>
+            <span data-value="3">☆</span>
+            <span data-value="4">☆</span>
+            <span data-value="5">☆</span>
+          </div>
+        </div>
+
+        <div class="review-field">
+          <label class="review-label" for="review-comment-en">Your review</label>
+          <textarea
+            id="review-comment-en"
+            class="review-textarea"
+            placeholder="Write your review here"
+          ></textarea>
+        </div>
+
+        <button id="review-submit-en" class="button" type="button">Publish Review</button>
+        <div id="review-status-en" class="review-status" aria-live="polite"></div>
+      </div>
+
+      <div id="review-public-list-en" class="review-public-list"></div>
+    </div>
+
     <div class="card" id="special-thanks-en">
       <h2>Special Thanks</h2>
 
@@ -949,6 +1068,7 @@
   </form>
 
   <script src="assets/data/home-featured-en.js"></script>
+  <script src="assets/data/products-en.js"></script>
 
   <script>
     (function () {
@@ -1047,6 +1167,150 @@
         tempLink.click();
         document.body.removeChild(tempLink);
       });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const storageKey = 'arcaneReviewsEn';
+      const reviewCategory = document.getElementById('review-category-en');
+      const reviewProductWrap = document.getElementById('review-product-wrap-en');
+      const reviewProduct = document.getElementById('review-product-en');
+      const starsBox = document.getElementById('review-stars-en');
+      const reviewComment = document.getElementById('review-comment-en');
+      const reviewSubmit = document.getElementById('review-submit-en');
+      const reviewStatus = document.getElementById('review-status-en');
+      const publicList = document.getElementById('review-public-list-en');
+
+      const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
+      let selectedStars = 0;
+      let reviews = [];
+
+      function setStatus(message, type) {
+        reviewStatus.textContent = message;
+        reviewStatus.className = 'review-status';
+        if (type) {
+          reviewStatus.classList.add(type);
+        }
+      }
+
+      function loadReviews() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          reviews = saved ? JSON.parse(saved) : [];
+          if (!Array.isArray(reviews)) {
+            reviews = [];
+          }
+        } catch (error) {
+          reviews = [];
+        }
+      }
+
+      function saveReviews() {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(reviews));
+        } catch (error) {
+        }
+      }
+
+      function renderProducts() {
+        reviewProduct.innerHTML = '<option value="">Select a product</option>';
+        products.forEach(function (product) {
+          const option = document.createElement('option');
+          option.value = product.id;
+          option.textContent = product.title;
+          reviewProduct.appendChild(option);
+        });
+      }
+
+      function renderReviews() {
+        publicList.innerHTML = reviews.map(function (review) {
+          return `<div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+      <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(review.stars)}</div>
+      <p style="margin:10px 0 0 0; padding:0; max-width:none;">${review.comment}</p>
+    </div>`;
+        }).join('');
+      }
+
+      function resetStars() {
+        selectedStars = 0;
+        starsBox.querySelectorAll('span').forEach(function (star) {
+          star.textContent = '☆';
+        });
+      }
+
+      function updateCategoryVisibility() {
+        const selectedCategory = reviewCategory.value;
+        if (selectedCategory === 'product') {
+          reviewProductWrap.style.display = 'block';
+          renderProducts();
+        } else {
+          reviewProductWrap.style.display = 'none';
+          reviewProduct.value = '';
+        }
+      }
+
+      reviewCategory.addEventListener('change', updateCategoryVisibility);
+
+      starsBox.addEventListener('click', function (e) {
+        const value = Number(e.target.dataset.value || 0);
+        if (!value) return;
+        selectedStars = value;
+        starsBox.querySelectorAll('span').forEach(function (star, index) {
+          star.textContent = index < value ? '★' : '☆';
+        });
+      });
+
+      reviewSubmit.addEventListener('click', function () {
+        const category = reviewCategory.value;
+        const productId = reviewProduct.value;
+        const comment = reviewComment.value.trim();
+
+        if (!category) {
+          setStatus('Select a review category first.', 'error');
+          reviewCategory.focus();
+          return;
+        }
+
+        if (category === 'product' && !productId) {
+          setStatus('Select a product before publishing your review.', 'error');
+          reviewProduct.focus();
+          return;
+        }
+
+        if (!selectedStars) {
+          setStatus('Choose a rating from 1 to 5 stars.', 'error');
+          return;
+        }
+
+        if (!comment) {
+          setStatus('Write your review before publishing it.', 'error');
+          reviewComment.focus();
+          return;
+        }
+
+        reviews.unshift({
+          category: category,
+          productId: category === 'product' ? productId : '',
+          stars: selectedStars,
+          comment: comment
+        });
+
+        saveReviews();
+        renderReviews();
+
+        reviewCategory.value = '';
+        reviewProduct.value = '';
+        reviewProductWrap.style.display = 'none';
+        reviewComment.value = '';
+        resetStars();
+
+        setStatus('Your review has been published successfully.', 'success');
+      });
+
+      loadReviews();
+      updateCategoryVisibility();
+      renderReviews();
     })();
   </script>
 </body>
