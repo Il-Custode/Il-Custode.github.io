@@ -1272,19 +1272,21 @@
     }
 
     function loadReviews() {
-      fetch('assets/data/reviews-it.json', { cache: 'no-store' })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          reviews = Array.isArray(data) ? data : [];
-          renderReviews();
-        })
-        .catch(function () {
-          reviews = [];
-          renderReviews();
-        });
-    }
+  fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec?lang=it', {
+    cache: 'no-store'
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      reviews = Array.isArray(data) ? data : [];
+      renderReviews();
+    })
+    .catch(function () {
+      reviews = [];
+      renderReviews();
+    });
+}
 
     reviewCategory.addEventListener('change', updateCategoryVisibility);
 
