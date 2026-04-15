@@ -1288,11 +1288,10 @@
       }
 
       function loadReviews() {
-        fetch('assets/data/reviews-en.json', { cache: 'no-store' })
+        fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec?lang=en', {
+          cache: 'no-store'
+        })
           .then(function (response) {
-            if (!response.ok) {
-              throw new Error('Unable to load the reviews file.');
-            }
             return response.json();
           })
           .then(function (data) {
