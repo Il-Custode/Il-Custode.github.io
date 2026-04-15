@@ -7,8 +7,8 @@
   <title>THE ARCANE SHOP | Premium D&D 5e Adventures and DM Tools</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png?v=20260414">
 
-  <meta name="description" content="Premium D&D 5e adventures, mini campaigns, Dungeon Master tools, DM for hire services, and original narrative content built for immersive and memorable play." />
-  <meta name="keywords" content="D&D 5e adventures, Dungeons and Dragons modules, one-shot adventures, mini campaigns, DM tools, Dungeon Master for hire, premium D&D content, immersive storytelling" />
+  <meta name="description" content="THE ARCANE SHOP offers premium adventures, mini-campaigns, Dungeon Master tools, Dungeon Master for Hire services, and original content for Dungeons & Dragons 5th Edition." />
+  <meta name="keywords" content="Dungeons and Dragons, D&D 5e, D&D adventures, one-shot adventures, mini campaigns, Dungeon Master, Dungeon Master for Hire, D&D content, narrative modules, DM tools" />
   <meta name="author" content="THE ARCANE SHOP" />
   <meta name="robots" content="index, follow" />
 
@@ -18,13 +18,13 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="THE ARCANE SHOP" />
   <meta property="og:title" content="THE ARCANE SHOP | Premium D&D 5e Adventures and DM Tools" />
-  <meta property="og:description" content="Premium adventures, mini campaigns, Dungeon Master tools, DM for hire services, and immersive D&D 5e narrative content." />
+  <meta property="og:description" content="Premium adventures, narrative modules, Dungeon Master tools, Dungeon Master for Hire services, and original content for Dungeons & Dragons 5th Edition." />
   <meta property="og:url" content="https://thearcaneshop.com/index-en.html" />
   <meta property="og:image" content="https://thearcaneshop.com/assets/images/arcane-shop-keeper-welcome.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="THE ARCANE SHOP | Premium D&D 5e Adventures and DM Tools" />
-  <meta name="twitter:description" content="Premium D&D 5e adventures, DM tools, one-shots, mini campaigns, and DM for hire services." />
+  <meta name="twitter:description" content="Premium adventures, DM tools, narrative modules, and Dungeon Master for Hire services for Dungeons & Dragons 5th Edition." />
   <meta name="twitter:image" content="https://thearcaneshop.com/assets/images/arcane-shop-keeper-welcome.png" />
 
   <style>
@@ -84,6 +84,10 @@
       gap: 26px;
       flex-wrap: wrap;
       align-items: center;
+    }
+
+    nav .brand-item {
+      margin-right: 12px;
     }
 
     nav .brand-link {
@@ -443,14 +447,16 @@
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
     }
 
-    a.button.secondary {
+    a.button.secondary,
+    button.button.secondary {
       background: transparent;
       border: 1px solid rgba(212, 175, 55, 0.5);
       color: var(--text);
       box-shadow: none;
     }
 
-    a.button.secondary:hover {
+    a.button.secondary:hover,
+    button.button.secondary:hover {
       background: rgba(139, 107, 47, 0.16);
       border-color: rgba(212, 175, 55, 0.72);
     }
@@ -617,6 +623,10 @@
       display: none;
     }
 
+    .review-toggle-button {
+      margin-top: 12px;
+    }
+
     .hidden-brevo-form {
       display: none !important;
       visibility: hidden;
@@ -635,28 +645,6 @@
       font-size: 0.92rem;
       color: #c9b78d;
       background: rgba(0, 0, 0, 0.12);
-    }
-
-    .footer-brand {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .footer-brand-logo {
-      width: 34px;
-      height: 34px;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.12));
-    }
-
-    .footer-brand-text {
-      color: var(--gold);
-      font-weight: bold;
-      letter-spacing: 0.04em;
     }
 
     @media (max-width: 900px) {
@@ -775,18 +763,13 @@
       .review-stars span {
         font-size: 1.8rem;
       }
-
-      .footer-brand-logo {
-        width: 30px;
-        height: 30px;
-      }
     }
   </style>
 </head>
 <body>
   <nav>
     <ul>
-      <li>
+      <li class="brand-item">
         <a href="#home" class="brand-link">
           <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="brand-logo" />
           <span class="brand-text">THE ARCANE SHOP</span>
@@ -796,7 +779,7 @@
       <li><a href="#projects">Editorial Lines</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#arcane-circle-en">Arcane Circle</a></li>
-      <li><a href="#reviews-en">Reviews</a></li>
+      <li><a href="#reviews-en">Leave a Review</a></li>
       <li><a href="#special-thanks-en">Special Thanks</a></li>
       <li><a href="index.html">IT</a></li>
     </ul>
@@ -821,8 +804,8 @@
 
         <div class="about-content">
           <div class="section-label">
-            <img src="assets/images/arcane-master-glyph.png" alt="Author and Dungeon Master seal" class="glyph-icon" />
-            Author &amp; Dungeon Master
+            <img src="assets/images/arcane-master-glyph.png" alt="Author and DM seal" class="glyph-icon" />
+            Author &amp; DM
           </div>
           <h2>About Me</h2>
           <p>
@@ -969,7 +952,7 @@
     </div>
 
     <div class="card" id="reviews-en">
-      <h2>Reviews</h2>
+      <h2>Leave a Review</h2>
       <p>
         Share your experience with THE ARCANE SHOP. You can leave a review for the Dungeon Master for Hire service or for one of the published products.
       </p>
@@ -979,7 +962,7 @@
           <label class="review-label" for="review-category-en">Review category</label>
           <select id="review-category-en" class="review-select">
             <option value="">Select a category</option>
-            <option value="dm">Dungeon Master for Hire</option>
+            <option value="master">Dungeon Master for Hire</option>
             <option value="product">Products</option>
           </select>
         </div>
@@ -1003,19 +986,33 @@
         </div>
 
         <div class="review-field">
+          <label class="review-label" for="review-email-en">Your email</label>
+          <input
+            id="review-email-en"
+            class="gift-input"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="review-field">
           <label class="review-label" for="review-comment-en">Your review</label>
           <textarea
             id="review-comment-en"
             class="review-textarea"
-            placeholder="Write your review here"
+            placeholder="Write your experience here"
           ></textarea>
         </div>
 
-        <button id="review-submit-en" class="button" type="button">Publish Review</button>
+        <button id="review-submit-en" class="button" type="button">Submit Review</button>
         <div id="review-status-en" class="review-status" aria-live="polite"></div>
       </div>
 
       <div id="review-public-list-en" class="review-public-list"></div>
+      <button id="review-toggle-en" class="button secondary review-toggle-button" type="button" style="display:none;">
+        View More Reviews
+      </button>
     </div>
 
     <div class="card" id="special-thanks-en">
@@ -1044,10 +1041,6 @@
   </section>
 
   <footer>
-    <div class="footer-brand">
-      <img src="assets/images/arcane-shop-logo-symbol.png" alt="THE ARCANE SHOP logo" class="footer-brand-logo" />
-      <span class="footer-brand-text">THE ARCANE SHOP</span>
-    </div>
     © 2026 THE ARCANE SHOP - All rights reserved
   </footer>
 
@@ -1063,8 +1056,21 @@
     <input type="hidden" name="lists_25[]" value="3" />
     <input type="hidden" name="EMAIL" id="brevo-email-en" value="" />
     <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
-    <input type="hidden" name="locale" value="it" />
+    <input type="hidden" name="locale" value="en" />
     <input type="hidden" name="html_type" value="simple" />
+  </form>
+
+  <iframe name="review-hidden-frame-en" class="hidden-brevo-form" title="Review hidden submit"></iframe>
+
+  <form
+    id="review-hidden-form-en"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAD3l1m8oggvakx6AiwROGffpHprYcyVO8EsZStliSN1d2FRvS9qCaC074744FFxdPmMoS9yJSYbwXWDYonePeYEOuJez3jgYwUW-RuKDFFkNlwGM61E_NDXVkpWZlBCs1VGDA154c9Zm3uHxqOszg4S8k38IN5iNq0OubtRatzAQ7CSCNvWQUZLomibg5WVrTbMLLqgHFpcdUg=="
+    target="review-hidden-frame-en"
+  >
+    <input type="hidden" name="EMAIL" id="review-hidden-email-en" value="" />
+    <input type="hidden" name="NOME" id="review-hidden-comment-en" value="" />
   </form>
 
   <script src="assets/data/home-featured-en.js"></script>
@@ -1172,19 +1178,26 @@
 
   <script>
     (function () {
-      const storageKey = 'arcaneReviewsEn';
       const reviewCategory = document.getElementById('review-category-en');
       const reviewProductWrap = document.getElementById('review-product-wrap-en');
       const reviewProduct = document.getElementById('review-product-en');
       const starsBox = document.getElementById('review-stars-en');
+      const reviewEmail = document.getElementById('review-email-en');
       const reviewComment = document.getElementById('review-comment-en');
       const reviewSubmit = document.getElementById('review-submit-en');
       const reviewStatus = document.getElementById('review-status-en');
       const publicList = document.getElementById('review-public-list-en');
+      const reviewToggle = document.getElementById('review-toggle-en');
+
+      const reviewHiddenForm = document.getElementById('review-hidden-form-en');
+      const reviewHiddenEmail = document.getElementById('review-hidden-email-en');
+      const reviewHiddenComment = document.getElementById('review-hidden-comment-en');
 
       const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
-      let selectedStars = 0;
       let reviews = [];
+      let selectedStars = 0;
+      let showAllReviews = false;
+      const visibleReviews = 3;
 
       function setStatus(message, type) {
         reviewStatus.textContent = message;
@@ -1194,27 +1207,22 @@
         }
       }
 
-      function loadReviews() {
-        try {
-          const saved = localStorage.getItem(storageKey);
-          reviews = saved ? JSON.parse(saved) : [];
-          if (!Array.isArray(reviews)) {
-            reviews = [];
-          }
-        } catch (error) {
-          reviews = [];
-        }
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       }
 
-      function saveReviews() {
-        try {
-          localStorage.setItem(storageKey, JSON.stringify(reviews));
-        } catch (error) {
-        }
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
       }
 
       function renderProducts() {
         reviewProduct.innerHTML = '<option value="">Select a product</option>';
+
         products.forEach(function (product) {
           const option = document.createElement('option');
           option.value = product.id;
@@ -1224,12 +1232,40 @@
       }
 
       function renderReviews() {
-        publicList.innerHTML = reviews.map(function (review) {
-          return `<div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-      <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(review.stars)}</div>
-      <p style="margin:10px 0 0 0; padding:0; max-width:none;">${review.comment}</p>
-    </div>`;
+        if (!publicList) return;
+
+        if (!Array.isArray(reviews) || !reviews.length) {
+          publicList.innerHTML = '';
+          if (reviewToggle) {
+            reviewToggle.style.display = 'none';
+          }
+          return;
+        }
+
+        const visibleList = showAllReviews ? reviews : reviews.slice(0, visibleReviews);
+
+        publicList.innerHTML = visibleList.map(function (review) {
+          const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+          const safeComment = escapeHtml(review.comment || '');
+          const safeAuthor = escapeHtml(review.author || 'Verified customer');
+
+          return `
+            <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+              <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+              <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+              <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+            </div>
+          `;
         }).join('');
+
+        if (reviewToggle) {
+          if (reviews.length > visibleReviews) {
+            reviewToggle.style.display = 'inline-flex';
+            reviewToggle.textContent = showAllReviews ? 'Show Less' : 'View More Reviews';
+          } else {
+            reviewToggle.style.display = 'none';
+          }
+        }
       }
 
       function resetStars() {
@@ -1241,6 +1277,7 @@
 
       function updateCategoryVisibility() {
         const selectedCategory = reviewCategory.value;
+
         if (selectedCategory === 'product') {
           reviewProductWrap.style.display = 'block';
           renderProducts();
@@ -1250,20 +1287,49 @@
         }
       }
 
+      function loadReviews() {
+        fetch('assets/data/reviews-en.json', { cache: 'no-store' })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error('Unable to load the reviews file.');
+            }
+            return response.json();
+          })
+          .then(function (data) {
+            reviews = Array.isArray(data) ? data : [];
+            renderReviews();
+          })
+          .catch(function () {
+            reviews = [];
+            renderReviews();
+          });
+      }
+
       reviewCategory.addEventListener('change', updateCategoryVisibility);
 
       starsBox.addEventListener('click', function (e) {
         const value = Number(e.target.dataset.value || 0);
+
         if (!value) return;
+
         selectedStars = value;
+
         starsBox.querySelectorAll('span').forEach(function (star, index) {
           star.textContent = index < value ? '★' : '☆';
         });
       });
 
+      if (reviewToggle) {
+        reviewToggle.addEventListener('click', function () {
+          showAllReviews = !showAllReviews;
+          renderReviews();
+        });
+      }
+
       reviewSubmit.addEventListener('click', function () {
         const category = reviewCategory.value;
         const productId = reviewProduct.value;
+        const email = reviewEmail.value.trim();
         const comment = reviewComment.value.trim();
 
         if (!category) {
@@ -1273,7 +1339,7 @@
         }
 
         if (category === 'product' && !productId) {
-          setStatus('Select a product before publishing your review.', 'error');
+          setStatus('Select a product before submitting your review.', 'error');
           reviewProduct.focus();
           return;
         }
@@ -1283,34 +1349,56 @@
           return;
         }
 
+        if (!email) {
+          setStatus('Enter your email before submitting your review.', 'error');
+          reviewEmail.focus();
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          setStatus('That email address does not look valid. Please check it and try again.', 'error');
+          reviewEmail.focus();
+          return;
+        }
+
         if (!comment) {
-          setStatus('Write your review before publishing it.', 'error');
+          setStatus('Write your review before submitting it.', 'error');
           reviewComment.focus();
           return;
         }
 
-        reviews.unshift({
-          category: category,
-          productId: category === 'product' ? productId : '',
-          stars: selectedStars,
-          comment: comment
-        });
+        const productLabel = category === 'product'
+          ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
+          : 'None';
 
-        saveReviews();
-        renderReviews();
+        const fullReviewMessage =
+          'Category: ' + category + '\n' +
+          'Product: ' + productLabel + '\n' +
+          'Stars: ' + selectedStars + '\n' +
+          'Review:\n' + comment;
+
+        reviewHiddenEmail.value = email;
+        reviewHiddenComment.value = fullReviewMessage;
+
+        try {
+          reviewHiddenForm.submit();
+        } catch (error) {
+          setStatus('There was a problem submitting your review. Please try again shortly.', 'error');
+          return;
+        }
 
         reviewCategory.value = '';
         reviewProduct.value = '';
         reviewProductWrap.style.display = 'none';
+        reviewEmail.value = '';
         reviewComment.value = '';
         resetStars();
 
-        setStatus('Your review has been published successfully.', 'success');
+        setStatus('Thank you. Your review has been received and will be checked before publication.', 'success');
       });
 
-      loadReviews();
       updateCategoryVisibility();
-      renderReviews();
+      loadReviews();
     })();
   </script>
 </body>
