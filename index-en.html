@@ -1046,362 +1046,360 @@
 
   <iframe name="brevo-hidden-frame-en" class="hidden-brevo-form" title="Brevo hidden submit"></iframe>
 
-  <form
-    id="brevo-hidden-form-en"
-    class="hidden-brevo-form"
-    method="POST"
-    action="https://ffe81cbf.sibforms.com/serve/MUIFAAgQB3ZYuADX9Sw-aSyeoJ4j4I1TNKuI19fXgUxVd3Ln8iy_kRovaKY8QdCVK6WWV67551tjM8wE5g9eHzUpNhLc8JBnrg-RCpEtMEime9jGBnaldn2_yzf1rqu2NOYjqR7OSq4RCnELZpBeUiDL8WTyGeGo_nAOVUL2Ko5AuohJHBPpkkdEYR_KwfsF7mrTDyUQjYBNjQJa9w=="
-    target="brevo-hidden-frame-en"
-  >
-    <input type="hidden" name="lists_25[]" value="3" />
-    <input type="hidden" name="EMAIL" id="brevo-email-en" value="" />
-    <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
-    <input type="hidden" name="locale" value="en" />
-    <input type="hidden" name="html_type" value="simple" />
-  </form>
-
-  <iframe name="review-hidden-frame-en" class="hidden-brevo-form" title="Review hidden submit"></iframe>
-
-  <form
-  id="review-hidden-form-en"
+<form
+  id="brevo-hidden-form-en"
   class="hidden-brevo-form"
   method="POST"
-  action="https://ffe81cbf.sibforms.com/serve/MUIFAD3l1m8oggvakx6AiwROGffpHprYcyVO8EsZStliSN1d2FRvS9qCaC074744FFxdPmMoS9yJSYbwXWDYonePeYEOuJez3jgYwUW-RuKDFFkNlwGM61E_NDXVkpWZlBCs1VGDA154c9Zm3uHxqOszg4S8k38IN5iNq0OubtRatzAQ7CSCNvWQUZLomibg5WVrTbMLLqgHFpcdUg=="
-  target="review-hidden-frame-en"
+  action="https://ffe81cbf.sibforms.com/serve/MUIFAAgQB3ZYuADX9Sw-aSyeoJ4j4I1TNKuI19fXgUxVd3Ln8iy_kRovaKY8QdCVK6WWV67551tjM8wE5g9eHzUpNhLc8JBnrg-RCpEtMEime9jGBnaldn2_yzf1rqu2NOYjqR7OSq4RCnELZpBeUiDL8WTyGeGo_nAOVUL2Ko5AuohJHBPpkkdEYR_KwfsF7mrTDyUQjYBNjQJa9w=="
+  target="brevo-hidden-frame-en"
 >
-  <input type="hidden" name="lists_25[]" value="6" />
-  <input type="hidden" name="EMAIL" id="review-hidden-email-en" value="" />
-  <input type="hidden" name="NOME" id="review-hidden-comment-en" value="" />
+  <input type="hidden" name="lists_25[]" value="3" />
+  <input type="hidden" name="EMAIL" id="brevo-email-en" value="" />
+  <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
+  <input type="hidden" name="locale" value="en" />
+  <input type="hidden" name="html_type" value="simple" />
 </form>
 
-  <script src="assets/data/home-featured-en.js"></script>
-  <script src="assets/data/products-en.js"></script>
+<script src="assets/data/home-featured-en.js"></script>
+<script src="assets/data/products-en.js"></script>
 
-  <script>
-    (function () {
-      const featuredGrid = document.getElementById('home-featured-grid-en');
-      const featuredProducts = Array.isArray(window.arcaneHomeFeaturedEn) ? window.arcaneHomeFeaturedEn : [];
+<script>
+  (function () {
+    const featuredGrid = document.getElementById('home-featured-grid-en');
+    const featuredProducts = Array.isArray(window.arcaneHomeFeaturedEn) ? window.arcaneHomeFeaturedEn : [];
 
-      if (featuredGrid && featuredProducts.length) {
-        featuredGrid.innerHTML = featuredProducts.map(function (product) {
-          return `
-            <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
-              <div class="featured-item">
-                <div class="featured-label">${product.label}</div>
-                <h3>${product.title}</h3>
-                <p>${product.description}</p>
-              </div>
-            </a>
-          `;
-        }).join('');
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const giftOptions = document.querySelectorAll('.gift-option');
-      const emailInput = document.getElementById('gift-email-en');
-      const submitButton = document.getElementById('gift-submit-en');
-      const statusBox = document.getElementById('gift-status-en');
-
-      const brevoForm = document.getElementById('brevo-hidden-form-en');
-      const brevoEmail = document.getElementById('brevo-email-en');
-
-      let selectedGift = '';
-
-      function setStatus(message, type) {
-        statusBox.textContent = message;
-        statusBox.className = 'gift-status';
-        if (type) {
-          statusBox.classList.add(type);
-        }
-      }
-
-      function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      giftOptions.forEach(function (option) {
-        option.addEventListener('click', function () {
-          giftOptions.forEach(function (item) {
-            item.classList.remove('is-selected');
-          });
-
-          option.classList.add('is-selected');
-          selectedGift = option.getAttribute('data-gift') || '';
-          setStatus('Gift selected. Now enter your email and click the button.', 'success');
-        });
-      });
-
-      submitButton.addEventListener('click', function () {
-        const email = emailInput.value.trim();
-
-        if (!selectedGift) {
-          setStatus('Choose one of the four gifts first.', 'error');
-          return;
-        }
-
-        if (!email) {
-          setStatus('Enter your email before continuing.', 'error');
-          emailInput.focus();
-          return;
-        }
-
-        if (!isValidEmail(email)) {
-          setStatus('That email address does not look valid. Please check it and try again.', 'error');
-          emailInput.focus();
-          return;
-        }
-
-        brevoEmail.value = email;
-
-        try {
-          brevoForm.submit();
-        } catch (error) {
-          setStatus('There was a problem with your subscription. Please try again shortly.', 'error');
-          return;
-        }
-
-        setStatus('Perfect. Your welcome gift will open in a moment.', 'success');
-
-        const giftPath = 'gifts/en/' + selectedGift;
-        const tempLink = document.createElement('a');
-        tempLink.href = giftPath;
-        tempLink.target = '_blank';
-        tempLink.rel = 'noopener noreferrer';
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
-      });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const reviewCategory = document.getElementById('review-category-en');
-      const reviewProductWrap = document.getElementById('review-product-wrap-en');
-      const reviewProduct = document.getElementById('review-product-en');
-      const starsBox = document.getElementById('review-stars-en');
-      const reviewEmail = document.getElementById('review-email-en');
-      const reviewComment = document.getElementById('review-comment-en');
-      const reviewSubmit = document.getElementById('review-submit-en');
-      const reviewStatus = document.getElementById('review-status-en');
-      const publicList = document.getElementById('review-public-list-en');
-      const reviewToggle = document.getElementById('review-toggle-en');
-
-      const reviewHiddenForm = document.getElementById('review-hidden-form-en');
-      const reviewHiddenEmail = document.getElementById('review-hidden-email-en');
-      const reviewHiddenComment = document.getElementById('review-hidden-comment-en');
-
-      const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
-      let reviews = [];
-      let selectedStars = 0;
-      let showAllReviews = false;
-      const visibleReviews = 3;
-
-      function setStatus(message, type) {
-        reviewStatus.textContent = message;
-        reviewStatus.className = 'review-status';
-        if (type) {
-          reviewStatus.classList.add(type);
-        }
-      }
-
-      function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      function escapeHtml(value) {
-        return String(value)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
-
-      function renderProducts() {
-        reviewProduct.innerHTML = '<option value="">Select a product</option>';
-
-        products.forEach(function (product) {
-          const option = document.createElement('option');
-          option.value = product.id;
-          option.textContent = product.title;
-          reviewProduct.appendChild(option);
-        });
-      }
-
-      function renderReviews() {
-        if (!publicList) return;
-
-        if (!Array.isArray(reviews) || !reviews.length) {
-          publicList.innerHTML = '';
-          if (reviewToggle) {
-            reviewToggle.style.display = 'none';
-          }
-          return;
-        }
-
-        const visibleList = showAllReviews
-  ? reviews
-  : reviews.slice(-visibleReviews).reverse();
-
-publicList.innerHTML = visibleList.map(function (review) {
-  const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
-  const safeComment = escapeHtml(review.comment || '');
-  const safeAuthor = escapeHtml(review.author || 'Verified customer');
-
-  return `
-            <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-              <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
-              <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
-              <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+    if (featuredGrid && featuredProducts.length) {
+      featuredGrid.innerHTML = featuredProducts.map(function (product) {
+        return `
+          <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
+            <div class="featured-item">
+              <div class="featured-label">${product.label}</div>
+              <h3>${product.title}</h3>
+              <p>${product.description}</p>
             </div>
-          `;
-        }).join('');
+          </a>
+        `;
+      }).join('');
+    }
+  })();
+</script>
 
-        if (reviewToggle) {
-          if (reviews.length > visibleReviews) {
-            reviewToggle.style.display = 'inline-flex';
-            reviewToggle.textContent = showAllReviews ? 'Show Less' : 'View More Reviews';
-          } else {
-            reviewToggle.style.display = 'none';
-          }
-        }
+<script>
+  (function () {
+    const giftOptions = document.querySelectorAll('.gift-option');
+    const emailInput = document.getElementById('gift-email-en');
+    const submitButton = document.getElementById('gift-submit-en');
+    const statusBox = document.getElementById('gift-status-en');
+
+    const brevoForm = document.getElementById('brevo-hidden-form-en');
+    const brevoEmail = document.getElementById('brevo-email-en');
+
+    let selectedGift = '';
+
+    function setStatus(message, type) {
+      statusBox.textContent = message;
+      statusBox.className = 'gift-status';
+      if (type) {
+        statusBox.classList.add(type);
       }
+    }
 
-      function resetStars() {
-        selectedStars = 0;
-        starsBox.querySelectorAll('span').forEach(function (star) {
-          star.textContent = '☆';
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    giftOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        giftOptions.forEach(function (item) {
+          item.classList.remove('is-selected');
         });
-      }
 
-      function updateCategoryVisibility() {
-        const selectedCategory = reviewCategory.value;
-
-        if (selectedCategory === 'product') {
-          reviewProductWrap.style.display = 'block';
-          renderProducts();
-        } else {
-          reviewProductWrap.style.display = 'none';
-          reviewProduct.value = '';
-        }
-      }
-
-      function loadReviews() {
-        fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec', {
-          cache: 'no-store'
-        })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            reviews = Array.isArray(data) ? data : [];
-            renderReviews();
-          })
-          .catch(function () {
-            reviews = [];
-            renderReviews();
-          });
-      }
-
-      reviewCategory.addEventListener('change', updateCategoryVisibility);
-
-      starsBox.addEventListener('click', function (e) {
-        const value = Number(e.target.dataset.value || 0);
-
-        if (!value) return;
-
-        selectedStars = value;
-
-        starsBox.querySelectorAll('span').forEach(function (star, index) {
-          star.textContent = index < value ? '★' : '☆';
-        });
+        option.classList.add('is-selected');
+        selectedGift = option.getAttribute('data-gift') || '';
+        setStatus('Gift selected. Now enter your email and click the button.', 'success');
       });
+    });
+
+    submitButton.addEventListener('click', function () {
+      const email = emailInput.value.trim();
+
+      if (!selectedGift) {
+        setStatus('Choose one of the four gifts first.', 'error');
+        return;
+      }
+
+      if (!email) {
+        setStatus('Enter your email before continuing.', 'error');
+        emailInput.focus();
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        setStatus('That email address does not look valid. Please check it and try again.', 'error');
+        emailInput.focus();
+        return;
+      }
+
+      brevoEmail.value = email;
+
+      try {
+        brevoForm.submit();
+      } catch (error) {
+        setStatus('There was a problem with your subscription. Please try again shortly.', 'error');
+        return;
+      }
+
+      setStatus('Perfect. Your welcome gift will open in a moment.', 'success');
+
+      const giftPath = 'gifts/en/' + selectedGift;
+      const tempLink = document.createElement('a');
+      tempLink.href = giftPath;
+      tempLink.target = '_blank';
+      tempLink.rel = 'noopener noreferrer';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const reviewCategory = document.getElementById('review-category-en');
+    const reviewProductWrap = document.getElementById('review-product-wrap-en');
+    const reviewProduct = document.getElementById('review-product-en');
+    const starsBox = document.getElementById('review-stars-en');
+    const reviewName = document.getElementById('review-name-en');
+    const reviewEmail = document.getElementById('review-email-en');
+    const reviewComment = document.getElementById('review-comment-en');
+    const reviewSubmit = document.getElementById('review-submit-en');
+    const reviewStatus = document.getElementById('review-status-en');
+    const publicList = document.getElementById('review-public-list-en');
+    const reviewToggle = document.getElementById('review-toggle-en');
+
+    const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
+    let reviews = [];
+    let selectedStars = 0;
+    let showAllReviews = false;
+    const visibleReviews = 3;
+
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec';
+
+    function setStatus(message, type) {
+      reviewStatus.textContent = message;
+      reviewStatus.className = 'review-status';
+      if (type) {
+        reviewStatus.classList.add(type);
+      }
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderProducts() {
+      reviewProduct.innerHTML = '<option value="">Select a product</option>';
+
+      products.forEach(function (product) {
+        const option = document.createElement('option');
+        option.value = product.id;
+        option.textContent = product.title;
+        reviewProduct.appendChild(option);
+      });
+    }
+
+    function renderReviews() {
+      if (!publicList) return;
+
+      const visibleList = showAllReviews
+        ? reviews.slice().reverse()
+        : reviews.slice(-visibleReviews).reverse();
+
+      publicList.innerHTML = visibleList.map(function (review) {
+        const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+        const safeComment = escapeHtml(review.comment || '');
+        const safeAuthor = escapeHtml(review.author || 'Verified customer');
+
+        return `
+          <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+            <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+            <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+            <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+          </div>
+        `;
+      }).join('');
 
       if (reviewToggle) {
-        reviewToggle.addEventListener('click', function () {
-          showAllReviews = !showAllReviews;
+        if (reviews.length > visibleReviews) {
+          reviewToggle.style.display = 'inline-flex';
+          reviewToggle.textContent = showAllReviews ? 'Show less' : 'View more reviews';
+        } else {
+          reviewToggle.style.display = 'none';
+        }
+      }
+    }
+
+    function resetStars() {
+      selectedStars = 0;
+      starsBox.querySelectorAll('span').forEach(function (star) {
+        star.textContent = '☆';
+      });
+    }
+
+    function updateCategoryVisibility() {
+      const selectedCategory = reviewCategory.value;
+
+      if (selectedCategory === 'product') {
+        reviewProductWrap.style.display = 'block';
+        renderProducts();
+      } else {
+        reviewProductWrap.style.display = 'none';
+        reviewProduct.value = '';
+      }
+    }
+
+    function loadReviews() {
+      fetch(APPS_SCRIPT_URL, {
+        method: 'GET',
+        cache: 'no-store'
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          reviews = Array.isArray(data)
+            ? data.filter(function (review) {
+                return String(review.language || 'en').toLowerCase() === 'en';
+              })
+            : [];
+          renderReviews();
+        })
+        .catch(function () {
+          reviews = [];
           renderReviews();
         });
+    }
+
+    reviewCategory.addEventListener('change', updateCategoryVisibility);
+
+    starsBox.addEventListener('click', function (e) {
+      const value = Number(e.target.dataset.value || 0);
+
+      if (!value) return;
+
+      selectedStars = value;
+
+      starsBox.querySelectorAll('span').forEach(function (star, index) {
+        star.textContent = index < value ? '★' : '☆';
+      });
+    });
+
+    if (reviewToggle) {
+      reviewToggle.addEventListener('click', function () {
+        showAllReviews = !showAllReviews;
+        renderReviews();
+      });
+    }
+
+    reviewSubmit.addEventListener('click', function () {
+      const category = reviewCategory.value;
+      const productId = reviewProduct.value;
+      const publicName = reviewName ? reviewName.value.trim() : '';
+      const email = reviewEmail.value.trim();
+      const comment = reviewComment.value.trim();
+
+      if (!category) {
+        setStatus('Select a review category first.', 'error');
+        reviewCategory.focus();
+        return;
       }
 
-      reviewSubmit.addEventListener('click', function () {
-        const category = reviewCategory.value;
-        const productId = reviewProduct.value;
-        const email = reviewEmail.value.trim();
-        const comment = reviewComment.value.trim();
+      if (category === 'product' && !productId) {
+        setStatus('Select a product before submitting your review.', 'error');
+        reviewProduct.focus();
+        return;
+      }
 
-        if (!category) {
-          setStatus('Select a review category first.', 'error');
-          reviewCategory.focus();
-          return;
-        }
+      if (!selectedStars) {
+        setStatus('Choose a rating from 1 to 5 stars.', 'error');
+        return;
+      }
 
-        if (category === 'product' && !productId) {
-          setStatus('Select a product before submitting your review.', 'error');
-          reviewProduct.focus();
-          return;
-        }
+      if (reviewName && !publicName) {
+        setStatus('Choose the name to display publicly.', 'error');
+        reviewName.focus();
+        return;
+      }
 
-        if (!selectedStars) {
-          setStatus('Choose a rating from 1 to 5 stars.', 'error');
-          return;
-        }
+      if (!email || !isValidEmail(email)) {
+        setStatus('That email address does not look valid. Please check it and try again.', 'error');
+        reviewEmail.focus();
+        return;
+      }
 
-        if (!email) {
-          setStatus('Enter your email before submitting your review.', 'error');
-          reviewEmail.focus();
-          return;
-        }
+      if (!comment) {
+        setStatus('Write your review before submitting it.', 'error');
+        reviewComment.focus();
+        return;
+      }
 
-        if (!isValidEmail(email)) {
-          setStatus('That email address does not look valid. Please check it and try again.', 'error');
-          reviewEmail.focus();
-          return;
-        }
+      const productLabel = category === 'product'
+        ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
+        : 'Master for Hire';
 
-        if (!comment) {
-          setStatus('Write your review before submitting it.', 'error');
-          reviewComment.focus();
-          return;
-        }
+      reviewSubmit.disabled = true;
+      setStatus('Sending...', 'success');
 
-        const productLabel = category === 'product'
-          ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
-          : 'None';
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify({
+          language: 'en',
+          category: category,
+          product: productLabel,
+          stars: selectedStars,
+          publicName: publicName,
+          email: email,
+          comment: comment
+        })
+      })
+        .then(function () {
+          reviewCategory.value = '';
+          reviewProduct.value = '';
+          reviewProductWrap.style.display = 'none';
+          if (reviewName) reviewName.value = '';
+          reviewEmail.value = '';
+          reviewComment.value = '';
+          resetStars();
 
-        const fullReviewMessage =
-          'Category: ' + category + '\n' +
-          'Product: ' + productLabel + '\n' +
-          'Stars: ' + selectedStars + '\n' +
-          'Review:\n' + comment;
+          setStatus('Thank you. Your review was submitted successfully.', 'success');
 
-        reviewHiddenEmail.value = email;
-        reviewHiddenComment.value = fullReviewMessage;
-
-        try {
-          reviewHiddenForm.submit();
-        } catch (error) {
+          setTimeout(function () {
+            loadReviews();
+          }, 1500);
+        })
+        .catch(function () {
           setStatus('There was a problem submitting your review. Please try again shortly.', 'error');
-          return;
-        }
+        })
+        .finally(function () {
+          reviewSubmit.disabled = false;
+        });
+    });
 
-        reviewCategory.value = '';
-        reviewProduct.value = '';
-        reviewProductWrap.style.display = 'none';
-        reviewEmail.value = '';
-        reviewComment.value = '';
-        resetStars();
-
-        setStatus('Thank you. Your review has been received and will be checked before publication.', 'success');
-      });
-
-      updateCategoryVisibility();
-      loadReviews();
-    })();
-  </script>
+    updateCategoryVisibility();
+    loadReviews();
+  })();
+</script>
 </body>
 </html>
