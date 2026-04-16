@@ -447,16 +447,14 @@
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
     }
 
-    a.button.secondary,
-    button.button.secondary {
+    a.button.secondary {
       background: transparent;
       border: 1px solid rgba(212, 175, 55, 0.5);
       color: var(--text);
       box-shadow: none;
     }
 
-    a.button.secondary:hover,
-    button.button.secondary:hover {
+    a.button.secondary:hover {
       background: rgba(139, 107, 47, 0.16);
       border-color: rgba(212, 175, 55, 0.72);
     }
@@ -593,6 +591,44 @@
       letter-spacing: 0.02em;
     }
 
+    .review-label-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .review-label-row .review-label {
+      margin-bottom: 0;
+    }
+
+    .privacy-hint {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      color: var(--gold-soft);
+      font-size: 0.82rem;
+      font-weight: bold;
+      cursor: help;
+      background: rgba(212, 175, 55, 0.08);
+      line-height: 1;
+    }
+
+    .review-privacy-note {
+      margin: 6px 0 0 0;
+      padding: 0;
+      max-width: none;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text-soft);
+      text-align: left;
+    }
+
     .review-stars {
       display: flex;
       justify-content: center;
@@ -621,10 +657,6 @@
 
     .review-public-list:empty {
       display: none;
-    }
-
-    .review-toggle-button {
-      margin-top: 12px;
     }
 
     .hidden-brevo-form {
@@ -986,6 +1018,28 @@
         </div>
 
         <div class="review-field">
+          <div class="review-label-row">
+            <label class="review-label" for="review-name-en">Choose your name</label>
+            <span
+              class="privacy-hint"
+              title="We will only use this name to display the review publicly. Your email will never be shown."
+              aria-label="Privacy information"
+            >?</span>
+          </div>
+          <input
+            id="review-name-en"
+            class="gift-input"
+            type="text"
+            placeholder="Example: Andrew"
+            autocomplete="name"
+            maxlength="40"
+          />
+          <p class="review-privacy-note">
+            Publicly, only the chosen name will be shown, for example: “Andrew, verified user”. Your email will never be visible.
+          </p>
+        </div>
+
+        <div class="review-field">
           <label class="review-label" for="review-email-en">Your email</label>
           <input
             id="review-email-en"
@@ -1005,15 +1059,15 @@
           ></textarea>
         </div>
 
-        <button id="review-submit-en" class="button" type="button">Submit Review</button>
-<div id="review-status-en" class="review-status" aria-live="polite"></div>
-</div>
+        <button id="review-submit-en" class="button" type="button">Submit review</button>
+        <div id="review-status-en" class="review-status" aria-live="polite"></div>
+      </div>
 
-<div id="review-public-list-en" class="review-public-list"></div>
-<button id="review-toggle-en" class="button secondary review-toggle-button" type="button" style="display:none;">
-  View More Reviews
-</button>
-</div>
+      <div id="review-public-list-en" class="review-public-list"></div>
+      <button id="review-toggle-en" class="button secondary" type="button" style="display:none;">
+        View more reviews
+      </button>
+    </div>
 
     <div class="card" id="special-thanks-en">
       <h2>Special Thanks</h2>
@@ -1046,360 +1100,357 @@
 
   <iframe name="brevo-hidden-frame-en" class="hidden-brevo-form" title="Brevo hidden submit"></iframe>
 
-<form
-  id="brevo-hidden-form-en"
-  class="hidden-brevo-form"
-  method="POST"
-  action="https://ffe81cbf.sibforms.com/serve/MUIFAAgQB3ZYuADX9Sw-aSyeoJ4j4I1TNKuI19fXgUxVd3Ln8iy_kRovaKY8QdCVK6WWV67551tjM8wE5g9eHzUpNhLc8JBnrg-RCpEtMEime9jGBnaldn2_yzf1rqu2NOYjqR7OSq4RCnELZpBeUiDL8WTyGeGo_nAOVUL2Ko5AuohJHBPpkkdEYR_KwfsF7mrTDyUQjYBNjQJa9w=="
-  target="brevo-hidden-frame-en"
->
-  <input type="hidden" name="lists_25[]" value="3" />
-  <input type="hidden" name="EMAIL" id="brevo-email-en" value="" />
-  <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
-  <input type="hidden" name="locale" value="en" />
-  <input type="hidden" name="html_type" value="simple" />
-</form>
+  <form
+    id="brevo-hidden-form-en"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAAgQB3ZYuADX9Sw-aSyeoJ4j4I1TNKuI19fXgUxVd3Ln8iy_kRovaKY8QdCVK6WWV67551tjM8wE5g9eHzUpNhLc8JBnrg-RCpEtMEime9jGBnaldn2_yzf1rqu2NOYjqR7OSq4RCnELZpBeUiDL8WTyGeGo_nAOVUL2Ko5AuohJHBPpkkdEYR_KwfsF7mrTDyUQjYBNjQJa9w=="
+    target="brevo-hidden-frame-en"
+  >
+    <input type="hidden" name="lists_25[]" value="3" />
+    <input type="hidden" name="EMAIL" id="brevo-email-en" value="" />
+    <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="locale" value="en" />
+    <input type="hidden" name="html_type" value="simple" />
+  </form>
 
-<script src="assets/data/home-featured-en.js"></script>
-<script src="assets/data/products-en.js"></script>
+  <script src="assets/data/home-featured-en.js"></script>
+  <script src="assets/data/products-en.js"></script>
 
-<script>
-  (function () {
-    const featuredGrid = document.getElementById('home-featured-grid-en');
-    const featuredProducts = Array.isArray(window.arcaneHomeFeaturedEn) ? window.arcaneHomeFeaturedEn : [];
+  <script>
+    (function () {
+      const featuredGrid = document.getElementById('home-featured-grid-en');
+      const featuredProducts = Array.isArray(window.arcaneHomeFeaturedEn) ? window.arcaneHomeFeaturedEn : [];
 
-    if (featuredGrid && featuredProducts.length) {
-      featuredGrid.innerHTML = featuredProducts.map(function (product) {
-        return `
-          <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
-            <div class="featured-item">
-              <div class="featured-label">${product.label}</div>
-              <h3>${product.title}</h3>
-              <p>${product.description}</p>
-            </div>
-          </a>
-        `;
-      }).join('');
-    }
-  })();
-</script>
-
-<script>
-  (function () {
-    const giftOptions = document.querySelectorAll('.gift-option');
-    const emailInput = document.getElementById('gift-email-en');
-    const submitButton = document.getElementById('gift-submit-en');
-    const statusBox = document.getElementById('gift-status-en');
-
-    const brevoForm = document.getElementById('brevo-hidden-form-en');
-    const brevoEmail = document.getElementById('brevo-email-en');
-
-    let selectedGift = '';
-
-    function setStatus(message, type) {
-      statusBox.textContent = message;
-      statusBox.className = 'gift-status';
-      if (type) {
-        statusBox.classList.add(type);
+      if (featuredGrid && featuredProducts.length) {
+        featuredGrid.innerHTML = featuredProducts.map(function (product) {
+          return `
+            <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
+              <div class="featured-item">
+                <div class="featured-label">${product.label}</div>
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+              </div>
+            </a>
+          `;
+        }).join('');
       }
-    }
+    })();
+  </script>
 
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+  <script>
+    (function () {
+      const giftOptions = document.querySelectorAll('.gift-option');
+      const emailInput = document.getElementById('gift-email-en');
+      const submitButton = document.getElementById('gift-submit-en');
+      const statusBox = document.getElementById('gift-status-en');
 
-    giftOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        giftOptions.forEach(function (item) {
-          item.classList.remove('is-selected');
+      const brevoForm = document.getElementById('brevo-hidden-form-en');
+      const brevoEmail = document.getElementById('brevo-email-en');
+
+      let selectedGift = '';
+
+      function setStatus(message, type) {
+        statusBox.textContent = message;
+        statusBox.className = 'gift-status';
+        if (type) statusBox.classList.add(type);
+      }
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      giftOptions.forEach(function (option) {
+        option.addEventListener('click', function () {
+          giftOptions.forEach(function (item) {
+            item.classList.remove('is-selected');
+          });
+
+          option.classList.add('is-selected');
+          selectedGift = option.getAttribute('data-gift') || '';
+          setStatus('Gift selected. Now enter your email and click the button.', 'success');
         });
-
-        option.classList.add('is-selected');
-        selectedGift = option.getAttribute('data-gift') || '';
-        setStatus('Gift selected. Now enter your email and click the button.', 'success');
       });
-    });
 
-    submitButton.addEventListener('click', function () {
-      const email = emailInput.value.trim();
+      submitButton.addEventListener('click', function () {
+        const email = emailInput.value.trim();
 
-      if (!selectedGift) {
-        setStatus('Choose one of the four gifts first.', 'error');
-        return;
-      }
+        if (!selectedGift) {
+          setStatus('Choose one of the four gifts first.', 'error');
+          return;
+        }
 
-      if (!email) {
-        setStatus('Enter your email before continuing.', 'error');
-        emailInput.focus();
-        return;
-      }
+        if (!email) {
+          setStatus('Enter your email before continuing.', 'error');
+          emailInput.focus();
+          return;
+        }
 
-      if (!isValidEmail(email)) {
-        setStatus('That email address does not look valid. Please check it and try again.', 'error');
-        emailInput.focus();
-        return;
-      }
+        if (!isValidEmail(email)) {
+          setStatus('That email address does not look valid. Please check it and try again.', 'error');
+          emailInput.focus();
+          return;
+        }
 
-      brevoEmail.value = email;
+        brevoEmail.value = email;
 
-      try {
-        brevoForm.submit();
-      } catch (error) {
-        setStatus('There was a problem with your subscription. Please try again shortly.', 'error');
-        return;
-      }
+        try {
+          brevoForm.submit();
+        } catch (error) {
+          setStatus('There was a problem with your subscription. Please try again shortly.', 'error');
+          return;
+        }
 
-      setStatus('Perfect. Your welcome gift will open in a moment.', 'success');
+        setStatus('Perfect. Your welcome gift will open in a moment.', 'success');
 
-      const giftPath = 'gifts/en/' + selectedGift;
-      const tempLink = document.createElement('a');
-      tempLink.href = giftPath;
-      tempLink.target = '_blank';
-      tempLink.rel = 'noopener noreferrer';
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    const reviewCategory = document.getElementById('review-category-en');
-    const reviewProductWrap = document.getElementById('review-product-wrap-en');
-    const reviewProduct = document.getElementById('review-product-en');
-    const starsBox = document.getElementById('review-stars-en');
-    const reviewName = document.getElementById('review-name-en');
-    const reviewEmail = document.getElementById('review-email-en');
-    const reviewComment = document.getElementById('review-comment-en');
-    const reviewSubmit = document.getElementById('review-submit-en');
-    const reviewStatus = document.getElementById('review-status-en');
-    const publicList = document.getElementById('review-public-list-en');
-    const reviewToggle = document.getElementById('review-toggle-en');
-
-    const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
-    let reviews = [];
-    let selectedStars = 0;
-    let showAllReviews = false;
-    const visibleReviews = 3;
-
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec';
-
-    function setStatus(message, type) {
-      reviewStatus.textContent = message;
-      reviewStatus.className = 'review-status';
-      if (type) {
-        reviewStatus.classList.add(type);
-      }
-    }
-
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function escapeHtml(value) {
-      return String(value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function renderProducts() {
-      reviewProduct.innerHTML = '<option value="">Select a product</option>';
-
-      products.forEach(function (product) {
-        const option = document.createElement('option');
-        option.value = product.id;
-        option.textContent = product.title;
-        reviewProduct.appendChild(option);
+        const giftPath = 'gifts/en/' + selectedGift;
+        const tempLink = document.createElement('a');
+        tempLink.href = giftPath;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
       });
-    }
+    })();
+  </script>
 
-    function renderReviews() {
-      if (!publicList) return;
+  <script>
+    (function () {
+      const reviewCategory = document.getElementById('review-category-en');
+      const reviewProductWrap = document.getElementById('review-product-wrap-en');
+      const reviewProduct = document.getElementById('review-product-en');
+      const starsBox = document.getElementById('review-stars-en');
+      const reviewName = document.getElementById('review-name-en');
+      const reviewEmail = document.getElementById('review-email-en');
+      const reviewComment = document.getElementById('review-comment-en');
+      const reviewSubmit = document.getElementById('review-submit-en');
+      const reviewStatus = document.getElementById('review-status-en');
+      const publicList = document.getElementById('review-public-list-en');
+      const reviewToggle = document.getElementById('review-toggle-en');
 
-      const visibleList = showAllReviews
-        ? reviews.slice().reverse()
-        : reviews.slice(-visibleReviews).reverse();
+      const products = Array.isArray(window.arcaneProductsEn) ? window.arcaneProductsEn : [];
+      let reviews = [];
+      let selectedStars = 0;
+      let showAllReviews = false;
+      const visibleReviews = 3;
 
-      publicList.innerHTML = visibleList.map(function (review) {
-        const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
-        const safeComment = escapeHtml(review.comment || '');
-        const safeAuthor = escapeHtml(review.author || 'Verified customer');
+      const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec';
 
-        return `
-          <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-            <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
-            <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
-            <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
-          </div>
-        `;
-      }).join('');
+      function setStatus(message, type) {
+        reviewStatus.textContent = message;
+        reviewStatus.className = 'review-status';
+        if (type) reviewStatus.classList.add(type);
+      }
 
-      if (reviewToggle) {
-        if (reviews.length > visibleReviews) {
-          reviewToggle.style.display = 'inline-flex';
-          reviewToggle.textContent = showAllReviews ? 'Show less' : 'View more reviews';
-        } else {
-          reviewToggle.style.display = 'none';
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function renderProducts() {
+        reviewProduct.innerHTML = '<option value="">Select a product</option>';
+
+        products.forEach(function (product) {
+          const option = document.createElement('option');
+          option.value = product.id;
+          option.textContent = product.title;
+          reviewProduct.appendChild(option);
+        });
+      }
+
+      function renderReviews() {
+        if (!publicList) return;
+
+        const visibleList = showAllReviews
+          ? reviews.slice().reverse()
+          : reviews.slice(-visibleReviews).reverse();
+
+        publicList.innerHTML = visibleList.map(function (review) {
+          const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+          const safeComment = escapeHtml(review.comment || '');
+          const safeAuthor = escapeHtml(review.author || 'Verified customer');
+
+          return `
+            <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+              <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+              <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+              <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+            </div>
+          `;
+        }).join('');
+
+        if (reviewToggle) {
+          if (reviews.length > visibleReviews) {
+            reviewToggle.style.display = 'inline-flex';
+            reviewToggle.textContent = showAllReviews
+              ? 'Show less'
+              : 'View more reviews';
+          } else {
+            reviewToggle.style.display = 'none';
+          }
         }
       }
-    }
 
-    function resetStars() {
-      selectedStars = 0;
-      starsBox.querySelectorAll('span').forEach(function (star) {
-        star.textContent = '☆';
-      });
-    }
-
-    function updateCategoryVisibility() {
-      const selectedCategory = reviewCategory.value;
-
-      if (selectedCategory === 'product') {
-        reviewProductWrap.style.display = 'block';
-        renderProducts();
-      } else {
-        reviewProductWrap.style.display = 'none';
-        reviewProduct.value = '';
-      }
-    }
-
-    function loadReviews() {
-      fetch(APPS_SCRIPT_URL, {
-        method: 'GET',
-        cache: 'no-store'
-      })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          reviews = Array.isArray(data)
-            ? data.filter(function (review) {
-                return String(review.language || 'en').toLowerCase() === 'en';
-              })
-            : [];
-          renderReviews();
-        })
-        .catch(function () {
-          reviews = [];
-          renderReviews();
+      function resetStars() {
+        selectedStars = 0;
+        starsBox.querySelectorAll('span').forEach(function (star) {
+          star.textContent = '☆';
         });
-    }
-
-    reviewCategory.addEventListener('change', updateCategoryVisibility);
-
-    starsBox.addEventListener('click', function (e) {
-      const value = Number(e.target.dataset.value || 0);
-
-      if (!value) return;
-
-      selectedStars = value;
-
-      starsBox.querySelectorAll('span').forEach(function (star, index) {
-        star.textContent = index < value ? '★' : '☆';
-      });
-    });
-
-    if (reviewToggle) {
-      reviewToggle.addEventListener('click', function () {
-        showAllReviews = !showAllReviews;
-        renderReviews();
-      });
-    }
-
-    reviewSubmit.addEventListener('click', function () {
-      const category = reviewCategory.value;
-      const productId = reviewProduct.value;
-      const publicName = reviewName ? reviewName.value.trim() : '';
-      const email = reviewEmail.value.trim();
-      const comment = reviewComment.value.trim();
-
-      if (!category) {
-        setStatus('Select a review category first.', 'error');
-        reviewCategory.focus();
-        return;
       }
 
-      if (category === 'product' && !productId) {
-        setStatus('Select a product before submitting your review.', 'error');
-        reviewProduct.focus();
-        return;
-      }
+      function updateCategoryVisibility() {
+        const selectedCategory = reviewCategory.value;
 
-      if (!selectedStars) {
-        setStatus('Choose a rating from 1 to 5 stars.', 'error');
-        return;
-      }
-
-      if (reviewName && !publicName) {
-        setStatus('Choose the name to display publicly.', 'error');
-        reviewName.focus();
-        return;
-      }
-
-      if (!email || !isValidEmail(email)) {
-        setStatus('That email address does not look valid. Please check it and try again.', 'error');
-        reviewEmail.focus();
-        return;
-      }
-
-      if (!comment) {
-        setStatus('Write your review before submitting it.', 'error');
-        reviewComment.focus();
-        return;
-      }
-
-      const productLabel = category === 'product'
-        ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
-        : 'Master for Hire';
-
-      reviewSubmit.disabled = true;
-      setStatus('Sending...', 'success');
-
-      fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify({
-          language: 'en',
-          category: category,
-          product: productLabel,
-          stars: selectedStars,
-          publicName: publicName,
-          email: email,
-          comment: comment
-        })
-      })
-        .then(function () {
-          reviewCategory.value = '';
-          reviewProduct.value = '';
+        if (selectedCategory === 'product') {
+          reviewProductWrap.style.display = 'block';
+          renderProducts();
+        } else {
           reviewProductWrap.style.display = 'none';
-          if (reviewName) reviewName.value = '';
-          reviewEmail.value = '';
-          reviewComment.value = '';
-          resetStars();
+          reviewProduct.value = '';
+        }
+      }
 
-          setStatus('Thank you. Your review was submitted successfully.', 'success');
+      function loadReviews() {
+        fetch(APPS_SCRIPT_URL, {
+          method: 'GET',
+          cache: 'no-store'
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            reviews = Array.isArray(data)
+              ? data.filter(function (review) {
+                  return String(review.language || 'en').toLowerCase() === 'en';
+                })
+              : [];
+            renderReviews();
+          })
+          .catch(function () {
+            reviews = [];
+            renderReviews();
+          });
+      }
 
-          setTimeout(function () {
-            loadReviews();
-          }, 1500);
-        })
-        .catch(function () {
-          setStatus('There was a problem submitting your review. Please try again shortly.', 'error');
-        })
-        .finally(function () {
-          reviewSubmit.disabled = false;
+      reviewCategory.addEventListener('change', updateCategoryVisibility);
+
+      starsBox.addEventListener('click', function (e) {
+        const value = Number(e.target.dataset.value || 0);
+        if (!value) return;
+
+        selectedStars = value;
+
+        starsBox.querySelectorAll('span').forEach(function (star, index) {
+          star.textContent = index < value ? '★' : '☆';
         });
-    });
+      });
 
-    updateCategoryVisibility();
-    loadReviews();
-  })();
-</script>
+      if (reviewToggle) {
+        reviewToggle.addEventListener('click', function () {
+          showAllReviews = !showAllReviews;
+          renderReviews();
+        });
+      }
+
+      reviewSubmit.addEventListener('click', function () {
+        const category = reviewCategory.value;
+        const productId = reviewProduct.value;
+        const publicName = reviewName.value.trim();
+        const email = reviewEmail.value.trim();
+        const comment = reviewComment.value.trim();
+
+        if (!category) {
+          setStatus('Select a review category first.', 'error');
+          reviewCategory.focus();
+          return;
+        }
+
+        if (category === 'product' && !productId) {
+          setStatus('Select a product before submitting your review.', 'error');
+          reviewProduct.focus();
+          return;
+        }
+
+        if (!selectedStars) {
+          setStatus('Choose a rating from 1 to 5 stars.', 'error');
+          return;
+        }
+
+        if (!publicName) {
+          setStatus('Choose the name to display publicly.', 'error');
+          reviewName.focus();
+          return;
+        }
+
+        if (!email || !isValidEmail(email)) {
+          setStatus('Enter a valid email address.', 'error');
+          reviewEmail.focus();
+          return;
+        }
+
+        if (!comment) {
+          setStatus('Write your review before submitting it.', 'error');
+          reviewComment.focus();
+          return;
+        }
+
+        const productLabel = category === 'product'
+          ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
+          : 'Dungeon Master for Hire';
+
+        reviewSubmit.disabled = true;
+        setStatus('Sending...', 'success');
+
+        fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify({
+            language: 'en',
+            category: category,
+            product: productLabel,
+            stars: selectedStars,
+            publicName: publicName,
+            email: email,
+            comment: comment
+          })
+        })
+          .then(function () {
+            reviewCategory.value = '';
+            reviewProduct.value = '';
+            reviewProductWrap.style.display = 'none';
+            reviewName.value = '';
+            reviewEmail.value = '';
+            reviewComment.value = '';
+            resetStars();
+
+            setStatus('Thank you. Your review was submitted successfully.', 'success');
+
+            setTimeout(function () {
+              loadReviews();
+            }, 1500);
+          })
+          .catch(function () {
+            setStatus('There was a problem submitting your review. Please try again shortly.', 'error');
+          })
+          .finally(function () {
+            reviewSubmit.disabled = false;
+          });
+      });
+
+      updateCategoryVisibility();
+      loadReviews();
+    })();
+  </script>
 </body>
 </html>
