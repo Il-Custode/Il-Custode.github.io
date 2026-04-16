@@ -1114,23 +1114,6 @@
   <input type="hidden" name="html_type" value="simple" />
 </form>
 
-<iframe name="review-hidden-frame-it" class="hidden-brevo-form" title="Review hidden submit"></iframe>
-
-<form
-  id="review-hidden-form-it"
-  class="hidden-brevo-form"
-  method="POST"
-  action="https://ffe81cbf.sibforms.com/serve/MUIFAD3l1m8oggvakx6AiwROGffpHprYcyVO8EsZStliSN1d2FRvS9qCaC074744FFxdPmMoS9yJSYbwXWDYonePeYEOuJez3jgYwUW-RuKDFFkNlwGM61E_NDXVkpWZlBCs1VGDA154c9Zm3uHxqOszg4S8k38IN5iNq0OubtRatzAQ7CSCNvWQUZLomibg5WVrTbMLLqgHFpcdUg=="
-  target="review-hidden-frame-it"
->
-  <input type="hidden" name="lists_25[]" value="6" />
-  <input type="hidden" name="EMAIL" id="review-hidden-email-it" value="" />
-  <input type="hidden" name="NOME" id="review-hidden-comment-it" value="" />
-  <input type="hidden" name="html_type" value="simple" />
-  <input type="hidden" name="locale" value="it" />
-  <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
-</form>
-
 <script src="assets/data/home-featured-it.js"></script>
 <script src="assets/data/products-it.js"></script>
 
@@ -1288,7 +1271,7 @@
       if (!publicList) return;
 
       const visibleList = showAllReviews
-        ? reviews
+        ? reviews.slice().reverse()
         : reviews.slice(-visibleReviews).reverse();
 
       publicList.innerHTML = visibleList.map(function (review) {
@@ -1338,13 +1321,18 @@
 
     function loadReviews() {
       fetch(APPS_SCRIPT_URL, {
+        method: 'GET',
         cache: 'no-store'
       })
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          reviews = Array.isArray(data) ? data : [];
+          reviews = Array.isArray(data)
+            ? data.filter(function (review) {
+                return String(review.language || 'it').toLowerCase() === 'it';
+              })
+            : [];
           renderReviews();
         })
         .catch(function () {
@@ -1425,8 +1413,7 @@
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         headers: {
-  'Content-Type': 'application/json'
-}
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           language: 'it',
@@ -1454,7 +1441,8 @@
           reviewComment.value = '';
           resetStars();
 
-          setStatus('Grazie. La recensione è stata ricevuta e sarà verificata.', 'success');
+          setStatus('Grazie. La recensione è stata inviata e pubblicata automaticamente.', 'success');
+          loadReviews();
         })
         .catch(function () {
           setStatus('C’è stato un problema durante l’invio della recensione. Riprova tra poco.', 'error');
