@@ -591,6 +591,44 @@
       letter-spacing: 0.02em;
     }
 
+    .review-label-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .review-label-row .review-label {
+      margin-bottom: 0;
+    }
+
+    .privacy-hint {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      color: var(--gold-soft);
+      font-size: 0.82rem;
+      font-weight: bold;
+      cursor: help;
+      background: rgba(212, 175, 55, 0.08);
+      line-height: 1;
+    }
+
+    .review-privacy-note {
+      margin: 6px 0 0 0;
+      padding: 0;
+      max-width: none;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text-soft);
+      text-align: left;
+    }
+
     .review-stars {
       display: flex;
       justify-content: center;
@@ -980,34 +1018,55 @@
         </div>
 
         <div class="review-field">
-  <label class="review-label" for="review-email-it">La tua email</label>
-  <input
-    id="review-email-it"
-    class="gift-input"
-    type="email"
-    placeholder="Inserisci la tua email"
-    autocomplete="email"
-  />
-</div>
+          <div class="review-label-row">
+            <label class="review-label" for="review-name-it">Scegli il tuo nome</label>
+            <span
+              class="privacy-hint"
+              title="Useremo solo questo nome per mostrare la recensione in forma pubblica. La tua email non verrà mai mostrata."
+              aria-label="Informazioni privacy"
+            >?</span>
+          </div>
+          <input
+            id="review-name-it"
+            class="gift-input"
+            type="text"
+            placeholder="Es. Andrea"
+            autocomplete="name"
+            maxlength="40"
+          />
+          <p class="review-privacy-note">
+            In pubblico verrà mostrato solo il nome scelto, ad esempio: “Andrea, utente verificato”. La tua email non sarà mai visibile.
+          </p>
+        </div>
 
-<div class="review-field">
-  <label class="review-label" for="review-comment-it">La tua recensione</label>
-  <textarea
-    id="review-comment-it"
-    class="review-textarea"
-    placeholder="Scrivi qui la tua esperienza"
-  ></textarea>
-</div>
+        <div class="review-field">
+          <label class="review-label" for="review-email-it">La tua email</label>
+          <input
+            id="review-email-it"
+            class="gift-input"
+            type="email"
+            placeholder="Inserisci la tua email"
+            autocomplete="email"
+          />
+        </div>
 
-<button id="review-submit-it" class="button" type="button">Invia recensione</button>
-<div id="review-status-it" class="review-status" aria-live="polite"></div>
+        <div class="review-field">
+          <label class="review-label" for="review-comment-it">La tua recensione</label>
+          <textarea
+            id="review-comment-it"
+            class="review-textarea"
+            placeholder="Scrivi qui la tua esperienza"
+          ></textarea>
+        </div>
 
+        <button id="review-submit-it" class="button" type="button">Invia recensione</button>
+        <div id="review-status-it" class="review-status" aria-live="polite"></div>
       </div>
 
       <div id="review-public-list-it" class="review-public-list"></div>
-<button id="review-toggle-it" class="button secondary" type="button" style="display:none;">
-  Guarda le altre recensioni
-</button>
+      <button id="review-toggle-it" class="button secondary" type="button" style="display:none;">
+        Guarda le altre recensioni
+      </button>
     </div>
 
     <div class="card" id="ringraziamenti-speciali">
@@ -1041,345 +1100,357 @@
 
   <iframe name="brevo-hidden-frame-it" class="hidden-brevo-form" title="Brevo hidden submit"></iframe>
 
-    <form
-  id="brevo-hidden-form-it"
-  class="hidden-brevo-form"
-  method="POST"
-  action="https://ffe81cbf.sibforms.com/serve/MUIFAPOCcN7NI6Jtili9UANfGgmpTmGygFJYkVec0EIf4gJhwFj829W3zUeh22N43Z8O9Jy-FsHZR3lU9cOngC0rawTU28ENSVOBWGW5qTH95IFuFXyx8wmpMZPjoTAD8Jv2qAwS37sQ3vNv5uIDQjJB2OWpMk1F_etT5wtyDuhW80_xXvIdv6ReeIraOHQjuJsf9f5Jmxsf9ApU6g=="
-  target="brevo-hidden-frame-it"
->
-  <input type="hidden" name="lists_25[]" value="2" />
-  <input type="hidden" name="EMAIL" id="brevo-email-it" value="" />
-  <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
-  <input type="hidden" name="locale" value="it" />
-  <input type="hidden" name="html_type" value="simple" />
-</form>
+  <form
+    id="brevo-hidden-form-it"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAPOCcN7NI6Jtili9UANfGgmpTmGygFJYkVec0EIf4gJhwFj829W3zUeh22N43Z8O9Jy-FsHZR3lU9cOngC0rawTU28ENSVOBWGW5qTH95IFuFXyx8wmpMZPjoTAD8Jv2qAwS37sQ3vNv5uIDQjJB2OWpMk1F_etT5wtyDuhW80_xXvIdv6ReeIraOHQjuJsf9f5Jmxsf9ApU6g=="
+    target="brevo-hidden-frame-it"
+  >
+    <input type="hidden" name="lists_25[]" value="2" />
+    <input type="hidden" name="EMAIL" id="brevo-email-it" value="" />
+    <input type="text" name="email_address_check" value="" class="hidden-brevo-form" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="locale" value="it" />
+    <input type="hidden" name="html_type" value="simple" />
+  </form>
 
-<iframe name="review-hidden-frame-it" class="hidden-brevo-form" title="Review hidden submit"></iframe>
+  <iframe name="review-hidden-frame-it" class="hidden-brevo-form" title="Review hidden submit"></iframe>
 
-<form
-  id="review-hidden-form-it"
-  class="hidden-brevo-form"
-  method="POST"
-  action="https://ffe81cbf.sibforms.com/serve/MUIFAD3l1m8oggvakx6AiwROGffpHprYcyVO8EsZStliSN1d2FRvS9qCaC074744FFxdPmMoS9yJSYbwXWDYonePeYEOuJez3jgYwUW-RuKDFFkNlwGM61E_NDXVkpWZlBCs1VGDA154c9Zm3uHxqOszg4S8k38IN5iNq0OubtRatzAQ7CSCNvWQUZLomibg5WVrTbMLLqgHFpcdUg=="
-  target="review-hidden-frame-it"
->
-  <input type="hidden" name="lists_25[]" value="6" />
-  <input type="hidden" name="EMAIL" id="review-hidden-email-it" value="" />
-  <input type="hidden" name="NOME" id="review-hidden-comment-it" value="" />
-</form>
+  <form
+    id="review-hidden-form-it"
+    class="hidden-brevo-form"
+    method="POST"
+    action="https://ffe81cbf.sibforms.com/serve/MUIFAD3l1m8oggvakx6AiwROGffpHprYcyVO8EsZStliSN1d2FRvS9qCaC074744FFxdPmMoS9yJSYbwXWDYonePeYEOuJez3jgYwUW-RuKDFFkNlwGM61E_NDXVkpWZlBCs1VGDA154c9Zm3uHxqOszg4S8k38IN5iNq0OubtRatzAQ7CSCNvWQUZLomibg5WVrTbMLLqgHFpcdUg=="
+    target="review-hidden-frame-it"
+  >
+    <input type="hidden" name="lists_25[]" value="6" />
+    <input type="hidden" name="EMAIL" id="review-hidden-email-it" value="" />
+    <input type="hidden" name="PUBLIC_NAME" id="review-hidden-name-it" value="" />
+    <input type="hidden" name="NOME" id="review-hidden-comment-it" value="" />
+  </form>
 
-<script src="assets/data/home-featured-it.js"></script>
-<script src="assets/data/products-it.js"></script>
+  <script src="assets/data/home-featured-it.js"></script>
+  <script src="assets/data/products-it.js"></script>
 
-<script>
-  (function () {
-    const featuredGrid = document.getElementById('home-featured-grid-it');
-    const featuredProducts = Array.isArray(window.arcaneHomeFeaturedIt) ? window.arcaneHomeFeaturedIt : [];
+  <script>
+    (function () {
+      const featuredGrid = document.getElementById('home-featured-grid-it');
+      const featuredProducts = Array.isArray(window.arcaneHomeFeaturedIt) ? window.arcaneHomeFeaturedIt : [];
 
-    if (featuredGrid && featuredProducts.length) {
-      featuredGrid.innerHTML = featuredProducts.map(function (product) {
-        return `
-          <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
-            <div class="featured-item">
-              <div class="featured-label">${product.label}</div>
-              <h3>${product.title}</h3>
-              <p>${product.description}</p>
-            </div>
-          </a>
-        `;
-      }).join('');
-    }
-  })();
-</script>
+      if (featuredGrid && featuredProducts.length) {
+        featuredGrid.innerHTML = featuredProducts.map(function (product) {
+          return `
+            <a class="featured-item-link" href="${product.link}" target="_blank" rel="noopener noreferrer">
+              <div class="featured-item">
+                <div class="featured-label">${product.label}</div>
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+              </div>
+            </a>
+          `;
+        }).join('');
+      }
+    })();
+  </script>
 
-<script>
-  (function () {
-    const giftOptions = document.querySelectorAll('.gift-option');
-    const emailInput = document.getElementById('gift-email-it');
-    const submitButton = document.getElementById('gift-submit-it');
-    const statusBox = document.getElementById('gift-status-it');
+  <script>
+    (function () {
+      const giftOptions = document.querySelectorAll('.gift-option');
+      const emailInput = document.getElementById('gift-email-it');
+      const submitButton = document.getElementById('gift-submit-it');
+      const statusBox = document.getElementById('gift-status-it');
 
-    const brevoForm = document.getElementById('brevo-hidden-form-it');
-    const brevoEmail = document.getElementById('brevo-email-it');
+      const brevoForm = document.getElementById('brevo-hidden-form-it');
+      const brevoEmail = document.getElementById('brevo-email-it');
 
-    let selectedGift = '';
+      let selectedGift = '';
 
-    function setStatus(message, type) {
-      statusBox.textContent = message;
-      statusBox.className = 'gift-status';
-      if (type) statusBox.classList.add(type);
-    }
+      function setStatus(message, type) {
+        statusBox.textContent = message;
+        statusBox.className = 'gift-status';
+        if (type) statusBox.classList.add(type);
+      }
 
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
 
-    giftOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        giftOptions.forEach(function (item) {
-          item.classList.remove('is-selected');
+      giftOptions.forEach(function (option) {
+        option.addEventListener('click', function () {
+          giftOptions.forEach(function (item) {
+            item.classList.remove('is-selected');
+          });
+
+          option.classList.add('is-selected');
+          selectedGift = option.getAttribute('data-gift') || '';
+          setStatus('Dono selezionato. Ora inserisci la tua email e clicca sul pulsante.', 'success');
         });
-
-        option.classList.add('is-selected');
-        selectedGift = option.getAttribute('data-gift') || '';
-        setStatus('Dono selezionato. Ora inserisci la tua email e clicca sul pulsante.', 'success');
       });
-    });
 
-    submitButton.addEventListener('click', function () {
-      const email = emailInput.value.trim();
+      submitButton.addEventListener('click', function () {
+        const email = emailInput.value.trim();
 
-      if (!selectedGift) {
-        setStatus('Prima scegli uno dei quattro doni.', 'error');
-        return;
-      }
+        if (!selectedGift) {
+          setStatus('Prima scegli uno dei quattro doni.', 'error');
+          return;
+        }
 
-      if (!email) {
-        setStatus('Inserisci la tua email prima di continuare.', 'error');
-        emailInput.focus();
-        return;
-      }
+        if (!email) {
+          setStatus('Inserisci la tua email prima di continuare.', 'error');
+          emailInput.focus();
+          return;
+        }
 
-      if (!isValidEmail(email)) {
-        setStatus('L’indirizzo email non sembra valido. Controllalo e riprova.', 'error');
-        emailInput.focus();
-        return;
-      }
+        if (!isValidEmail(email)) {
+          setStatus('L’indirizzo email non sembra valido. Controllalo e riprova.', 'error');
+          emailInput.focus();
+          return;
+        }
 
-      brevoEmail.value = email;
+        brevoEmail.value = email;
 
-      try {
-        brevoForm.submit();
-      } catch (error) {
-        setStatus('C’è stato un problema durante l’iscrizione. Riprova tra poco.', 'error');
-        return;
-      }
+        try {
+          brevoForm.submit();
+        } catch (error) {
+          setStatus('C’è stato un problema durante l’iscrizione. Riprova tra poco.', 'error');
+          return;
+        }
 
-      setStatus('Perfetto. Tra poco si aprirà il tuo dono di benvenuto.', 'success');
+        setStatus('Perfetto. Tra poco si aprirà il tuo dono di benvenuto.', 'success');
 
-      const giftPath = 'gifts/it/' + selectedGift;
-      const tempLink = document.createElement('a');
-      tempLink.href = giftPath;
-      tempLink.target = '_blank';
-      tempLink.rel = 'noopener noreferrer';
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    const reviewCategory = document.getElementById('review-category-it');
-    const reviewProductWrap = document.getElementById('review-product-wrap-it');
-    const reviewProduct = document.getElementById('review-product-it');
-    const starsBox = document.getElementById('review-stars-it');
-    const reviewEmail = document.getElementById('review-email-it');
-    const reviewComment = document.getElementById('review-comment-it');
-    const reviewSubmit = document.getElementById('review-submit-it');
-    const reviewStatus = document.getElementById('review-status-it');
-    const publicList = document.getElementById('review-public-list-it');
-    const reviewToggle = document.getElementById('review-toggle-it');
-
-    const reviewHiddenForm = document.getElementById('review-hidden-form-it');
-    const reviewHiddenEmail = document.getElementById('review-hidden-email-it');
-    const reviewHiddenComment = document.getElementById('review-hidden-comment-it');
-
-    const products = Array.isArray(window.arcaneProductsIt) ? window.arcaneProductsIt : [];
-    let reviews = [];
-    let selectedStars = 0;
-    let showAllReviews = false;
-    const visibleReviews = 3;
-
-    function setStatus(message, type) {
-      reviewStatus.textContent = message;
-      reviewStatus.className = 'review-status';
-      if (type) reviewStatus.classList.add(type);
-    }
-
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function escapeHtml(value) {
-      return String(value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function renderProducts() {
-      reviewProduct.innerHTML = '<option value="">Seleziona un prodotto</option>';
-
-      products.forEach(function (product) {
-        const option = document.createElement('option');
-        option.value = product.id;
-        option.textContent = product.title;
-        reviewProduct.appendChild(option);
+        const giftPath = 'gifts/it/' + selectedGift;
+        const tempLink = document.createElement('a');
+        tempLink.href = giftPath;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
       });
-    }
+    })();
+  </script>
 
-    function renderReviews() {
-  if (!publicList) return;
+  <script>
+    (function () {
+      const reviewCategory = document.getElementById('review-category-it');
+      const reviewProductWrap = document.getElementById('review-product-wrap-it');
+      const reviewProduct = document.getElementById('review-product-it');
+      const starsBox = document.getElementById('review-stars-it');
+      const reviewName = document.getElementById('review-name-it');
+      const reviewEmail = document.getElementById('review-email-it');
+      const reviewComment = document.getElementById('review-comment-it');
+      const reviewSubmit = document.getElementById('review-submit-it');
+      const reviewStatus = document.getElementById('review-status-it');
+      const publicList = document.getElementById('review-public-list-it');
+      const reviewToggle = document.getElementById('review-toggle-it');
 
-  const visibleList = showAllReviews
-    ? reviews
-    : reviews.slice(-visibleReviews).reverse();
+      const reviewHiddenForm = document.getElementById('review-hidden-form-it');
+      const reviewHiddenEmail = document.getElementById('review-hidden-email-it');
+      const reviewHiddenName = document.getElementById('review-hidden-name-it');
+      const reviewHiddenComment = document.getElementById('review-hidden-comment-it');
 
-  publicList.innerHTML = visibleList.map(function (review) {
-    const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
-    const safeComment = escapeHtml(review.comment || '');
-    const safeAuthor = escapeHtml(review.author || 'Cliente verificato');
+      const products = Array.isArray(window.arcaneProductsIt) ? window.arcaneProductsIt : [];
+      let reviews = [];
+      let selectedStars = 0;
+      let showAllReviews = false;
+      const visibleReviews = 3;
 
-        return `
-          <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-            <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
-            <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
-            <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
-          </div>
-        `;
-      }).join('');
+      function setStatus(message, type) {
+        reviewStatus.textContent = message;
+        reviewStatus.className = 'review-status';
+        if (type) reviewStatus.classList.add(type);
+      }
 
-      if (reviewToggle) {
-        if (reviews.length > visibleReviews) {
-          reviewToggle.style.display = 'inline-flex';
-          reviewToggle.textContent = showAllReviews
-            ? 'Mostra meno'
-            : 'Guarda le altre recensioni';
-        } else {
-          reviewToggle.style.display = 'none';
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function renderProducts() {
+        reviewProduct.innerHTML = '<option value="">Seleziona un prodotto</option>';
+
+        products.forEach(function (product) {
+          const option = document.createElement('option');
+          option.value = product.id;
+          option.textContent = product.title;
+          reviewProduct.appendChild(option);
+        });
+      }
+
+      function renderReviews() {
+        if (!publicList) return;
+
+        const visibleList = showAllReviews
+          ? reviews
+          : reviews.slice(-visibleReviews).reverse();
+
+        publicList.innerHTML = visibleList.map(function (review) {
+          const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+          const safeComment = escapeHtml(review.comment || '');
+          const safeAuthor = escapeHtml(review.author || 'Cliente verificato');
+
+          return `
+            <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+              <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+              <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+              <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+            </div>
+          `;
+        }).join('');
+
+        if (reviewToggle) {
+          if (reviews.length > visibleReviews) {
+            reviewToggle.style.display = 'inline-flex';
+            reviewToggle.textContent = showAllReviews
+              ? 'Mostra meno'
+              : 'Guarda le altre recensioni';
+          } else {
+            reviewToggle.style.display = 'none';
+          }
         }
       }
-    }
 
-    function resetStars() {
-      selectedStars = 0;
-      starsBox.querySelectorAll('span').forEach(function (star) {
-        star.textContent = '☆';
+      function resetStars() {
+        selectedStars = 0;
+        starsBox.querySelectorAll('span').forEach(function (star) {
+          star.textContent = '☆';
+        });
+      }
+
+      function updateCategoryVisibility() {
+        const selectedCategory = reviewCategory.value;
+
+        if (selectedCategory === 'product') {
+          reviewProductWrap.style.display = 'block';
+          renderProducts();
+        } else {
+          reviewProductWrap.style.display = 'none';
+          reviewProduct.value = '';
+        }
+      }
+
+      function loadReviews() {
+        fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec', {
+          cache: 'no-store'
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            reviews = Array.isArray(data) ? data : [];
+            renderReviews();
+          })
+          .catch(function () {
+            reviews = [];
+            renderReviews();
+          });
+      }
+
+      reviewCategory.addEventListener('change', updateCategoryVisibility);
+
+      starsBox.addEventListener('click', function (e) {
+        const value = Number(e.target.dataset.value || 0);
+        if (!value) return;
+
+        selectedStars = value;
+
+        starsBox.querySelectorAll('span').forEach(function (star, index) {
+          star.textContent = index < value ? '★' : '☆';
+        });
       });
-    }
 
-    function updateCategoryVisibility() {
-      const selectedCategory = reviewCategory.value;
+      if (reviewToggle) {
+        reviewToggle.addEventListener('click', function () {
+          showAllReviews = !showAllReviews;
+          renderReviews();
+        });
+      }
 
-      if (selectedCategory === 'product') {
-        reviewProductWrap.style.display = 'block';
-        renderProducts();
-      } else {
-        reviewProductWrap.style.display = 'none';
+      reviewSubmit.addEventListener('click', function () {
+        const category = reviewCategory.value;
+        const productId = reviewProduct.value;
+        const name = reviewName.value.trim();
+        const email = reviewEmail.value.trim();
+        const comment = reviewComment.value.trim();
+
+        if (!category) {
+          setStatus('Seleziona prima una categoria recensione.', 'error');
+          reviewCategory.focus();
+          return;
+        }
+
+        if (category === 'product' && !productId) {
+          setStatus('Seleziona un prodotto prima di inviare la recensione.', 'error');
+          reviewProduct.focus();
+          return;
+        }
+
+        if (!selectedStars) {
+          setStatus('Scegli una valutazione da 1 a 5 stelle.', 'error');
+          return;
+        }
+
+        if (!name) {
+          setStatus('Scegli il nome da mostrare pubblicamente.', 'error');
+          reviewName.focus();
+          return;
+        }
+
+        if (!email || !isValidEmail(email)) {
+          setStatus('Inserisci una email valida.', 'error');
+          reviewEmail.focus();
+          return;
+        }
+
+        if (!comment) {
+          setStatus('Scrivi la tua recensione prima di inviarla.', 'error');
+          reviewComment.focus();
+          return;
+        }
+
+        const productLabel = category === 'product'
+          ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
+          : 'Nessuno';
+
+        const fullReviewMessage =
+          'Categoria: ' + category + '\n' +
+          'Prodotto: ' + productLabel + '\n' +
+          'Stelle: ' + selectedStars + '\n' +
+          'Recensione:\n' + comment;
+
+        reviewHiddenEmail.value = email;
+        reviewHiddenName.value = name;
+        reviewHiddenComment.value = fullReviewMessage;
+
+        try {
+          reviewHiddenForm.submit();
+        } catch (error) {
+          setStatus('C’è stato un problema durante l’invio.', 'error');
+          return;
+        }
+
+        reviewCategory.value = '';
         reviewProduct.value = '';
-      }
-    }
+        reviewProductWrap.style.display = 'none';
+        reviewName.value = '';
+        reviewEmail.value = '';
+        reviewComment.value = '';
+        resetStars();
 
-    function loadReviews() {
-  fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec', {
-    cache: 'no-store'
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      reviews = Array.isArray(data) ? data : [];
-      renderReviews();
-    })
-    .catch(function () {
-      reviews = [];
-      renderReviews();
-    });
-}
-
-    reviewCategory.addEventListener('change', updateCategoryVisibility);
-
-    starsBox.addEventListener('click', function (e) {
-      const value = Number(e.target.dataset.value || 0);
-      if (!value) return;
-
-      selectedStars = value;
-
-      starsBox.querySelectorAll('span').forEach(function (star, index) {
-        star.textContent = index < value ? '★' : '☆';
+        setStatus('Grazie. La recensione è stata ricevuta e sarà verificata.', 'success');
       });
-    });
 
-    if (reviewToggle) {
-      reviewToggle.addEventListener('click', function () {
-        showAllReviews = !showAllReviews;
-        renderReviews();
-      });
-    }
-
-    reviewSubmit.addEventListener('click', function () {
-      const category = reviewCategory.value;
-      const productId = reviewProduct.value;
-      const email = reviewEmail.value.trim();
-      const comment = reviewComment.value.trim();
-
-      if (!category) {
-        setStatus('Seleziona prima una categoria recensione.', 'error');
-        reviewCategory.focus();
-        return;
-      }
-
-      if (category === 'product' && !productId) {
-        setStatus('Seleziona un prodotto prima di inviare la recensione.', 'error');
-        reviewProduct.focus();
-        return;
-      }
-
-      if (!selectedStars) {
-        setStatus('Scegli una valutazione da 1 a 5 stelle.', 'error');
-        return;
-      }
-
-      if (!email || !isValidEmail(email)) {
-        setStatus('Inserisci una email valida.', 'error');
-        reviewEmail.focus();
-        return;
-      }
-
-      if (!comment) {
-        setStatus('Scrivi la tua recensione prima di inviarla.', 'error');
-        reviewComment.focus();
-        return;
-      }
-
-      const productLabel = category === 'product'
-        ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
-        : 'Nessuno';
-
-      const fullReviewMessage =
-        'Categoria: ' + category + '\n' +
-        'Prodotto: ' + productLabel + '\n' +
-        'Stelle: ' + selectedStars + '\n' +
-        'Recensione:\n' + comment;
-
-      reviewHiddenEmail.value = email;
-      reviewHiddenComment.value = fullReviewMessage;
-
-      try {
-        reviewHiddenForm.submit();
-      } catch (error) {
-        setStatus('C’è stato un problema durante l’invio.', 'error');
-        return;
-      }
-
-      reviewCategory.value = '';
-      reviewProduct.value = '';
-      reviewProductWrap.style.display = 'none';
-      reviewEmail.value = '';
-      reviewComment.value = '';
-      resetStars();
-
-      setStatus('Grazie. La recensione è stata ricevuta e sarà verificata.', 'success');
-    });
-
-    updateCategoryVisibility();
-    loadReviews();
-  })();
-</script>
+      updateCategoryVisibility();
+      loadReviews();
+    })();
+  </script>
 </body>
 </html>
