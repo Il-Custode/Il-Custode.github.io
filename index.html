@@ -1328,13 +1328,9 @@
           return response.json();
         })
         .then(function (data) {
-          reviews = Array.isArray(data)
-            ? data.filter(function (review) {
-                return String(review.language || 'it').toLowerCase() === 'it';
-              })
-            : [];
-          renderReviews();
-        })
+  reviews = Array.isArray(data) ? data : [];
+  renderReviews();
+})
         .catch(function () {
           reviews = [];
           renderReviews();
