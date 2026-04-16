@@ -1320,26 +1320,22 @@
       }
 
       function loadReviews() {
-        fetch(APPS_SCRIPT_URL, {
-          method: 'GET',
-          cache: 'no-store'
-        })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            reviews = Array.isArray(data)
-              ? data.filter(function (review) {
-                  return String(review.language || 'en').toLowerCase() === 'en';
-                })
-              : [];
-            renderReviews();
-          })
-          .catch(function () {
-            reviews = [];
-            renderReviews();
-          });
-      }
+  fetch(APPS_SCRIPT_URL, {
+    method: 'GET',
+    cache: 'no-store'
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      reviews = Array.isArray(data) ? data : [];
+      renderReviews();
+    })
+    .catch(function () {
+      reviews = [];
+      renderReviews();
+    });
+}
 
       reviewCategory.addEventListener('change', updateCategoryVisibility);
 
