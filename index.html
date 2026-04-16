@@ -1425,36 +1425,32 @@
     comment: comment
   })
 })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (result) {
-          if (!result || result.success !== true) {
-            throw new Error((result && result.error) || 'Errore sconosciuto');
-          }
+  .then(function () {
+    reviewCategory.value = '';
+    reviewProduct.value = '';
+    reviewProductWrap.style.display = 'none';
+    reviewName.value = '';
+    reviewEmail.value = '';
+    reviewComment.value = '';
+    resetStars();
 
-          reviewCategory.value = '';
-          reviewProduct.value = '';
-          reviewProductWrap.style.display = 'none';
-          reviewName.value = '';
-          reviewEmail.value = '';
-          reviewComment.value = '';
-          resetStars();
+    setStatus('Grazie. La recensione è stata inviata correttamente.', 'success');
 
-          setStatus('Grazie. La recensione è stata inviata e pubblicata automaticamente.', 'success');
-          loadReviews();
-        })
-        .catch(function () {
-          setStatus('C’è stato un problema durante l’invio della recensione. Riprova tra poco.', 'error');
-        })
-        .finally(function () {
-          reviewSubmit.disabled = false;
-        });
-    });
+    setTimeout(function () {
+      loadReviews();
+    }, 1500);
+  })
+  .catch(function () {
+    setStatus('C’è stato un problema durante l’invio della recensione. Riprova tra poco.', 'error');
+  })
+  .finally(function () {
+    reviewSubmit.disabled = false;
+  });
+});
 
-    updateCategoryVisibility();
-    loadReviews();
-  })();
+updateCategoryVisibility();
+loadReviews();
+})();
 </script>
 </body>
 </html>
