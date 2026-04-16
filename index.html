@@ -1246,15 +1246,13 @@
     const publicList = document.getElementById('review-public-list-it');
     const reviewToggle = document.getElementById('review-toggle-it');
 
-    const reviewHiddenForm = document.getElementById('review-hidden-form-it');
-    const reviewHiddenEmail = document.getElementById('review-hidden-email-it');
-    const reviewHiddenComment = document.getElementById('review-hidden-comment-it');
-
     const products = Array.isArray(window.arcaneProductsIt) ? window.arcaneProductsIt : [];
     let reviews = [];
     let selectedStars = 0;
     let showAllReviews = false;
     const visibleReviews = 3;
+
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec';
 
     function setStatus(message, type) {
       reviewStatus.textContent = message;
@@ -1339,7 +1337,7 @@
     }
 
     function loadReviews() {
-      fetch('https://script.google.com/macros/s/AKfycbzo64eBfyZA5X7bbXGNbXGMUGFdQcJIZ5Aq5dckoadPTs5QnR6p-G_pTwLp1xciEMD0Ig/exec', {
+      fetch(APPS_SCRIPT_URL, {
         cache: 'no-store'
       })
         .then(function (response) {
@@ -1378,7 +1376,7 @@
     reviewSubmit.addEventListener('click', function () {
       const category = reviewCategory.value;
       const productId = reviewProduct.value;
-      const name = reviewName.value.trim();
+      const publicName = reviewName.value.trim();
       const email = reviewEmail.value.trim();
       const comment = reviewComment.value.trim();
 
@@ -1399,7 +1397,7 @@
         return;
       }
 
-      if (!name) {
+      if (!publicName) {
         setStatus('Scegli il nome da mostrare pubblicamente.', 'error');
         reviewName.focus();
         return;
@@ -1419,34 +1417,50 @@
 
       const productLabel = category === 'product'
         ? ((products.find(function (p) { return p.id === productId; }) || {}).title || productId)
-        : 'Nessuno';
+        : 'Master a Noleggio';
 
-      const fullReviewMessage =
-        'Nome pubblico: ' + name + '\n' +
-        'Categoria: ' + category + '\n' +
-        'Prodotto: ' + productLabel + '\n' +
-        'Stelle: ' + selectedStars + '\n' +
-        'Recensione:\n' + comment;
+      reviewSubmit.disabled = true;
+      setStatus('Invio in corso...', 'success');
 
-      reviewHiddenEmail.value = email;
-      reviewHiddenComment.value = fullReviewMessage;
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify({
+          language: 'it',
+          category: category,
+          product: productLabel,
+          stars: selectedStars,
+          publicName: publicName,
+          email: email,
+          comment: comment
+        })
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (result) {
+          if (!result || result.success !== true) {
+            throw new Error((result && result.error) || 'Errore sconosciuto');
+          }
 
-      try {
-        reviewHiddenForm.submit();
-      } catch (error) {
-        setStatus('C’è stato un problema durante l’invio.', 'error');
-        return;
-      }
+          reviewCategory.value = '';
+          reviewProduct.value = '';
+          reviewProductWrap.style.display = 'none';
+          reviewName.value = '';
+          reviewEmail.value = '';
+          reviewComment.value = '';
+          resetStars();
 
-      reviewCategory.value = '';
-      reviewProduct.value = '';
-      reviewProductWrap.style.display = 'none';
-      reviewName.value = '';
-      reviewEmail.value = '';
-      reviewComment.value = '';
-      resetStars();
-
-      setStatus('Grazie. La recensione è stata ricevuta e sarà verificata.', 'success');
+          setStatus('Grazie. La recensione è stata ricevuta e sarà verificata.', 'success');
+        })
+        .catch(function () {
+          setStatus('C’è stato un problema durante l’invio della recensione. Riprova tra poco.', 'error');
+        })
+        .finally(function () {
+          reviewSubmit.disabled = false;
+        });
     });
 
     updateCategoryVisibility();
