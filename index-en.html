@@ -1243,14 +1243,16 @@
           return;
         }
 
-        const visibleList = showAllReviews ? reviews : reviews.slice(0, visibleReviews);
+        const visibleList = showAllReviews
+  ? reviews
+  : reviews.slice(-visibleReviews).reverse();
 
-        publicList.innerHTML = visibleList.map(function (review) {
-          const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
-          const safeComment = escapeHtml(review.comment || '');
-          const safeAuthor = escapeHtml(review.author || 'Verified customer');
+publicList.innerHTML = visibleList.map(function (review) {
+  const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+  const safeComment = escapeHtml(review.comment || '');
+  const safeAuthor = escapeHtml(review.author || 'Verified customer');
 
-          return `
+  return `
             <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
               <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
               <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
