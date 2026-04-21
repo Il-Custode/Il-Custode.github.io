@@ -7,10 +7,10 @@ window.arcaneHomeFeaturedEn = [
     link: "https://site.dmsguild.com/product/564224/The-Crimson-Ladys-Feast?src=newest_in_dmg&filters=45469"
   },
   {
-    id: "bastion-compendium",
-    label: "Featured",
-    title: "The Definitive Bastion Compendium",
-    description: "A complete and modular Bastion expansion designed to deeply enhance and expand the gameplay experience.",
-    link: "https://site.dmsguild.com/product/563364/The-Definitive-Bastion-Compendium-for-DD-5e"
+    id: "leylines-primordial-convergences",
+    label: "New Release",
+    title: "Leylines: Primordial Convergences",
+    description: "A premium compendium focused on leylines, designed to give Dungeon Masters concrete tools, narrative hooks, and systems to enrich worldbuilding and magical energy management in their campaigns.",
+    link: "https://site.dmsguild.com/product/564986/Leylines-Primordial-Convergences?src=newest_in_dmg&filters=45469"
   }
 ];
