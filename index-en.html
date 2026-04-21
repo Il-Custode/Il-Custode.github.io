@@ -1268,39 +1268,48 @@
       }
 
       function renderReviews() {
-        if (!publicList) return;
+  if (!publicList) return;
 
-        const visibleList = showAllReviews
-          ? reviews.slice().reverse()
-          : reviews.slice(-visibleReviews).reverse();
+  const visibleList = showAllReviews
+    ? reviews.slice().reverse()
+    : reviews.slice(-visibleReviews).reverse();
 
-        publicList.innerHTML = visibleList.map(function (review) {
-          const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
-          const safeComment = escapeHtml(review.comment || '');
-          const safeAuthor = escapeHtml(review.author || 'Verified customer');
+  publicList.innerHTML = visibleList.map(function (review) {
+    const safeStars = Math.max(1, Math.min(5, Number(review.stars) || 0));
+    const safeComment = escapeHtml(review.comment || '');
+    const rawAuthor = review.author || 'Verified user';
 
-          return `
-  <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-    <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
-    <div style="font-size:0.95rem; color:#e8d8ad; margin-top:4px;">${escapeHtml(review.product || 'General experience')}</div>
-    <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
-    <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
-  </div>
-`;
-        }).join('');
+const fixedAuthor = rawAuthor
+  .replace(/utente verificato/gi, 'Verified user')
+  .replace(/cliente verificato/gi, 'Verified user');
 
-        if (reviewToggle) {
-          if (reviews.length > visibleReviews) {
-            reviewToggle.style.display = 'inline-flex';
-            reviewToggle.textContent = showAllReviews
-              ? 'Show less'
-              : 'View more reviews';
-          } else {
-            reviewToggle.style.display = 'none';
-          }
-        }
-      }
+const safeAuthor = escapeHtml(fixedAuthor);
 
+    return `
+      <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+        <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+        <div style="font-size:1rem; color:#e8d8ad; margin-top:6px; font-style:italic;">
+          ${escapeHtml(review.product || 'General experience')}
+        </div>
+        <div style="height:8px;"></div>
+        <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+        <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+      </div>
+    `;
+  }).join('');
+
+  if (reviewToggle) {
+    if (reviews.length > visibleReviews) {
+      reviewToggle.style.display = 'inline-flex';
+      reviewToggle.textContent = showAllReviews
+        ? 'Show less'
+        : 'View more reviews';
+    } else {
+      reviewToggle.style.display = 'none';
+    }
+  }
+}
+      
       function resetStars() {
         selectedStars = 0;
         starsBox.querySelectorAll('span').forEach(function (star) {
