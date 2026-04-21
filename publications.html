@@ -612,27 +612,41 @@
     </div>
 
     <div class="card">
-      <span class="section-label">
-        <img src="assets/images/arcane-new-release-glyph-en.png" alt="Subscriber content seal" class="glyph-icon" />
-        Subscribers only
-      </span>
-      <h2>Exclusive Arcane Circle content</h2>
-      <p>
-        Here you will find richer and more curated material designed for those who want to follow the catalog closely and receive special content reserved for subscribers.
-      </p>
+  <span class="section-label">
+    <img src="assets/images/arcane-new-release-glyph-en.png" alt="Free content seal" class="glyph-icon" />
+    Free content
+  </span>
+  <h2>Free and pay-what-you-want content</h2>
+  <p>
+    Here you can find free releases or pay-what-you-want content published on DMsGuild. These materials are designed to provide immediate value, showcase the style of THE ARCANE SHOP, and bring ready-to-use resources to your table.
+  </p>
 
-      <div class="upcoming-grid">
-        <div id="members-products-en" class="upcoming-products-dynamic"></div>
-      </div>
+  <div class="featured-grid">
+    <div id="free-products-en" class="featured-products-dynamic"></div>
 
-      <p class="intro-note">
-        These materials are delivered by email to Arcane Circle subscribers.
-      </p>
-
-      <div class="button-row" style="justify-content: center; margin-top: 24px;">
-        <a class="button secondary" href="index-en.html#arcane-circle-en">Receive exclusive content</a>
+    <div class="product-card">
+      <div>
+        <div class="badge-row">
+          <span class="badge">Free archive</span>
+          <span class="badge">All content</span>
+        </div>
+        <h3>Complete free content overview</h3>
+        <p>
+          A quick collection of all free or pay-what-you-want releases, useful to access every available resource in one place.
+        </p>
+        <div id="free-catalog-list-en" class="product-meta catalog-list"></div>
       </div>
     </div>
+  </div>
+
+  <p class="intro-note">
+    This section collects free resources and introductory materials available on DMsGuild.
+  </p>
+
+  <div class="button-row" style="justify-content: center; margin-top: 24px;">
+    <a class="button secondary" href="index-en.html#arcane-circle-en">Join the Arcane Circle</a>
+  </div>
+</div>
 
     <div class="card">
       <span class="section-label">
@@ -681,72 +695,156 @@
   <script src="assets/data/upcoming-en.js"></script>
   <script src="assets/data/members-en.js"></script>
   <script>
-    (function () {
-      const featuredContainer = document.getElementById('featured-products-en');
-      const catalogListContainer = document.getElementById('catalog-list-en');
-      const upcomingContainer = document.getElementById('upcoming-products-en');
-      const membersContainer = document.getElementById('members-products-en');
+  (function () {
+    const featuredContainer = document.getElementById('featured-products-en');
+    const catalogListContainer = document.getElementById('catalog-list-en');
+    const upcomingContainer = document.getElementById('upcoming-products-en');
+    const freeProductsContainer = document.getElementById('free-products-en');
+    const freeCatalogListContainer = document.getElementById('free-catalog-list-en');
 
-      const products = Array.isArray(window.arcaneProductsEn) ? [...window.arcaneProductsEn] : [];
-      const upcoming = Array.isArray(window.arcaneUpcomingEn) ? [...window.arcaneUpcomingEn] : [];
-      const members = Array.isArray(window.arcaneMembersEn) ? [...window.arcaneMembersEn] : [];
+    const products = Array.isArray(window.arcaneProductsEn) ? [...window.arcaneProductsEn] : [];
+    const upcoming = Array.isArray(window.arcaneUpcomingEn) ? [...window.arcaneUpcomingEn] : [];
+    const freeProducts = Array.isArray(window.arcaneMembersEn) ? [...window.arcaneMembersEn] : [];
 
-      function escapeHtml(text) {
-        return String(text || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
+    function escapeHtml(text) {
+      return String(text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function buildBadges(badges) {
+      if (!Array.isArray(badges) || !badges.length) return '';
+      return badges.map(function (badge) {
+        return '<span class="badge">' + escapeHtml(badge) + '</span>';
+      }).join('');
+    }
+
+    function buildProductButton(link) {
+      if (!link || link === '#') {
+        return '<a class="button secondary" href="#">Link not available yet</a>';
       }
 
-      function buildBadges(badges) {
-        if (!Array.isArray(badges) || !badges.length) return '';
-        return badges.map(function (badge) {
-          return '<span class="badge">' + escapeHtml(badge) + '</span>';
-        }).join('');
-      }
+      return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Open product</a>';
+    }
 
-      function buildProductButton(link) {
-        if (!link || link === '#') {
-          return '<a class="button secondary" href="#">Link not available yet</a>';
+    function buildStandardCard(product) {
+      return `
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              ${buildBadges(product.badges)}
+            </div>
+            <h3>${escapeHtml(product.title)}</h3>
+            <p>${escapeHtml(product.description)}</p>
+            <div class="product-meta">
+              <strong>Format:</strong> ${escapeHtml(product.format)}<br />
+              <strong>Category:</strong> ${escapeHtml(product.category)}<br />
+              <strong>Platform:</strong> ${escapeHtml(product.platform)}
+            </div>
+          </div>
+          <div class="button-row">
+            ${buildProductButton(product.link)}
+          </div>
+        </div>
+      `;
+    }
+
+    products.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    freeProducts.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    if (featuredContainer) {
+      const featuredProducts = products.slice(0, 2);
+      featuredContainer.innerHTML = featuredProducts.map(buildStandardCard).join('');
+    }
+
+    if (catalogListContainer) {
+      catalogListContainer.innerHTML = products.map(function (product) {
+        const safeTitle = escapeHtml(product.title);
+        const safeLink = escapeHtml(product.link || '#');
+
+        if (!product.link || product.link === '#') {
+          return `<div class="catalog-list-item">• ${safeTitle}</div>`;
         }
 
-        return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Open product</a>';
-      }
+        return `
+          <div class="catalog-list-item">
+            • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+              ${safeTitle}
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
 
-      products.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
-      });
-
-      if (featuredContainer) {
-        const featuredProducts = products.slice(0, 2);
-
-        featuredContainer.innerHTML = featuredProducts.map(function (product) {
+    if (upcomingContainer) {
+      if (!upcoming.length) {
+        upcomingContainer.innerHTML = `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                <span class="badge">Updating</span>
+              </div>
+              <h3>New announcements coming soon</h3>
+              <p>
+                This section will be updated as more materials become ready to be shown.
+              </p>
+            </div>
+          </div>
+        `;
+      } else {
+        upcomingContainer.innerHTML = upcoming.map(function (item) {
           return `
             <div class="product-card">
               <div>
                 <div class="badge-row">
-                  ${buildBadges(product.badges)}
+                  <span class="badge">${escapeHtml(item.type)}</span>
+                  <span class="badge">${escapeHtml(item.status)}</span>
                 </div>
-                <h3>${escapeHtml(product.title)}</h3>
-                <p>${escapeHtml(product.description)}</p>
-                <div class="product-meta">
-                  <strong>Format:</strong> ${escapeHtml(product.format)}<br />
-                  <strong>Category:</strong> ${escapeHtml(product.category)}<br />
-                  <strong>Platform:</strong> ${escapeHtml(product.platform)}
-                </div>
-              </div>
-              <div class="button-row">
-                ${buildProductButton(product.link)}
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.description)}</p>
               </div>
             </div>
           `;
         }).join('');
       }
+    }
 
-      if (catalogListContainer) {
-        catalogListContainer.innerHTML = products.map(function (product) {
+    if (freeProductsContainer) {
+      if (!freeProducts.length) {
+        freeProductsContainer.innerHTML = `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                <span class="badge">Free</span>
+              </div>
+              <h3>Free content coming soon</h3>
+              <p>
+                New free or pay-what-you-want releases will appear here as soon as they are available.
+              </p>
+            </div>
+          </div>
+        `;
+      } else {
+        const featuredFreeProducts = freeProducts.slice(0, 2);
+        freeProductsContainer.innerHTML = featuredFreeProducts.map(buildStandardCard).join('');
+      }
+    }
+
+    if (freeCatalogListContainer) {
+      if (!freeProducts.length) {
+        freeCatalogListContainer.innerHTML = `
+          <div class="catalog-list-item">No free content available yet.</div>
+        `;
+      } else {
+        freeCatalogListContainer.innerHTML = freeProducts.map(function (product) {
           const safeTitle = escapeHtml(product.title);
           const safeLink = escapeHtml(product.link || '#');
 
@@ -763,76 +861,8 @@
           `;
         }).join('');
       }
-
-      if (upcomingContainer) {
-        if (!upcoming.length) {
-          upcomingContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">Updating</span>
-                </div>
-                <h3>New announcements coming soon</h3>
-                <p>
-                  This section will be updated as more materials become ready to be shown.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          upcomingContainer.innerHTML = upcoming.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-      }
-
-      if (membersContainer) {
-        if (!members.length) {
-          membersContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">Subscribers only</span>
-                </div>
-                <h3>Exclusive content coming soon</h3>
-                <p>
-                  The next materials reserved for Arcane Circle subscribers will appear here as soon as they are ready.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          membersContainer.innerHTML = members.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-                <div class="button-row">
-                  <a class="button secondary" href="index-en.html#arcane-circle-en">${escapeHtml(item.buttonText)}</a>
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-      }
-    })();
-  </script>
+    }
+  })();
+</script>
 </body>
 </html>
