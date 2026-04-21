@@ -1,14 +1,8 @@
 window.arcaneUpcomingIt = [
   {
     type: "Prossima uscita",
-    status: "In preparazione",
-    title: "Il Compendio delle Leyline",
-    description: "Un compendio premium dedicato alle leyline, pensato per offrire ai Dungeon Master strumenti concreti, spunti narrativi e materiale di supporto per arricchire campagne, ambientazioni e gestione dell’energia del mondo."
-  },
-  {
-    type: "Lavori in corso",
-    status: "In aggiornamento",
-    title: "Nuovi progetti in preparazione",
-    description: "Le prossime pubblicazioni sono attualmente in fase di sviluppo. Questa sezione verrà aggiornata con nuovi annunci non appena i materiali saranno pronti per essere mostrati."
+    status: "In produzione",
+    title: "Nuova One-shot ad Alta Atmosfera",
+    description: "Una nuova avventura autoconclusiva attualmente in sviluppo, progettata per offrire un’esperienza intensa, evocativa e immediatamente giocabile. Il modulo sarà costruito per garantire ritmo, identità forte e massima facilità di utilizzo al tavolo, con particolare attenzione a atmosfera, scelte dei giocatori e impatto narrativo."
   }
 ];
