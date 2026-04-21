@@ -614,23 +614,37 @@
     <div class="card">
   <span class="section-label">
     <img src="assets/images/arcane-new-release-glyph.png" alt="Sigillo Contenuti gratuiti" class="glyph-icon" />
-    Per gli iscritti
+    Contenuti gratuiti
   </span>
-  <h2>Contenuti gratuiti del Circolo Arcano</h2>
+  <h2>Contenuti gratuiti e a offerta libera</h2>
   <p>
-    Alcune nuove uscite gratuite vengono condivise direttamente via email con gli iscritti al Circolo Arcano. Un modo semplice per ricevere materiali pronti da usare, restare aggiornati sulle pubblicazioni di THE ARCANE SHOP e non perdere i prossimi contenuti in arrivo.
+    Qui trovi i contenuti gratuiti o pubblicati con offerta libera su DMsGuild. Sono materiali pensati per offrire valore immediato, far conoscere meglio lo stile di THE ARCANE SHOP e portare al tavolo risorse rapide, evocative e già pronte da usare.
   </p>
 
-  <div class="upcoming-grid">
-    <div id="members-products-it" class="upcoming-products-dynamic"></div>
+  <div class="featured-grid">
+    <div id="free-products-it" class="featured-products-dynamic"></div>
+
+    <div class="product-card">
+      <div>
+        <div class="badge-row">
+          <span class="badge">Archivio gratuiti</span>
+          <span class="badge">Tutti i contenuti</span>
+        </div>
+        <h3>Panoramica completa dei contenuti gratuiti</h3>
+        <p>
+          Una raccolta rapida di tutti i contenuti gratuiti o a offerta libera già pubblicati, utile per trovare subito ogni risorsa disponibile in un solo spazio.
+        </p>
+        <div id="free-catalog-list-it" class="product-meta catalog-list"></div>
+      </div>
+    </div>
   </div>
 
   <p class="intro-note">
-    I contenuti gratuiti del Circolo Arcano vengono inviati via email agli iscritti. Le versioni pubbliche possono comparire anche su DMsGuild come offerta libera.
+    Questa sezione raccoglie contenuti gratuiti, risorse introduttive e materiali pubblicati su DMsGuild con formula a offerta libera.
   </p>
 
   <div class="button-row" style="justify-content: center; margin-top: 24px;">
-    <a class="button secondary" href="index.html#circolo-arcano">Iscriviti per riceverli</a>
+    <a class="button secondary" href="index.html#circolo-arcano">Entra nel Circolo Arcano</a>
   </div>
 </div>
     <div class="card">
@@ -680,72 +694,156 @@
   <script src="assets/data/upcoming-it.js"></script>
   <script src="assets/data/members-it.js"></script>
   <script>
-    (function () {
-      const featuredContainer = document.getElementById('featured-products-it');
-      const catalogListContainer = document.getElementById('catalog-list-it');
-      const upcomingContainer = document.getElementById('upcoming-products-it');
-      const membersContainer = document.getElementById('members-products-it');
+  (function () {
+    const featuredContainer = document.getElementById('featured-products-it');
+    const catalogListContainer = document.getElementById('catalog-list-it');
+    const upcomingContainer = document.getElementById('upcoming-products-it');
+    const freeProductsContainer = document.getElementById('free-products-it');
+    const freeCatalogListContainer = document.getElementById('free-catalog-list-it');
 
-      const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
-      const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
-      const members = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
+    const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
+    const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
+    const freeProducts = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
 
-      function escapeHtml(text) {
-        return String(text || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
+    function escapeHtml(text) {
+      return String(text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function buildBadges(badges) {
+      if (!Array.isArray(badges) || !badges.length) return '';
+      return badges.map(function (badge) {
+        return '<span class="badge">' + escapeHtml(badge) + '</span>';
+      }).join('');
+    }
+
+    function buildProductButton(link) {
+      if (!link || link === '#') {
+        return '<a class="button secondary" href="#">Collegamento non ancora disponibile</a>';
       }
 
-      function buildBadges(badges) {
-        if (!Array.isArray(badges) || !badges.length) return '';
-        return badges.map(function (badge) {
-          return '<span class="badge">' + escapeHtml(badge) + '</span>';
-        }).join('');
-      }
+      return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
+    }
 
-      function buildProductButton(link) {
-        if (!link || link === '#') {
-          return '<a class="button secondary" href="#">Collegamento non ancora disponibile</a>';
+    function buildStandardCard(product) {
+      return `
+        <div class="product-card">
+          <div>
+            <div class="badge-row">
+              ${buildBadges(product.badges)}
+            </div>
+            <h3>${escapeHtml(product.title)}</h3>
+            <p>${escapeHtml(product.description)}</p>
+            <div class="product-meta">
+              <strong>Formato:</strong> ${escapeHtml(product.format)}<br />
+              <strong>Categoria:</strong> ${escapeHtml(product.category)}<br />
+              <strong>Piattaforma:</strong> ${escapeHtml(product.platform)}
+            </div>
+          </div>
+          <div class="button-row">
+            ${buildProductButton(product.link)}
+          </div>
+        </div>
+      `;
+    }
+
+    products.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    freeProducts.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    if (featuredContainer) {
+      const featuredProducts = products.slice(0, 2);
+      featuredContainer.innerHTML = featuredProducts.map(buildStandardCard).join('');
+    }
+
+    if (catalogListContainer) {
+      catalogListContainer.innerHTML = products.map(function (product) {
+        const safeTitle = escapeHtml(product.title);
+        const safeLink = escapeHtml(product.link || '#');
+
+        if (!product.link || product.link === '#') {
+          return `<div class="catalog-list-item">• ${safeTitle}</div>`;
         }
 
-        return '<a class="button" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Apri prodotto</a>';
-      }
+        return `
+          <div class="catalog-list-item">
+            • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+              ${safeTitle}
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
 
-      products.sort(function (a, b) {
-        return new Date(b.date) - new Date(a.date);
-      });
-
-      if (featuredContainer) {
-        const featuredProducts = products.slice(0, 2);
-
-        featuredContainer.innerHTML = featuredProducts.map(function (product) {
+    if (upcomingContainer) {
+      if (!upcoming.length) {
+        upcomingContainer.innerHTML = `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                <span class="badge">In aggiornamento</span>
+              </div>
+              <h3>Nuovi annunci in arrivo</h3>
+              <p>
+                Questa sezione verrà aggiornata man mano che i prossimi materiali saranno pronti per essere mostrati.
+              </p>
+            </div>
+          </div>
+        `;
+      } else {
+        upcomingContainer.innerHTML = upcoming.map(function (item) {
           return `
             <div class="product-card">
               <div>
                 <div class="badge-row">
-                  ${buildBadges(product.badges)}
+                  <span class="badge">${escapeHtml(item.type)}</span>
+                  <span class="badge">${escapeHtml(item.status)}</span>
                 </div>
-                <h3>${escapeHtml(product.title)}</h3>
-                <p>${escapeHtml(product.description)}</p>
-                <div class="product-meta">
-                  <strong>Formato:</strong> ${escapeHtml(product.format)}<br />
-                  <strong>Categoria:</strong> ${escapeHtml(product.category)}<br />
-                  <strong>Piattaforma:</strong> ${escapeHtml(product.platform)}
-                </div>
-              </div>
-              <div class="button-row">
-                ${buildProductButton(product.link)}
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.description)}</p>
               </div>
             </div>
           `;
         }).join('');
       }
+    }
 
-      if (catalogListContainer) {
-        catalogListContainer.innerHTML = products.map(function (product) {
+    if (freeProductsContainer) {
+      if (!freeProducts.length) {
+        freeProductsContainer.innerHTML = `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                <span class="badge">Gratuiti</span>
+              </div>
+              <h3>Contenuti gratuiti in arrivo</h3>
+              <p>
+                I prossimi contenuti gratuiti o a offerta libera compariranno qui non appena saranno disponibili.
+              </p>
+            </div>
+          </div>
+        `;
+      } else {
+        const featuredFreeProducts = freeProducts.slice(0, 2);
+        freeProductsContainer.innerHTML = featuredFreeProducts.map(buildStandardCard).join('');
+      }
+    }
+
+    if (freeCatalogListContainer) {
+      if (!freeProducts.length) {
+        freeCatalogListContainer.innerHTML = `
+          <div class="catalog-list-item">Nessun contenuto gratuito disponibile al momento.</div>
+        `;
+      } else {
+        freeCatalogListContainer.innerHTML = freeProducts.map(function (product) {
           const safeTitle = escapeHtml(product.title);
           const safeLink = escapeHtml(product.link || '#');
 
@@ -762,76 +860,8 @@
           `;
         }).join('');
       }
-
-      if (upcomingContainer) {
-        if (!upcoming.length) {
-          upcomingContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">In aggiornamento</span>
-                </div>
-                <h3>Nuovi annunci in arrivo</h3>
-                <p>
-                  Questa sezione verrà aggiornata man mano che i prossimi materiali saranno pronti per essere mostrati.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          upcomingContainer.innerHTML = upcoming.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-      }
-
-      if (membersContainer) {
-        if (!members.length) {
-          membersContainer.innerHTML = `
-            <div class="product-card">
-              <div>
-                <div class="badge-row">
-                  <span class="badge">Solo iscritti</span>
-                </div>
-                <h3>Contenuti esclusivi in arrivo</h3>
-                <p>
-                  I prossimi materiali riservati agli iscritti del Circolo Arcano compariranno qui non appena saranno pronti.
-                </p>
-              </div>
-            </div>
-          `;
-        } else {
-          membersContainer.innerHTML = members.map(function (item) {
-            return `
-              <div class="product-card">
-                <div>
-                  <div class="badge-row">
-                    <span class="badge">${escapeHtml(item.type)}</span>
-                    <span class="badge">${escapeHtml(item.status)}</span>
-                  </div>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <p>${escapeHtml(item.description)}</p>
-                </div>
-                <div class="button-row">
-                  <a class="button secondary" href="index.html#circolo-arcano">${escapeHtml(item.buttonText)}</a>
-                </div>
-              </div>
-            `;
-          }).join('');
-        }
-      }
-    })();
-  </script>
+    }
+  })();
+</script>
 </body>
 </html>
