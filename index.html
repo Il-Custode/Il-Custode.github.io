@@ -1283,12 +1283,13 @@
         const safeAuthor = escapeHtml(review.author || 'Cliente verificato');
 
         return `
-          <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
-            <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
-            <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
-            <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
-          </div>
-        `;
+  <div style="text-align:left; margin-bottom:18px; padding:16px; border:1px solid rgba(212,175,55,.35); border-radius:12px;">
+    <div style="font-size:1.2rem; color:#d4af37;">${'★'.repeat(safeStars)}</div>
+    <div style="font-size:0.95rem; color:#e8d8ad; margin-top:4px;">${escapeHtml(review.product || 'Esperienza generale')}</div>
+    <p style="margin:10px 0 6px 0; padding:0; max-width:none;">${safeComment}</p>
+    <div style="font-size:0.95rem; color:#dccb9d;">${safeAuthor}</div>
+  </div>
+`;
       }).join('');
 
       if (reviewToggle) {
