@@ -1,5 +1,16 @@
 window.arcaneProductsIt = [
   {
+    id: "leylines-primordial-convergences",
+    date: "2026-04-21",
+    title: "Leylines: Primordial Convergences",
+    description: "Un compendio premium dedicato alle leyline, pensato per offrire ai Dungeon Master strumenti concreti, spunti narrativi e materiale di supporto per arricchire campagne, ambientazioni e gestione dell’energia del mondo.",
+    format: "Compendio premium",
+    category: "Strumenti per Master / Espansione di regole",
+    platform: "DMsGuild",
+    badges: ["Nuova uscita", "Leyline", "DMsGuild"],
+    link: "https://site.dmsguild.com/product/564986/Leylines-Primordial-Convergences?src=newest_in_dmg&filters=45469"
+  },
+  {
     id: "crimson-ladys-feast",
     date: "2026-04-14",
     title: "The Crimson Lady's Feast",
