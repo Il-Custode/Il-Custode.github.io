@@ -1,5 +1,16 @@
 window.arcaneProductsEn = [
   {
+    id: "the-nameless-village",
+    date: "2026-04-30",
+    title: "The Nameless Village",
+    description: "A psychological investigative mini-adventure about identity unraveling, where names detach from people and reality slowly begins to break.",
+    format: "Mini-adventure",
+    category: "Narrative module / One-shot",
+    platform: "DMsGuild",
+    badges: ["New Release", "Psychological", "DMsGuild"],
+    link: "https://site.dmsguild.com/product/565642/The-Nameless-Village"
+  },
+  {
     id: "leylines-primordial-convergences",
     date: "2026-04-21",
     title: "Leylines: Primordial Convergences",
@@ -7,7 +18,7 @@ window.arcaneProductsEn = [
     format: "Premium compendium",
     category: "DM tools / rules expansion",
     platform: "DMsGuild",
-    badges: ["New Release", "Leylines", "DMsGuild"],
+    badges: ["Featured", "Leylines", "DMsGuild"],
     link: "https://site.dmsguild.com/product/564986/Leylines-Primordial-Convergences?src=newest_in_dmg&filters=45469"
   },
   {
@@ -18,7 +29,7 @@ window.arcaneProductsEn = [
     format: "Premium adventure",
     category: "Narrative module / One-shot",
     platform: "DMsGuild",
-    badges: ["New Release", "Horror", "DMsGuild"],
+    badges: ["Horror", "Gothic", "DMsGuild"],
     link: "https://site.dmsguild.com/product/564224/The-Crimson-Ladys-Feast?src=newest_in_dmg&filters=45469"
   },
   {
