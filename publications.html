@@ -662,31 +662,8 @@
     Some special products will be available exclusively through THE ARCANE SHOP. These releases will be designed to expand existing publications, add new gameplay options, and offer premium material not available on DMsGuild.
   </p>
 
-  <div class="featured-grid">
-    <div class="product-card">
-      <div>
-        <div class="badge-row">
-          <span class="badge">Website exclusive</span>
-          <span class="badge">Coming soon</span>
-        </div>
-
-        <h3>First exclusive in development</h3>
-
-        <p>
-          A premium module connected to already published content, designed to offer new scenes, locations, narrative developments, and ready-to-use tools for the table.
-        </p>
-
-        <div class="product-meta">
-          <strong>Format:</strong> Digital PDF<br />
-          <strong>Category:</strong> premium exclusive content<br />
-          <strong>Platform:</strong> THE ARCANE SHOP
-        </div>
-      </div>
-
-      <div class="button-row">
-        <a class="button secondary" href="#">Available soon</a>
-      </div>
-    </div>
+    <div class="featured-grid">
+    <div id="exclusive-products-en" class="featured-products-dynamic"></div>
   </div>
 </div>
     <div class="card">
@@ -733,12 +710,14 @@
   </footer>
 
   <script src="assets/data/products-en.js"></script>
-  <script src="assets/data/upcoming-en.js"></script>
-  <script src="assets/data/members-en.js"></script>
-  <script>
+<script src="assets/data/upcoming-en.js"></script>
+<script src="assets/data/members-en.js"></script>
+<script src="assets/data/exclusives-en.js"></script>
+<script>
   (function () {
     const featuredContainer = document.getElementById('featured-products-en');
     const catalogListContainer = document.getElementById('catalog-list-en');
+    const exclusiveProductsContainer = document.getElementById('exclusive-products-en');
     const upcomingContainer = document.getElementById('upcoming-products-en');
     const freeProductsContainer = document.getElementById('free-products-en');
     const freeCatalogListContainer = document.getElementById('free-catalog-list-en');
@@ -746,7 +725,8 @@
     const products = Array.isArray(window.arcaneProductsEn) ? [...window.arcaneProductsEn] : [];
     const upcoming = Array.isArray(window.arcaneUpcomingEn) ? [...window.arcaneUpcomingEn] : [];
     const freeProducts = Array.isArray(window.arcaneMembersEn) ? [...window.arcaneMembersEn] : [];
-
+    const exclusiveProducts = Array.isArray(window.arcaneExclusivesEn) ? [...window.arcaneExclusivesEn] : [];
+    
     function escapeHtml(text) {
       return String(text || '')
         .replace(/&/g, '&amp;')
@@ -903,6 +883,29 @@
         }).join('');
       }
     }
+    if (exclusiveProductsContainer) {
+  if (!exclusiveProducts.length) {
+    exclusiveProductsContainer.innerHTML = `
+      <div class="product-card">
+        <div>
+          <div class="badge-row">
+            <span class="badge">Exclusive</span>
+          </div>
+          <h3>Exclusives coming soon</h3>
+          <p>
+            Upcoming exclusive content from THE ARCANE SHOP will appear here as soon as it becomes available.
+          </p>
+        </div>
+      </div>
+    `;
+  } else {
+    exclusiveProducts.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    exclusiveProductsContainer.innerHTML = exclusiveProducts.map(buildStandardCard).join('');
+  }
+}
   })();
 </script>
 </body>
