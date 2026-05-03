@@ -662,33 +662,11 @@
     Alcuni prodotti speciali saranno disponibili esclusivamente su THE ARCANE SHOP. Questi contenuti nasceranno per espandere pubblicazioni già esistenti, aggiungere nuove possibilità di gioco e offrire materiali premium non presenti su DMsGuild.
   </p>
 
-  <div class="featured-grid">
-    <div class="product-card">
-      <div>
-        <div class="badge-row">
-          <span class="badge">Esclusiva sito</span>
-          <span class="badge">In arrivo</span>
-        </div>
-
-        <h3>Prima esclusiva in preparazione</h3>
-
-        <p>
-          Un modulo premium collegato ai contenuti già pubblicati, pensato per offrire nuove scene, luoghi, sviluppi narrativi e strumenti pronti da utilizzare al tavolo.
-        </p>
-
-        <div class="product-meta">
-          <strong>Formato:</strong> PDF digitale<br />
-          <strong>Categoria:</strong> contenuto esclusivo premium<br />
-          <strong>Piattaforma:</strong> THE ARCANE SHOP
-        </div>
-      </div>
-
-      <div class="button-row">
-        <a class="button secondary" href="#">Disponibile prossimamente</a>
-      </div>
-    </div>
+    <div class="featured-grid">
+    <div id="exclusive-products-it" class="featured-products-dynamic"></div>
   </div>
 </div>
+
     <div class="card">
       <span class="section-label">
         <img src="assets/images/arcane-dmsguild-glyph.png" alt="Sigillo DMsGuild" class="glyph-icon" />
@@ -733,19 +711,22 @@
   </footer>
 
   <script src="assets/data/products-it.js"></script>
-  <script src="assets/data/upcoming-it.js"></script>
-  <script src="assets/data/members-it.js"></script>
-  <script>
+<script src="assets/data/upcoming-it.js"></script>
+<script src="assets/data/members-it.js"></script>
+<script src="assets/data/exclusives-it.js"></script>
+<script>
   (function () {
     const featuredContainer = document.getElementById('featured-products-it');
     const catalogListContainer = document.getElementById('catalog-list-it');
     const upcomingContainer = document.getElementById('upcoming-products-it');
     const freeProductsContainer = document.getElementById('free-products-it');
-    const freeCatalogListContainer = document.getElementById('free-catalog-list-it');
+const freeCatalogListContainer = document.getElementById('free-catalog-list-it');
+const exclusiveProductsContainer = document.getElementById('exclusive-products-it');
 
-    const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
-    const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
-    const freeProducts = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
+const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
+const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
+const freeProducts = Array.isArray(window.arcaneMembersIt) ? [...window.arcaneMembersIt] : [];
+const exclusiveProducts = Array.isArray(window.arcaneExclusivesIt) ? [...window.arcaneExclusivesIt] : [];
 
     function escapeHtml(text) {
       return String(text || '')
@@ -800,7 +781,10 @@
     freeProducts.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-
+    exclusiveProducts.sort(function (a, b) {
+  return new Date(b.date) - new Date(a.date);
+});
+    
     if (featuredContainer) {
       const featuredProducts = products.slice(0, 2);
       featuredContainer.innerHTML = featuredProducts.map(buildStandardCard).join('');
@@ -901,6 +885,25 @@
             </div>
           `;
         }).join('');
+      }
+    }
+        if (exclusiveProductsContainer) {
+      if (!exclusiveProducts.length) {
+        exclusiveProductsContainer.innerHTML = `
+          <div class="product-card">
+            <div>
+              <div class="badge-row">
+                <span class="badge">Esclusive</span>
+              </div>
+              <h3>Esclusive in arrivo</h3>
+              <p>
+                I prossimi contenuti esclusivi di THE ARCANE SHOP compariranno qui non appena saranno disponibili.
+              </p>
+            </div>
+          </div>
+        `;
+      } else {
+        exclusiveProductsContainer.innerHTML = exclusiveProducts.map(buildStandardCard).join('');
       }
     }
   })();
