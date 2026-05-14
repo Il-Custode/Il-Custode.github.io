@@ -659,7 +659,9 @@
     const upcomingContainer = document.getElementById('upcoming-products-it');
     const freeProductsContainer = document.getElementById('free-products-it');
 const freeCatalogListContainer = document.getElementById('free-catalog-list-it');
-const exclusiveProductsContainer = document.getElementById('exclusive-products-it');
+const exclusiveFeaturedContainer = document.getElementById('exclusive-featured-it');
+const exclusiveLatestContainer = document.getElementById('exclusive-latest-it');
+const exclusiveCatalogListContainer = document.getElementById('exclusive-catalog-list-it');
 
 const products = Array.isArray(window.arcaneProductsIt) ? [...window.arcaneProductsIt] : [];
 const upcoming = Array.isArray(window.arcaneUpcomingIt) ? [...window.arcaneUpcomingIt] : [];
@@ -825,25 +827,52 @@ const exclusiveProducts = Array.isArray(window.arcaneExclusivesIt) ? [...window.
         }).join('');
       }
     }
-        if (exclusiveProductsContainer) {
-      if (!exclusiveProducts.length) {
-        exclusiveProductsContainer.innerHTML = `
-          <div class="product-card">
-            <div>
-              <div class="badge-row">
-                <span class="badge">Esclusive</span>
-              </div>
-              <h3>Esclusive in arrivo</h3>
-              <p>
-                I prossimi contenuti esclusivi di THE ARCANE SHOP compariranno qui non appena saranno disponibili.
-              </p>
-            </div>
+        if (exclusiveFeaturedContainer) {
+  const featuredExclusive = exclusiveProducts.slice(0, 1);
+  exclusiveFeaturedContainer.innerHTML = featuredExclusive.map(buildStandardCard).join('');
+}
+
+if (exclusiveLatestContainer) {
+  const latestExclusive = exclusiveProducts.slice(1, 2);
+
+  if (!latestExclusive.length) {
+    exclusiveLatestContainer.innerHTML = `
+      <div class="product-card">
+        <div>
+          <div class="badge-row">
+            <span class="badge">Ultima uscita</span>
+            <span class="badge">Esclusiva</span>
           </div>
-        `;
-      } else {
-        exclusiveProductsContainer.innerHTML = exclusiveProducts.map(buildStandardCard).join('');
-      }
+          <h3>Nuove esclusive in arrivo</h3>
+          <p>
+            Nuovi contenuti esclusivi verranno aggiunti qui man mano che il catalogo di THE ARCANE SHOP crescerà.
+          </p>
+        </div>
+      </div>
+    `;
+  } else {
+    exclusiveLatestContainer.innerHTML = latestExclusive.map(buildStandardCard).join('');
+  }
+}
+
+if (exclusiveCatalogListContainer) {
+  exclusiveCatalogListContainer.innerHTML = exclusiveProducts.map(function (product) {
+    const safeTitle = escapeHtml(product.title);
+    const safeLink = escapeHtml(product.link || '#');
+
+    if (!product.link || product.link === '#') {
+      return `<div class="catalog-list-item">• ${safeTitle}</div>`;
     }
+
+    return `
+      <div class="catalog-list-item">
+        • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+          ${safeTitle}
+        </a>
+      </div>
+    `;
+  }).join('');
+}
   })();
 </script>
 </body>
