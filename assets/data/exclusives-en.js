@@ -1,13 +1,13 @@
 window.arcaneExclusivesEn = [
   {
-    id: "first-exclusive-coming-soon",
-    date: "2026-05-03",
-    title: "First Exclusive Coming Soon",
-    description: "The first exclusive product from THE ARCANE SHOP will be available soon on Ko-fi.",
-    format: "PDF",
-    category: "THE ARCANE SHOP Exclusive",
+    id: "the-collectors-archive",
+    date: "2026-05-14",
+    title: "The Collector’s Archive",
+    description: "A premium narrative location where memory, identity and reality begin to fracture. A modular horror-investigative experience for Dungeons & Dragons 5e, designed for Dungeon Masters who want more than a traditional dungeon.",
+    format: "Premium PDF",
+    category: "Narrative location / Horror investigation",
     platform: "Ko-fi",
-    badges: ["Coming Soon", "Exclusive", "Ko-fi"],
-    link: "#"
+    badges: ["New Exclusive", "Premium", "Horror"],
+    link: "https://ko-fi.com/s/fcbcb3dcdd"
   }
 ];
