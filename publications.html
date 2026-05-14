@@ -519,64 +519,25 @@
 
       <div class="featured-grid">
 
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Featured</span>
-              <span class="badge">Exclusive</span>
-            </div>
-            <h3>Featured exclusive product</h3>
-            <p>
-              The main exclusive release will appear here, selected to represent the quality, identity, and style of THE ARCANE SHOP.
-            </p>
-            <div class="product-meta">
-              Exclusive content will be available directly through this website and will offer additional material not available on DMsGuild.
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button secondary" href="#">Open product</a>
-          </div>
-        </div>
+  <div id="exclusive-featured-en" class="featured-products-dynamic"></div>
 
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Latest release</span>
-              <span class="badge">Exclusive</span>
-            </div>
-            <h3>New exclusive content</h3>
-            <p>
-              This section will show the latest exclusive publication available, updated whenever a new website-only release is published.
-            </p>
-            <div class="product-meta">
-              No exclusive products are available yet, but this section will be updated soon.
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button secondary" href="#">Open product</a>
-          </div>
-        </div>
+  <div id="exclusive-latest-en" class="featured-products-dynamic"></div>
 
-        <div class="product-card">
-          <div>
-            <div class="badge-row">
-              <span class="badge">Archive</span>
-              <span class="badge">All content</span>
-            </div>
-            <h3>Complete exclusive overview</h3>
-            <p>
-              A complete collection of all exclusive content published on THE ARCANE SHOP, designed to give a clear and organized view of the full website-only catalog.
-            </p>
-            <div class="product-meta">
-              Exclusive releases will appear here as the catalog expands, keeping the section ordered and easy to browse.
-            </div>
-          </div>
-          <div class="button-row">
-            <a class="button secondary" href="#">Explore content</a>
-          </div>
-        </div>
-
+  <div class="product-card">
+    <div>
+      <div class="badge-row">
+        <span class="badge">Archive</span>
+        <span class="badge">All content</span>
       </div>
+      <h3>Complete exclusive overview</h3>
+      <p>
+        A complete collection of all exclusive content published on THE ARCANE SHOP, designed to give a clear and organized view of the full website-only catalog.
+      </p>
+      <div id="exclusive-catalog-list-en" class="product-meta catalog-list"></div>
+    </div>
+  </div>
+
+</div>
     </div>
 
     <div class="card">
@@ -696,7 +657,9 @@
   (function () {
     const featuredContainer = document.getElementById('featured-products-en');
     const catalogListContainer = document.getElementById('catalog-list-en');
-    const exclusiveProductsContainer = document.getElementById('exclusive-products-en');
+    const exclusiveFeaturedContainer = document.getElementById('exclusive-featured-en');
+    const exclusiveLatestContainer = document.getElementById('exclusive-latest-en');
+    const exclusiveCatalogListContainer = document.getElementById('exclusive-catalog-list-en');
     const upcomingContainer = document.getElementById('upcoming-products-en');
     const freeProductsContainer = document.getElementById('free-products-en');
     const freeCatalogListContainer = document.getElementById('free-catalog-list-en');
@@ -863,28 +826,55 @@
       }
     }
 
-    if (exclusiveProductsContainer) {
-  if (!exclusiveProducts.length) {
-    exclusiveProductsContainer.innerHTML = `
+    exclusiveProducts.sort(function (a, b) {
+  return new Date(b.date) - new Date(a.date);
+});
+
+if (exclusiveFeaturedContainer) {
+  const featuredExclusive = exclusiveProducts.slice(0, 1);
+  exclusiveFeaturedContainer.innerHTML = featuredExclusive.map(buildStandardCard).join('');
+}
+
+if (exclusiveLatestContainer) {
+  const latestExclusive = exclusiveProducts.slice(1, 2);
+
+  if (!latestExclusive.length) {
+    exclusiveLatestContainer.innerHTML = `
       <div class="product-card">
         <div>
           <div class="badge-row">
+            <span class="badge">Latest release</span>
             <span class="badge">Exclusive</span>
           </div>
-          <h3>Exclusives coming soon</h3>
+          <h3>More exclusives coming soon</h3>
           <p>
-            Upcoming exclusive content from THE ARCANE SHOP will appear here as soon as it becomes available.
+            New exclusive content will appear here as THE ARCANE SHOP catalog continues to grow.
           </p>
         </div>
       </div>
     `;
   } else {
-    exclusiveProducts.sort(function (a, b) {
-      return new Date(b.date) - new Date(a.date);
-    });
-
-    exclusiveProductsContainer.innerHTML = exclusiveProducts.map(buildStandardCard).join('');
+    exclusiveLatestContainer.innerHTML = latestExclusive.map(buildStandardCard).join('');
   }
+}
+
+if (exclusiveCatalogListContainer) {
+  exclusiveCatalogListContainer.innerHTML = exclusiveProducts.map(function (product) {
+    const safeTitle = escapeHtml(product.title);
+    const safeLink = escapeHtml(product.link || '#');
+
+    if (!product.link || product.link === '#') {
+      return `<div class="catalog-list-item">• ${safeTitle}</div>`;
+    }
+
+    return `
+      <div class="catalog-list-item">
+        • <a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="catalog-list-link">
+          ${safeTitle}
+        </a>
+      </div>
+    `;
+  }).join('');
 }
   })();
 </script>
